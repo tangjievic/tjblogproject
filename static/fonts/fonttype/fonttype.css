@@ -1,0 +1,16 @@
+/* @font-face {font-family: "writetype";
+    src: url('./writetype.ttf?#font-spider') format('embedded-opentype'),
+} */
+
+/* @font-face {
+    font-family: 'writetype';
+    src: url('./writetype.eot');
+    src:
+      url('./writetype.eot?') format('embedded-opentype'),
+      url('./writetype.woff') format('woff'),
+      url('./writetype.ttf') format('truetype'),
+      url('./writetype.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  } */
+  
