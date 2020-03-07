@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin'); //通过 npm 安装
 const webpack = require('webpack'); //访问内置的插件
+const TerserPlugin = require('terser-webpack-plugin');
 const ExtractTextPlugin=require("extract-text-webpack-plugin")
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
 
@@ -100,7 +101,11 @@ module.exports = {
       port: 4001,
       open: true,
 	  	inline:true//实时刷新
-	  },
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+    },
   	plugins: [
         new ExtractTextPlugin('css/[name].css'),
         new OptimizeCssAssetsPlugin(),
