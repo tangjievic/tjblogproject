@@ -9,6 +9,10 @@ const entryMode = (pagename) => {
   return `./src/view/${pagename}/${pagename}.js`
 }
 
+const entryMmode = (pagename)=>{
+  return `./src/mview/${pagename}/${pagename}.js`
+}
+
 const outputHtml = (pagename) => {
   return  new htmlWebpackPlugin({
     template: `./src/view/${pagename}/${pagename}.html`,
