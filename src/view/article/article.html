@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <!-- head模块设置[[ -->
+    ${require('html-loader!../../components/elements/head/index.html')}
+    <!-- head模块设置]] -->
+<body>
+    <div  class="pageview">
+        <!-- head导航栏设置[[ -->
+        ${require('html-loader!../../components/plugins/headnav/index.html')}
+        <!-- head导航栏设置]] -->
+
+        <!-- 主体结构[[ -->
+        <section class="page_content">
+            <aside class="content__left ">
+                ${require('html-loader!../../components/elements/leftele/adcard/index.html')}
+                ${require('html-loader!../../components/elements/leftele/listdiv/index.html')}
+                ${require('html-loader!../../components/elements/leftele/hotart/index.html')}
+                ${require('html-loader!../../components/elements/leftele/reward/index.html')}
+            </aside>
+
+            <div class="content__right">
+                <div class="boder_decorate_a">
+                    <div class="boder_decorate_b">
+                        <div class="right__planel">
+                            <div class="right__mian_box">
+                                <section class="main__articel">
+                                    <header>
+                                        <h2>
+                                        <span class="art_label imgicon img-label-a">原</span>
+                                                                    测试                    </h2>
+                                        <div>
+                                            <span class="hd_belongto">文章所属：</span>
+                                            <span class="base-tag tag-success"><a href="jacascript::void(0)">前端大杂烩</a></span>
+                                            <span class="base-tag tag-primary"><a href="/lstindex/cid/5.html">HTML5/CSS3</a></span>
+                                        </div>
+                                    </header>
+
+                                    <div class="art_msg">
+                                        <span>
+                                            <i class="iconfont icon-edit"></i>
+                                            作者：TANGJIE               
+                                        </span>
+                                        <span>
+                                            <i class="iconfont icon-marketing_fill "></i>
+                                            标签：第三方啊是                    
+                                        </span>
+                                        <span>
+                                            <i class="iconfont icon-yueduxiao"></i>
+                                            查看：5                    
+                                        </span>
+                                        <span>
+                                            <i class="iconfont icon-brush_fill "></i>
+                                            发布时间：2019-01-31                   
+                                         </span>
+                                    </div>
+
+                                    <div class="art_dsc">
+                                        <p>
+                                            简介 : 安抚发送                    
+                                        </p>
+                                    </div>
+
+                                    <article class="markdown-body">
+                                        <h4><a id="JavaScript_0" target="_blank"></a>前端JavaScript数据结构和算法——基本概念</h4>
+ <p>简介：本部分主要是介绍数据结构和算法的基本概念，尤其是讲解了时间复杂度，提及了空间复杂度。</p>
+ <p>第一部分：<br>
+ 1.数据结构基本概念<br>
+ <strong>a.数据</strong><br>
+ 数据是信息的载体，是描述事物属性的<strong>数，字符串</strong>，以及所有能输入到计算机中并被计算机<strong>识别和处理的符号集合</strong><br>
+ <strong>b.数据元素</strong><br>
+ 数据元素是数据的基本单位，一个数据元素可由多个数据项构成<br>
+ <strong>c.数据对象</strong><br>
+ 是具有相同性质的数据元素的集合。是数据的一个子集<br>
+ <strong>d.数据类型</strong><br>
+ 数据类型是一个值的集合和定义在此集合上的一组操作的总称<br>
+ （1）原子类型：其值不能再分割的数据类型<br>
+ （2）结构类型：其值可再分为若干成分的数据类型<br>
+ （3）抽象数据类型：抽象数据组织及相关操作<br>
+ <strong>e.抽象数据类型</strong><br>
+ 指的是一个数学模型及定义在该模型上的一组操作。（抽象数据类型的定义仅仅取决于它的一组逻辑特性，与其在计算机内如何表示和实现无关。也就是说不管他内部结构如何变化，只要他的数学特性不变，就不影响其外部使用），通常用（数据对象、数据关系、基本操作集）这样三元组来表示抽象数据类型。<br>
+ <strong>f.数据结构</strong><br>
+ 任何问题中，数据元素都不是孤立的。他们之间的关系称为结构。也就是数据结构是相互之间存在一种或多种特定关系的数据元素的集合。一般包括这三个方面（逻辑结构、存储结构、和数据的运算）。（数据的逻辑结构和存储结构是密不可分的。<strong>一个算法的设计取决于所选定的逻辑结构，算法的实现依赖于所采用的存储结构</strong>）</p>
+ <p>2.数据结构三要素<br>
+ <strong>a.逻辑结构</strong><br>
+ 指的是数据之间的逻辑关系。与数据的存储无关是独立于计算机的。（一般分为线性结构[例如：线性表]和非线性结构[例如集合、树、图]）<br>
+ （1）线性结构：数据之间只存在一对一的关系<br>
+ （2）树形结构：数据之间存在一对多的关系<br>
+ （3）图或网状结构：数据之间存在多对多的关系<br>
+ <strong>b.数据的存储结构</strong><br>
+ 即数据结构在计算机中的表示（物理结构），（数据的存储结构是由计算机语言实现的逻辑结构（比如JavaScript），依赖于计算机语言），数据的存储结构主要有：顺序存储、链式存储、索引存储、散列存储</p>
+ <p>第二部分：</p>
+ <p><strong>3.算法</strong><br>
+ 算法是对特定问题求解步骤的一种描述<br>
+ 算法5特性如下：<br>
+ <strong>a.有穷性<br>
+ b.确定性<br>
+ c.可行性<br>
+ d.输入<br>
+ e.输出</strong></p>
+ <p><strong>4.时间复杂度</strong><br>
+ 一条语句的频度是指该语句在算法中被重复执行的次数。算法中所有语句的频度之和记为T(n)，他是问题规模n的函数。时间复杂度主要是分析T(n)的数量级。因为算法中基本运算的频度与T(n)通数量级，所以采用算法基本运算频度f(n)来分析算法的时间复杂度。</p>
+ <p>一般有一条准则就是：一般是考虑最坏时间复杂度，以保证算法的运行时间不会比它更长。<br>
+ 时间复杂度的加法规则：T(n,m)=T1(n)+T2(n)=O(max(f(n),g(m))<br>
+ 时间复杂度的乘法规则：<br>
+ （1）T(n,m)=T1(n)∗T2(m)=O(f(n)∗g(m))T(n,m)=T1(n)∗T2(m)=O(f(n)∗g(m))<br>
+ （2）O(n)∗O(m)=O(n∗m</p>
+ <p>常见的渐进的时在这里插入代码片间复杂度为：O(1)&lt;O(log2n)&lt;O(n)&lt;O(nlog2n)&lt;O(n²)&lt;O(n³)&lt;O(2ⁿ)&lt;O(n!)&lt;O(nⁿ)</p>
+ <p><strong>5.时间复杂度的实例分析：</strong></p>
+ <pre><div class="hljs"><code class="lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test1</span>(<span class="hljs-params">n</span>)</span>{
+     <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;
+     <span class="hljs-keyword">while</span>(a&lt;=n){
+         a = a*<span class="hljs-number">2</span>;
+     }
+ }
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test2</span>(<span class="hljs-params">n</span>)</span>{
+     <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
+     <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i&lt;n;i++){
+         a ++;
+     }
+ }
+ </code></div></pre>
+ <p>首先分析函数test1。<br>
+ 设执行a= a * 2 这条语句执行了t次，根据a = a*2,a=1 有a= 2^t那么又while中的条件可知 2^t  = n;推出t = log2n 因此次函数的时间复杂度为O（log2n）</p>
+ <p>函数test1就比较简单了，a++这条语句一直执行n次因此时间复杂度为O（n）</p>
+ <p>再来一个实例如下：</p>
+ <pre><div class="hljs"><code class="lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test3</span>(<span class="hljs-params">n</span>)</span>{
+     <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>,sum = <span class="hljs-number">0</span>;
+     <span class="hljs-keyword">while</span>(sum&lt;n){
+         sum += ++i;
+         <span class="hljs-keyword">return</span> i;
+     }
+ }
+ </code></div></pre>
+ <p>test3函数的时间复杂度是O（n^(1/2)）；具体解决见下期（js算法——数组（线性表））</p>
+ <p><strong>5.空间复杂度</strong><br>
+ 空间复杂度是指：算法的空间复杂度S(n)定义为该算法所耗费的存储空间。他是问题规模n的函数。（一般来说：一段程序除了本身所用的指令、常数、变量、和输入数据以外，还需要一些对数据进行操作的工作单元和存储为实现计算所需要的一些信息的辅助空间，比如递归是常见的空间复杂度很高的一种场景）</p>
+                                     </article>
+
+                                    <div class="art_btn">
+                                        <button class="btn btn-danger"><i class="iconfont icon-good-filling"></i>&nbsp;很赞哦！<span>(33)</span></button>
+                                    </div> 
+
+
+								</section>
+                            </div>
+
+                            <!-- 右侧主要内容区域]] -->
+                            ${require('html-loader!../../components/elements/righttool/index.html')}
+                            <!-- 右侧主要内容区域[[ -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="msg__code">
+                    <a href="#">xxxx</a><span>暂无演示</span>
+                </div>
+
+                <div class="bg-layout ad_level">
+                    <img src="${require(`../../../static/images/ad.gif`)}"/>
+                </div>
+
+                <div class="bg-layout">
+                    <b class="art_title">文章评论</b>
+                    <div class="pl_box"><input type="text"></div>
+                    <div class="btn-right">
+                        <button class="btn btn-danger">提交评论</button>
+                    </div>
+                </div>
+
+                <div class="bg-layout">
+                    <b class="art_title">历史评论</b>
+                    <ul class="art_recoment">
+                        <li>
+                            <div class="recoment">
+                                <span class="youke">游客:</span>
+                                <span>很实用，赞一个按揭房阿双方均按理说房价链接阿里发拉升发动机零售价分离的独家●■√♠♠aflka煞风景路撒地方开讲啦疯狂拉好地方咖啡咖啡咖啡喝口水都浪费抗衰老的发挥卡拉水电费卡上的符号卡机法兰克福打上来就很烦啦★★★★★◀◀◁♠☝▅▅▌▓▍▊✘☑▶♦☞☛♥♥♡♠咖啡壶 纱礼服和阿斯蒂芬</span>
+                            </div>
+                            <span class="recoment-time">2018/12/23</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- 主体结构]] -->
+        <!-- 脚部设置[[ -->
+        ${require('html-loader!../../components/elements/footer/index.html')}
+        <!-- 脚部设置]] -->
+    </div>
+    <!-- 页面背景设置[[ -->
+    ${require('html-loader!../../components/elements/bgdiv/index.html')}
+    <!-- 页面背景设置]] -->
+</body>
+</html>

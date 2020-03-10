@@ -1,6 +1,5 @@
 import './index.scss'
 import {dreamLike} from '../../components/plugins/canvasbg/dreamlike/index.js'
-import '../../components/plugins/slidershow/index'
 import pullDown from '../../components/elements/leftele/listdiv/index'
 import indexTab from '../../components/elements/tab/index'
 import '../../components/plugins/slidershow/index'

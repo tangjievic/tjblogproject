@@ -27,12 +27,30 @@ const outputHtml = (pagename) => {
     }
   })
 }
+const outputmHtml = (pagename) => {
+  return  new htmlWebpackPlugin({
+    template: `./src/mview/${pagename}/${pagename}.html`,
+    filename: `mview/${pagename}.html`,//改html的输出文件名index.html改为了a.hmtl,
+    inject: true,
+    chunks: [`${pagename}`],
+    minify:{
+        removeAttributeQuotes:true,//去除引号
+        removeComments:false,//去除注释
+        removeEmptyAttributes:true,//去除空属性
+        collapseWhitespace:false//去除空格
+    }
+  })
+}
 module.exports = {
     mode: 'development',//production,development
   	entry: {
-      index:entryMode('index'),
-      //list:'./src/pageview/listpage/index.js',
-      //article:'./src/pageview/articlepage/index.js',
+      //index:entryMode('index'),
+      //list:entryMode('list'),
+      //article:entryMode('article')
+      mindex:entryMmode('mindex'),
+      mlist:entryMmode('mlist'),
+      marticle:entryMmode('marticle')
+      
   	},//入口
   	output: {//出口
     	//filename: 'js/[name].[hash].js',
@@ -113,31 +131,12 @@ module.exports = {
   	plugins: [
         new ExtractTextPlugin('css/[name].css'),
         new OptimizeCssAssetsPlugin(),
-  	    outputHtml('index'),
-        // new htmlWebpackPlugin({
-        //   template: `./src/pageview/listpage/index.html`,
-        //   filename: `pageview/list.html`,//改html的输出文件名index.html改为了a.hmtl,
-        //   inject: true,
-        //   chunks: ['list',],
-        //   minify:{
-        //       removeAttributeQuotes:true,//去除引号
-        //       removeComments:false,//去除注释
-        //       removeEmptyAttributes:true,//去除空属性
-        //       collapseWhitespace:false//去除空格
-        //   }
-        // }),
-        // new htmlWebpackPlugin({
-        //   template: `./src/pageview/articlepage/index.html`,
-        //   filename: `pageview/article.html`,//改html的输出文件名index.html改为了a.hmtl,
-        //   inject: true,
-        //   chunks: ['article',],
-        //   minify:{
-        //       removeAttributeQuotes:true,//去除引号
-        //       removeComments:false,//去除注释
-        //       removeEmptyAttributes:true,//去除空属性
-        //       collapseWhitespace:false//去除空格
-        //   }
-        // }),
+        //outputHtml('index'),
+        //outputHtml('list'),
+        //outputHtml('article')
+        outputmHtml('mindex'),
+        outputmHtml('mlist'),
+        outputmHtml('marticle')
    	]
 
 };

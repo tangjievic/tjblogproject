@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <!-- head模块设置[[ -->
+    ${require('html-loader!../../components/elements/head/index.html')}
+    <!-- head模块设置]] -->
+<body>
+    <div  class="pageview">
+        <!-- head导航栏设置[[ -->
+        ${require('html-loader!../../components/plugins/headnav/index.html')}
+        <!-- head导航栏设置]] -->
+
+        <!-- 主体结构[[ -->
+        <section class="page_content">
+            <aside class="content__left ">
+                ${require('html-loader!../../components/elements/leftele/adcard/index.html')}
+                ${require('html-loader!../../components/elements/leftele/listdiv/index.html')}
+                ${require('html-loader!../../components/elements/leftele/hotart/index.html')}
+                ${require('html-loader!../../components/elements/leftele/reward/index.html')}
+            </aside>
+
+            <div class="content__right">
+                <div class="boder_decorate_a">
+                    <div class="boder_decorate_b">
+                        <div class="right__planel">
+                            <div class="right__mian_box">
+                                <h2 class="index-page_title">前端学习分享-列表页</h2>                           
+                                <section>
+									${require('html-loader!../../components/elements/artlist/index.html')}
+								</section>
+                            </div>
+                            <!-- 右侧主要内容区域]] -->
+                            ${require('html-loader!../../components/elements/righttool/index.html')}
+                            <!-- 右侧主要内容区域[[ -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-layout ad_level layout-model">
+					<img src="${require(`../../../static/images/ad.gif`)}"/>
+                </div>
+                
+                <div class="bg-layout layout-model">
+					${require('html-loader!../../components/plugins/showreel/index.html')}
+				</div>
+            </div>
+        </section>
+        <!-- 主体结构]] -->
+        <!-- 脚部设置[[ -->
+        ${require('html-loader!../../components/elements/footer/index.html')}
+        <!-- 脚部设置]] -->
+    </div>
+    <!-- 页面背景设置[[ -->
+    ${require('html-loader!../../components/elements/bgdiv/index.html')}
+    <!-- 页面背景设置]] -->
+</body>
+</html>

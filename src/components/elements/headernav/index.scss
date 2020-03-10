@@ -1,0 +1,32 @@
+.aui-nav-slider{
+    height: 44px;
+}
+.aui-navBar {
+    height: 44px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 102;
+    background: #fff;
+    .aui-navBar-item{
+        height: 44px;
+        line-height: 44px;
+        flex: 1;
+        padding: 0 20px;
+    }
+    .right{
+        text-align: right;
+    }
+    .nav_logo{
+        flex: 2;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        font-weight: 600;
+    }
+}
