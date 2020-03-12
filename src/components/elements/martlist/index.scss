@@ -1,0 +1,25 @@
+.mart_listlink-box{
+    display: block
+}
+.aui-all{
+    display: flex;
+    .pre,.next{
+        flex: 1;
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        width: 65px;
+        height: 15px;
+        line-height: 15px;
+        margin:0 10px;
+        border: 1px solid #7d7d7d;
+        padding: 5px;
+        border-radius: 3px;
+    }
+    .page_num{
+        padding: 5px;
+        height: 15px;
+        line-height: 15px;
+        font-size: 14px;
+    }
+}

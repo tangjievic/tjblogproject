@@ -1,7 +1,7 @@
 import './mindex.scss'
 import '../../../static/fonts/iconfont/iconfont.css'
 import '../../components/plugins/slidershow/index'
-
+import sliderNav from '../../components/elements/headernav/index'
 $(function () {
     $('.shutter').shutter({
       shutterW: '100%', // 容器宽度
@@ -12,3 +12,4 @@ $(function () {
       fullPage: false // 是否全屏展示
     });
 });
+sliderNav();

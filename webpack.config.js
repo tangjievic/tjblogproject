@@ -44,9 +44,9 @@ const outputmHtml = (pagename) => {
 module.exports = {
     mode: 'development',//production,development
   	entry: {
-      //index:entryMode('index'),
-      //list:entryMode('list'),
-      //article:entryMode('article')
+      index:entryMode('index'),
+      list:entryMode('list'),
+      article:entryMode('article'),
       mindex:entryMmode('mindex'),
       mlist:entryMmode('mlist'),
       marticle:entryMmode('marticle')
@@ -131,9 +131,9 @@ module.exports = {
   	plugins: [
         new ExtractTextPlugin('css/[name].css'),
         new OptimizeCssAssetsPlugin(),
-        //outputHtml('index'),
-        //outputHtml('list'),
-        //outputHtml('article')
+        outputHtml('index'),
+        outputHtml('list'),
+        outputHtml('article'),
         outputmHtml('mindex'),
         outputmHtml('mlist'),
         outputmHtml('marticle')
