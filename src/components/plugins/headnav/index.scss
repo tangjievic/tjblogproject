@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 9;
     height: 80px;
     background-color: rgba(255, 255, 255,0.7);
     -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
@@ -13,7 +13,7 @@
         min-width: 800px;
         margin: 0 auto;
     }
-    a{
+    .nav_link{
         display: block;height: 80px;line-height: 80px;
         text-align: center;padding: 0 10px;cursor: pointer;white-space: nowrap;
         font-size: 16px;
@@ -32,6 +32,13 @@
     .hd_nav{
         position: relative;
         float: right;
+        .login_item{
+            float: left;
+            height: 80px;
+            line-height: 80px;
+            position: relative;
+            cursor: pointer;
+        }
         .nav_item{
             float: left;
             height: 80px;
@@ -39,7 +46,7 @@
             position: relative;
             cursor: pointer;
             &:hover{
-                &>a{
+                &>.nav_link{
                     color: #86c0c7;
                 }
                 &::after{
@@ -71,7 +78,7 @@
                     z-index: 99;
                     background-color: rgba(0, 0, 0,0.5);
                 }
-                &>a{
+                &>.nav_link{
                     color: #86c0c7;
                 }
             }
@@ -87,20 +94,44 @@
                 &:last-child{
                     border-bottom:none;
                 }
-                a{
+                .nav_link{
                         height: 45px;
                         line-height: 45px;
                         color: #000;
                 }
                 cursor: pointer;
                 &:hover{
-                    &>a{
+                    &>.nav_link{
                         color: #ffffff;
                     }
                 }
                 &.slected{
                     color: #ffffff;
                 }
+            }
+        }
+    }
+    .user_box{
+        position: relative;
+        width: 80px;
+        padding-left: 20px;
+        .user_msg{
+            position: absolute;
+            top:0;right: 0;width:80px;height: 80px;
+            background-color: #333333;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            padding-top: 10px;
+        }
+        .user_state{
+            height: 20px;
+            line-height: 20px;
+            padding: 5px;
+            text-align: center;
+            font-size: 12px;
+            color: #ffffff;
+            .loginorsign_btn,.user_link{
+                color: #ffffff;
             }
         }
     }
