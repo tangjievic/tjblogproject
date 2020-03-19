@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "ws-icon":"../../../wescoreui/base/icon/index",
+        "ws-flex":"../../../wescoreui/base/flexlayout/index"
+    }
+}

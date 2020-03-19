@@ -1,0 +1,65 @@
+ .ws-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 主轴对齐方式 */
+  .ws-dir_left {
+    flex-direction: row;
+  }
+  .ws-dir_right {
+    flex-direction: row-reverse;
+  }
+  .ws-dir_top {
+    flex-direction: column;
+  }
+  .ws-dir_bottom {
+    flex-direction: column-reverse;
+  }
+
+  /* 主轴排列方式 */
+  .ws-main_start {
+    justify-content: flex-start;
+  }
+  .ws-main_end {
+    justify-content: flex-end;
+  }
+  .ws-main_between {
+    justify-content: space-between;
+  }
+  .ws-main_center {
+    justify-content: center;
+  }
+  .ws-main_around {
+    justify-content: space-around;
+  }
+
+  /* 换行设置 */
+  .ws-wrap_nowrap {
+    flex-wrap: nowrap;
+  }
+  .ws-wrap_wrap {
+    flex-wrap: wrap;
+  }
+  .ws-wrap_reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+
+  /* 交叉轴排列方式 */
+  .ws-cross_start {
+    align-items: flex-start;
+  }
+  .ws-cross_end {
+    align-items: flex-end;
+  }
+  .ws-cross_center {
+    align-items: center;
+  }
+  .ws-cross_baseline {
+    align-items: baseline;
+  }
+  .ws-cross_stretch {
+    align-items: stretch;
+  }
