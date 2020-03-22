@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c4846"],{"3abd":function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v("商品管理")])},u=[],a={},r=a,s=t("623f"),i=Object(s["a"])(r,c,u,!1,null,"0036f56b",null);e["default"]=i.exports}}]);
+//# sourceMappingURL=chunk-2d0c4846.20d4f821.js.map
