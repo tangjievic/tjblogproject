@@ -39,11 +39,7 @@ const index = {
                                 window.localStorage.setItem('tjblog_username',data.username);
                                 this.$message.success(res.message);
                                 setTimeout(()=>{
-                                    if(window.history.length>1){
-                                        this.$router.back(-1)
-                                    }else{
-                                        this.$router.replace({name:'adminlist'});
-                                    }
+                                    this.$router.replace({name:'adminlist'});
                                 },1000)
                             }
                         })

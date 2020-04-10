@@ -77,6 +77,23 @@ let listMenuArray =[
                 pathname:'addgoods'
             },
         ]
+    },
+    {
+        tilte:"员工管理",
+        pathname:"",
+        icon:"",
+        childs:[
+            {
+                c_tilte:'暂存员工列表'
+            },
+            {
+                c_tilte:'正式员工列表'
+            },
+            {
+                c_tilte:'员工录入',
+                pathname:''
+            }
+        ]
     }
 ]
 
