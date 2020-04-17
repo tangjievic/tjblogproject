@@ -109,6 +109,30 @@ const routes = [
         }
       },
       {
+        path:"tempstaff",
+        name:'tempstaff',
+        component:()=>import('../views/staffpage/tempstaff.vue'),
+        meta:{
+          keepalive:true,
+        }
+      },
+      {
+        path:"formalstaff",
+        name:'formalstaff',
+        component:()=>import('../views/staffpage/formalstaff.vue'),
+        meta:{
+          keepalive:true,
+        }
+      },
+      {
+        path:"addstaff",
+        name:'addstaff',
+        component:()=>import('../views/staffpage/addstaff.vue'),
+        meta:{
+          keepalive:true,
+        }
+      },
+      {
         path: '/homepage',
         redirect: { name: 'adminlist' }
       }

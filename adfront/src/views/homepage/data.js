@@ -81,17 +81,19 @@ let listMenuArray =[
     {
         tilte:"员工管理",
         pathname:"",
-        icon:"",
+        icon:"user-add",
         childs:[
             {
-                c_tilte:'暂存员工列表'
+                c_tilte:'暂存员工列表',
+                pathname:'tempstaff'
             },
             {
-                c_tilte:'正式员工列表'
+                c_tilte:'正式员工列表',
+                pathname:'formalstaff'
             },
             {
                 c_tilte:'员工录入',
-                pathname:''
+                pathname:'addstaff'
             }
         ]
     }

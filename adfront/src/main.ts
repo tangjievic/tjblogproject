@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import './assets/reset/reset.css'
 import {Button,Input,Form, Menu,Layout,Icon,message,Tabs,Select,Modal,
-Breadcrumb,Table,Alert,Popconfirm,Radio} from 'ant-design-vue'
+Breadcrumb,Table,Alert,Popconfirm,Radio,Row,Col,Divider} from 'ant-design-vue'
 
 Vue.use(Form);
 Vue.use(Menu);
@@ -17,6 +17,9 @@ Vue.use(Select);
 Vue.use(Modal);
 Vue.use(Radio);
 Vue.use(Input);
+Vue.use(Row);
+Vue.use(Col);
+Vue.use(Divider);
 Vue.component(Button.name,Button);
 Vue.component(Alert.name,Alert);
 Vue.component(Icon.name,Icon);
