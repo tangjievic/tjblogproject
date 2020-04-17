@@ -10,5 +10,5 @@ module.exports = {
             }
         }
     },
-    publicPath:'./'
+    publicPath:'/view/admin/'
 }

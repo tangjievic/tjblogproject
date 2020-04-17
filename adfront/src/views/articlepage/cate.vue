@@ -274,7 +274,13 @@ export default {
     },
     getCateList(){
         getCate().then(res=>{
-            this.catelistdata = res.data;
+            let temp = [];
+            res.data.forEach(item=>{
+                if(item.pid ==0){
+                    temp.push(item)
+                }
+            })
+            this.catelistdata = temp;
         })
     },
     getTagsList(){

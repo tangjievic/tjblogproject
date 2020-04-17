@@ -5,6 +5,7 @@ let SEVERURL = '';
 if(process.env.NODE_ENV == 'development'){
     SEVERURL = 'http://www.tjcms.com/index.php'
 }else{
+    //SEVERURL = 'http://www.tjcms.com/index.php'
     SEVERURL = 'https://www.tangjietop.cn/index.php'
 }
 /* 
