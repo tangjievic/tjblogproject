@@ -5,10 +5,11 @@
     .img{
         flex:1;
         border: 1px solid rgba(0,0,0,0.1);
+        height: 130px;
+        width: 100px;
+        padding: 5px;
         img{
-            padding: 5px;
-            height: 130px;
-            width: 100px;
+            width: 100%;
         }
     }
     .sfz_img{
@@ -66,17 +67,18 @@
                         <a-col :span="12">
                             <a-form-item label="员工头像">
                                 <div class="img">
-                                    <img src="https://img.yzcdn.cn/vant/tree.jpg">
+                                    <img :src="hd_img" v-if="hd_img">
+                                    <span v-else>待上传</span>
                                 </div>
                                 <div>
                                     <a-button type="primary" style="margin-right:10px" @click="getLocalImg('hd')">本地获取</a-button>
                                     <a-button style="margin-right:10px"  @click="getRightimg('hd')">右侧获取</a-button>
-                                    <a-button type="danger">更换图片</a-button>
+                                    <!-- <a-button type="danger">更换图片</a-button> -->
                                 </div>
                             </a-form-item>
                         </a-col>
                         <a-col :span="12">
-                            <a-form-item label="创建日期:"></a-form-item>
+                            <a-form-item label="创建日期:">{{momentFormat(submit_data.createtime*1000)}}</a-form-item>
                             <a-form-item label="临时id:"></a-form-item>
                         </a-col>
                     </a-row>
@@ -107,12 +109,12 @@
                     <a-row>
                         <a-col :span="12">
                             <a-form-item label="身份证号">
-                                <a-input v-decorator="['sfz', { rules: [{ required: true, message: '此字段不能为空' }] }]"/>
+                                <a-input @blur="getAge" v-decorator="['sfz', { rules: [{ required: true, message: '此字段不能为空' }] }]"/>
                             </a-form-item>
                         </a-col>
                         <a-col :span="12">
-                            <a-form-item label="年龄">
-                                <a-input v-decorator="['age', { rules: [{ required: true, message: '此字段不能为空' }] }]"/>
+                            <a-form-item label="年龄" disabled>
+                                <a-input v-model="submit_data.age" disabled></a-input>
                             </a-form-item>
                         </a-col>
                     </a-row>
@@ -120,24 +122,26 @@
                         <a-col :span="12">
                             <a-form-item label="身份证正面:">
                                 <div class="sfz_img">
-                                   <img src="https://img.yzcdn.cn/vant/tree.jpg">
+                                    <img :src="sfz_img[0]" v-if="sfz_img[0]">
+                                    <span v-else>暂无图片，待上传</span>
                                 </div>
                                 <div>
                                     <a-button type="primary" style="margin-right:10px"  @click="getLocalImg('sfz')">本地获取</a-button>
                                     <a-button style="margin-right:10px" @click="getRightimg('hd')">右侧获取</a-button>
-                                    <a-button type="danger">更换图片</a-button>
+                                    <!-- <a-button type="danger">更换图片</a-button> -->
                                 </div>
                             </a-form-item>
                         </a-col>
                         <a-col :span="12">
                             <a-form-item label="身份证反面:">
                                 <div class="sfz_img">
-                                    <img src="https://img.yzcdn.cn/vant/tree.jpg">
+                                    <img :src="sfz_img[1]" v-if="sfz_img[1]">
+                                    <span v-else>暂无图片，待上传</span>
                                 </div>
                                 <div>
                                     <a-button type="primary" style="margin-right:10px"  @click="getLocalImg('sfz')">本地获取</a-button>
                                     <a-button style="margin-right:10px" @click="getRightimg('hd')">右侧获取</a-button>
-                                    <a-button type="danger">更换图片</a-button>
+                                    <!-- <a-button type="danger">更换图片</a-button> -->
                                 </div>
                             </a-form-item>
                         </a-col>
@@ -184,13 +188,29 @@
                                 <a-input v-decorator="['salary']"/>
                             </a-form-item>
                         </a-col>
+                        <a-col :span="12">
+                            <a-form-item label="学历">
+                                <a-select
+                                    default-value="小学"
+                                    v-model="submit_data.education"
+                                >
+                                    <a-select-option value="小学">小学</a-select-option>
+                                    <a-select-option value="初中">初中</a-select-option>
+                                    <a-select-option value="高中">高中</a-select-option>
+                                    <a-select-option value="本科">本科</a-select-option>
+                                    <a-select-option value="硕士">硕士</a-select-option>
+                                    <a-select-option value="博士">博士</a-select-option>
+                                </a-select>
+                            </a-form-item>
+                        </a-col>
                     </a-row>
                     <a-row style="position:relative">
                         <a-col :span="12">
                             <a-form-item label="其他图片">
                                 <ul class="other_img_box">
-                                    <li>
-                                        <img src="https://img.yzcdn.cn/vant/tree.jpg">
+                                    <li v-for="item in other_img" :key="item">
+                                        <img :src="item" v-if="item">
+                                        <span v-else>暂无图片，待上传</span>
                                     </li>
                                 </ul>
                                 <div>
@@ -229,7 +249,7 @@
             </a-row>
             <a-divider type="horizontal" />
             <a-form-item>
-                <a-button type="primary" html-type="submit">
+                <a-button type="primary" html-type="submit" @click="handleSubmit">
                     员工信息录入上传提交
                 </a-button>
             </a-form-item>
@@ -262,6 +282,7 @@
 
 <script>
 import { VueCropper } from 'vue-cropper'
+import Moment from 'moment';
 export default {
     components: {
         VueCropper,
@@ -274,12 +295,36 @@ export default {
             visible:false,
             cropper_img:'',
             fixedNumber:[1,1],
-            isopenlocalfile:false
+            isopenlocalfile:false,
+            submit_data:{
+                age:0,
+                education:'小学',
+                hd_img:'',
+                sfz_img:'',
+                other_img:'',
+                createtime: parseInt(new Date()/1000)
+            },
+            hd_img:"",
+            sfz_img:['',''],
+            other_img:[''],
         }
     },
+    created(){
+
+    },
+    actived(){
+
+    },
     methods: {
+        //数据初始化
+        initData(){
+
+        },
         onChange(){
             
+        },
+        momentFormat(params){
+            return Moment(params).format('YYYY-MM-DD')
         },
         getRightimg(type){
             if(type=="hd"){
@@ -329,7 +374,34 @@ export default {
             }
             // let cropper_img = reader.readAsDataURL(this.$refs.local_input.files[0])
             // console.log(cropper_img)
-        }
+        },
+        handleSubmit(e) {
+            e.preventDefault();
+            this.form.validateFields((err, values) => {
+                if (!err) {
+                    console.log('Received values of form: ', values);
+                }else{
+                    //请求cgi
+                    Object.assign(this.submit_data,values);
+                }
+            });
+        },
+        getAge(e){
+            console.log(e.target.value)
+            let UUserCard = e.target.value;
+            let reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (reg.test(UUserCard) === false) {
+                return
+            }
+            let myDate = new Date();
+            let month = myDate.getMonth() + 1;
+            let day = myDate.getDate();
+            let age = myDate.getFullYear() - UUserCard.substring(6, 10) - 1;
+            if (UUserCard.substring(10, 12) < month || UUserCard.substring(10, 12) == month && UUserCard.substring(12, 14) <= day) {
+                age++;
+            }
+            this.submit_data.age = age
+        },
     },
 }
 </script>
