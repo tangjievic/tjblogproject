@@ -65,8 +65,8 @@ module.exports = {
 	            use:[{
 	              loader:'css-loader?name=./css/[name].[hash].[ext]',
 	              options:{
-	                minimize:true,//代码压缩
-	              }
+                  sourceMap: true,//代码压缩
+                }
 	            }],
             	publicPath:"../"
             })},//正则，表示后缀为css的文件
@@ -95,19 +95,19 @@ module.exports = {
     		  		exclude:/node_modules/ //排除不编译node_modules文件        
     			  },
             {
-              test: /\.scss/,
+              test: /\.less/,
               use: ExtractTextPlugin.extract({
                 use:[
                   {
                     loader:'css-loader',
                     options:{
-                      minimize:true,//代码压缩
+                      sourceMap: true,//代码压缩
                     }
                   },
                   {
-                    loader:'sass-loader',
+                    loader:'less-loader',
                     options:{
-                      minimize:true,//代码压缩
+                      sourceMap: true,//代码压缩
                     }
                   }
                 ],
@@ -120,7 +120,7 @@ module.exports = {
 	  	contentBase: path.join(__dirname,'dist') ,
 	  	compress: true,
 	  	host:'localhost',//服务器地址
-      port: 4001,
+      port: 4000,
       open: true,
 	  	inline:true//实时刷新
     },

@@ -1,4 +1,4 @@
-import './list.scss'
+import './list.less'
 import {dreamLike} from '../../components/plugins/canvasbg/dreamlike/index.js'
 import pullDown from '../../components/elements/leftele/listdiv/index'
 import '../../components/plugins/slidershow/index'

@@ -1,4 +1,4 @@
-import './index.scss'
+import './index.less'
 import {dreamLike} from '../../components/plugins/canvasbg/dreamlike/index.js'
 import pullDown from '../../components/elements/leftele/listdiv/index'
 import indexTab from '../../components/elements/tab/index'
