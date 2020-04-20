@@ -27,28 +27,28 @@ const index = {
     methods: {
         handleSubmit (e) {
             e.preventDefault();
-            this.$router.replace({name:'adminlist'});
-            // let regx = new RegExp(this.oldyzm,'i');
-            // this.form.validateFields((err,values)=>{
-            //     if(regx.test(values.yzm)){
-            //         if(!err){
-            //             managerLogin(values).then((res)=>{
-            //                // console.log(res)
-            //                 let data = res.data
-            //                 if(res.errorcode==10001){
-            //                     window.localStorage.setItem('tjblog_token',data.token);
-            //                     window.localStorage.setItem('tjblog_username',data.username);
-            //                     this.$message.success(res.message);
-            //                     setTimeout(()=>{
-            //                         this.$router.replace({name:'adminlist'});
-            //                     },1000)
-            //                 }
-            //             })
-            //         }
-            //     }else{
-            //         this.$message.error("验证码输入不正确！")
-            //     }
-            // })
+            //this.$router.replace({name:'adminlist'});
+            let regx = new RegExp(this.oldyzm,'i');
+            this.form.validateFields((err,values)=>{
+                if(regx.test(values.yzm)){
+                    if(!err){
+                        managerLogin(values).then((res)=>{
+                           // console.log(res)
+                            let data = res.data
+                            if(res.errorcode==10001){
+                                window.localStorage.setItem('tjblog_token',data.token);
+                                window.localStorage.setItem('tjblog_username',data.username);
+                                this.$message.success(res.message);
+                                setTimeout(()=>{
+                                    this.$router.replace({name:'adminlist'});
+                                },1000)
+                            }
+                        })
+                    }
+                }else{
+                    this.$message.error("验证码输入不正确！")
+                }
+            })
         },
         //刷新验证码
         updataYzm(){
