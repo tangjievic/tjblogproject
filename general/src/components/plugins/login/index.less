@@ -7,19 +7,29 @@
     left: 0;bottom: 0;
     z-index: 99;
 	background-color: rgba(0,0,0,0.7);
+	.input_flex{
+		display: flex;
+		.input{
+			flex: 3;
+		}
+		.submit_getcode_btn{
+			flex:1; 
+			margin-left: 10px;
+		}
+	}
 }
 .login-html{
 	width:525px;
-    height:670px;
+    height:500px;
     box-sizing: border-box;
     margin: 0 auto;
     border-radius: 5px;
-	padding:90px 70px 50px 70px;
+	padding:70px;
     background:rgba(255, 255, 255, 0.9);
     position: relative;
     .close_btn{
         position: absolute;
-        right: 0;top: 0;
+        right: 5px;top: 5px;
         .close{
             padding: 5px;
         }
@@ -91,16 +101,16 @@
     .group{
         .input{
             border:none;
-	        padding:15px 20px;
-	        border-radius:25px;
+	        padding:5px 10px;
+	        border-radius:15px;
             background-color: rgba(0,0,0,0.3);
         }
     }
 }
 .login-form .group .button{
 	border:none;
-	padding:15px 20px;
-	border-radius:25px;
+	padding:5px 10px;
+	border-radius:15px;;
 	background:rgba(255,255,255,.1);
 }
 .login-form .group input[data-type="password"]{
@@ -110,11 +120,16 @@
 }
 .login-form .group .label{
 	color:#000000;
-	font-size:12px;
+	font-size:14px;
 }
 .login-form .group .button{
     background:#000000;
-    cursor: pointer;
+	cursor: pointer;
+	font-size: 14px;
+	&:hover{
+		background-color: rgba(0,0,0,0.7);
+		color: #86c0c7;
+	}
 }
 .login-form .group label .icon{
 	width:15px;
@@ -178,9 +193,12 @@
 
 .hr{
 	height:2px;
-	margin:60px 0 50px 0;
+	margin:30px;
 	background:rgba(0,0,0,.8);
 }
 .foot-lnk{
 	text-align:center;
+	&:active{
+		color: #86c0c7;
+	}
 }
