@@ -6,7 +6,6 @@ import '../../components/plugins/slidershow/index'
 import '../../components/plugins/showreel/index'
 import '../../../static/fonts/iconfont/iconfont.css'
 import "../../libs/js/ripple.js"
-import loginOrsign from '../../components/plugins/login/index'
 import "../../components/plugins/rightemenu/index"
 let indexPage = ()=>{
     //启动背景动画
@@ -43,7 +42,6 @@ let indexPage = ()=>{
         bgColor : "#fff",
         cursor : true
     })
-    loginOrsign();
     //右侧菜单
     $("#gooey-upper").gooeymenu({
         bgColor: "#68d099",

@@ -1,0 +1,30 @@
+.tj_header{
+    position: relative;
+}
+.logo_link{
+    line-height: 46px;
+    height: 46px;
+    color: #2d374b;
+    font-weight: 600;
+    font-size: 20px;
+}
+.user_msg-box,.user_class-tag{
+    line-height: 46px;
+    height: 46px;
+    text-align: center;
+}
+.user_msg-box .user_front{
+    font-size: 12px;
+    color: rgba(104, 208, 153, 1);
+    max-width: 150px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.user_notice-bage{
+    position: relative;
+    top: 13px;
+}
+.user_notice-link{
+    font-size: 22px;
+}

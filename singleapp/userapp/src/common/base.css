@@ -1,0 +1,11 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}body{-webkit-text-size-adjust:100%;}a{color:#2d374b;text-decoration:none}a:hover{color:#cd0200;text-decoration:underline}em{font-style:normal}li{list-style:none}img{border:0;vertical-align:middle}table{border-collapse:collapse;border-spacing:0}p{word-wrap:break-word}
+body{font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;font-size: 16px;background-color: #f3f3f3;}
+a:hover{color: #000000;text-decoration: none}
+html,body{
+    font-size: 12px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+    word-break: break-word;
+    text-rendering: optimizeLegibility;
+    color: #333;
+    background-color: #f4f5f5;
+}
