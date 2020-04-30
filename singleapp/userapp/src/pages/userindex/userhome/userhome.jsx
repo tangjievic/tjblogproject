@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col,Button,Tabs   } from 'antd';
+import { getUserMsg} from '../../../api/index'
 
 const { TabPane } = Tabs;
 function callback(key) {
@@ -61,11 +62,26 @@ class UserHome extends Component{
                             <TabPane tab="本站注册用户资源分享" key="6"  className="box_tab">
                             Content of Tab Pane 3
                             </TabPane>
+                            <TabPane tab="本站VIP用户资源分享" key="7"  className="box_tab">
+                            Content of Tab Pane 3
+                            </TabPane>
                         </Tabs>
                     </Col>
                 </Row>
             </div>
         )
+    }
+
+    //页面初始化
+    initPage(){
+        // getUserMsg().then(res=>{
+
+        // })
+    }
+
+    //生命周期
+    componentWillMount(){
+
     }
 }
 

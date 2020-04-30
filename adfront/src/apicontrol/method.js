@@ -42,9 +42,9 @@ let getApi = (api,params,type=0) =>{
         ).catch(
             (error)=>{
                 let data = error.response.data;
-                if(error.response.status ==501){
+                if(error.response.status ==500){
                     Vue.prototype.$message.error(data.message)
-                    if(data.error_code == 50011 ){
+                    if(data.error_code == 10002 ){
                         setTimeout(()=>{
                             RouterList.push({name:"loginpage",params:{
                                 type:'relogin'
@@ -92,9 +92,9 @@ let postApi = (api,params,type=0,upload=false) => {
         ).catch(
             (error)=>{
                 let data = error.response.data;
-                if(error.response.status ==501){
+                if(error.response.status ==500){
                     Vue.prototype.$message.error(data.message)
-                    if(data.error_code == 50011 ){
+                    if(data.error_code == 10002 ){
                         setTimeout(()=>{
                             RouterList.push({name:"loginpage",params:{
                                 type:'relogin'

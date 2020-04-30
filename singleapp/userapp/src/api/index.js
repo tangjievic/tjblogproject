@@ -15,11 +15,14 @@ const userSignIn = (params)=>{
 const useReplacePassowrd = (params) =>{
     return postApi('user/findpassword',params,1);
 }
-
+const getUserMsg = ()=>{
+    return getApi('/user/getmsg',{},1)
+}
 export {
     getHomeData,
     getCode,
     userLogin,
     userSignIn,
-    useReplacePassowrd
+    useReplacePassowrd,
+    getUserMsg
 }

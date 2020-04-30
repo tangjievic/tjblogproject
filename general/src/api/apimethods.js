@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {message} from 'antd'
+import '../components/plugins/notice/index'
 let SEVERURL = '';
 if(process.env.NODE_ENV == 'development'){
     SEVERURL = 'http://www.tjcms.com/index.php'
@@ -41,13 +41,21 @@ let getApi = (api,params,type=0) =>{
         ).catch(
             (error)=>{
                 let data = error.response.data;
-                if(error.response.status == 501 && data.error_code == 50011){
-                    setTimeout(()=>{
-                        window.location.href = '/#/login'
-                    })
+                if(error.response.status == 500 && data.error_code == 10002){
+                    spop({
+                        template: "token失效或不合法，如有需要请登录",
+                        style: 'error',
+                        autoclose: 3000,
+                        position  : 'top-center',
+                    });
+                }else{
+                    spop({
+                        template: data.message,
+                        style: 'error',
+                        autoclose: 3000,
+                        position  : 'top-center',
+                    });
                 }
-                console.log('xx')
-                message.error(data.message)
                 reject(data)
             }
         )
@@ -87,11 +95,20 @@ let postApi = (api,params,type=0,upload=false) => {
             (error)=>{
                 let data = error.response.data;
                 if(error.response.status == 500 && data.error_code == 10002){
-                    setTimeout(()=>{
-                        window.location.href = '/#/login'
-                    },500)
+                    spop({
+                        template: "token失效或不合法，如有需要请登录",
+                        style: 'error',
+                        autoclose: 3000,
+                        position  : 'top-center',
+                    });
+                }else{
+                    spop({
+                        template: data.message,
+                        style: 'error',
+                        autoclose: 3000,
+                        position  : 'top-center',
+                    });
                 }
-                message.error(data.message)
                 reject(data)
             }
         )

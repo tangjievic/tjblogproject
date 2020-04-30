@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Button} from 'antd';
-
+let time = null//全局定时器变量
 class SendCode extends Component{
 
     constructor(props){
@@ -22,30 +22,37 @@ class SendCode extends Component{
 
     sendCodeEvent(){
         const { onClick } = this.props;
-        console.log(this.props)
+        //console.log(this.props)
         let is_send = null
         if (onClick) {
-            is_send = onClick();
-        }
-        this.setState({
-            is_send:is_send
-        })
-        if(this.state.is_send){
-            let time = setInterval(() => {
-                let send_time = this.state.send_time
-                send_time --;
+            onClick().then(res=>{
+                is_send = res
                 this.setState({
-                    send_time
+                    is_send:is_send
                 })
-                if(send_time == 0){
-                    this.setState({
-                        is_send:false,
-                        send_time:60
-                    })
-                    clearInterval(time)
+                //console.log(is_send,'xxx')
+                if(is_send){
+                    time = setInterval(() => {
+                        let send_time = this.state.send_time
+                        send_time --;
+                        this.setState({
+                            send_time
+                        })
+                        if(send_time == 0){
+                            this.setState({
+                                is_send:false,
+                                send_time:60
+                            })
+                            clearInterval(time)
+                        }
+                    }, 1000);
                 }
-            }, 1000);
+            })
         }
+    }
+
+    componentWillUnmount(){
+        clearInterval(time)
     }
 }
 SendCode.defaultProps ={

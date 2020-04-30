@@ -286,20 +286,23 @@ class UserLogin extends Component {
         })
     }
 
-    sendCode(){
-        console.log('xxx')
+    async sendCode(){
+        let result = null;
         let emreg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/
         if(emreg.test(this.state.email)){
-            getCode({
+            await getCode({
                 email:this.state.email
             }).then(res=>{
                 message.success('获取验证码成功，请登录邮箱查看验证码')
-                return true
+                result = true
+            }).catch(()=>{
+                result = false
             })
         }else{
             message.error('邮箱格式不正确,请确认后再次发送')
-            return false
+            result = false
         }
+        return result
     }
 
     changeFlag(type){
