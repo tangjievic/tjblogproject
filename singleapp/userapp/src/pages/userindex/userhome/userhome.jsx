@@ -1,42 +1,47 @@
 import React, { Component } from 'react';
-import { Row, Col,Button,Tabs   } from 'antd';
-import { getUserMsg} from '../../../api/index'
+import { Row, Col,Button,Tabs,Tag } from 'antd';
+import { connect } from 'react-redux'
 
 const { TabPane } = Tabs;
 function callback(key) {
     console.log(key);
 }
 class UserHome extends Component{
-
     render(){
+        let {userData} = this.props
+        //console.log(userData)
         return(
             <div className="userhome_box">
                 <Row className="box">
                     <Col span={8}>
                         <ul>
                             <li>
-                                <h2>Tangjie</h2>
+                                <h2 className="text-ellipt">账户|昵称:{userData.nickname?userData.nickname:userData.username}</h2>
                             </li>
                             <li>
-                                绑定邮箱：
+                                <Tag color="geekblue">绑定邮箱：{userData.email}</Tag>
                             </li>
-                            <li className="email">
-                                981955667@qq.com
+                            <li>
+                                <Tag color="geekblue">职业：{userData.profession?userData.profession:'暂未此信息'}</Tag>
                             </li>
                         </ul>
                     </Col>
                     <Col span={12}>
                         <ul className="msg">
                             <li>
-                                个人签名：十年磨一剑
-                            </li>
-                            <li>
-                                职业：前端开发
+                                <Tag color="purple" style={{
+                                    whiteSpace:'normal',
+                                    wordBreak:'break-all',
+                                    wordWrap:'break-word',
+                                    width:"95%",
+                                    display:'inline-block'}}>
+                                    个人签名：{userData.signature?userData.signature:"该小可爱暂未挥洒签名"}
+                                </Tag>
                             </li>
                         </ul>
                     </Col>
                     <Col span={4}>
-                        <Button type="dashed">编辑个人资料</Button>
+                        <Button type="dashed" onClick={this.goEdite.bind(this)}>编辑个人资料</Button>
                     </Col>
                 </Row>
 
@@ -74,15 +79,24 @@ class UserHome extends Component{
 
     //页面初始化
     initPage(){
+        //获取栏目列表
+        // getCate().then(res=>{
+        //     console.log(res)
+        // })
         // getUserMsg().then(res=>{
 
         // })
     }
-
-    //生命周期
-    componentWillMount(){
-
+    goEdite(){
+        this.props.history.push('/main/edite')
     }
 }
 
-export default UserHome
+const mapState = (state)=>{
+    return {
+        userData:state.userData
+    }
+}
+
+//export default UserHome
+export default connect(mapState)(UserHome)

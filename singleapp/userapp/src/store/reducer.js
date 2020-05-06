@@ -1,17 +1,19 @@
 import * as constants from './action_types'
 
 //存放数据
-const default_sate = {
-    homeData:{
-        username:'tangjie'
+const default_state = {
+    userData:{
+        //username:'tangjie'
     }
 }
 
-export default (state = default_sate,actions)=>{
+export default (state = default_state,actions)=>{
     //第一种方式，利用json方法实现state的深拷贝，从而实现状态的不可逆
-    if(actions.type === constants.INIT_HOME_DATA){
+    //console.log(actions.type,constants.INIT_USER_DATA)
+    if(actions.type === constants.INIT_USER_DATA){
         const newState = JSON.parse(JSON.stringify(state));
-        newState.homeData = state.homeData;
+        //console.log(actions.type,constants.INIT_USER_DATA,state)
+        newState.userData = actions.userData;
         return newState;
     }
     return state;

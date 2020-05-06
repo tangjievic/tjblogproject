@@ -30,7 +30,6 @@ class SendCode extends Component{
                 this.setState({
                     is_send:is_send
                 })
-                //console.log(is_send,'xxx')
                 if(is_send){
                     time = setInterval(() => {
                         let send_time = this.state.send_time
@@ -38,7 +37,7 @@ class SendCode extends Component{
                         this.setState({
                             send_time
                         })
-                        if(send_time == 0){
+                        if(send_time === 0){
                             this.setState({
                                 is_send:false,
                                 send_time:60

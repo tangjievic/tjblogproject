@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import { Row, Col ,Input } from 'antd';
+import Tool from '../../common/tool';
 
 const { Search } = Input;
 
 class TJAside extends Component {
     render(){
+        let {asidemsg} = this.props
         return(
             <div className="tjaside">
                 <Row>
@@ -26,18 +28,18 @@ class TJAside extends Component {
                         <ul className="right_box">
                             <li className="cell_box">
                                 <div className="cell_title">
-                                    点赞数
+                                    点赞文章数
                                 </div>
                                 <div className="cell_num">
-                                    0
+                                    {asidemsg.zannum}
                                 </div>
                             </li>
                             <li className="cell_box">
                                 <div className="cell_title">
-                                    <a>收藏集</a>
+                                    <a href="/#">文章收藏集</a>
                                 </div>
                                 <div className="cell_num">
-                                    0
+                                    {asidemsg.columnum}
                                 </div>
                             </li>
                             <li className="cell_box">
@@ -45,7 +47,7 @@ class TJAside extends Component {
                                     加入本站时间
                                 </div>
                                 <div className="cell_num">
-                                    2018-12-28
+                                    {Tool.formatDate(asidemsg.addtime)}
                                 </div>
                             </li>
                         </ul>
@@ -57,10 +59,13 @@ class TJAside extends Component {
                             <div className="select_title">开发手册</div>
                             <ul>
                                 <li className="cell_wrap">
-                                    <a>js工具手册</a>
+                                    <a href="/#">开发常见问题</a>
                                 </li>
                                 <li className="cell_wrap">
-                                    <a>css工具手册</a>
+                                    <a href="/#">js工具手册</a>
+                                </li>
+                                <li className="cell_wrap">
+                                    <a href="/#">css工具手册</a>
                                 </li>
                             </ul>
                         </div>
@@ -68,6 +73,14 @@ class TJAside extends Component {
                 </Row>
             </div>
         )
+    }
+}
+
+TJAside.defaultProps = {
+    asidemsg:{
+        addtime:'1588751387',
+        columnum:1,
+        zannum:1
     }
 }
 

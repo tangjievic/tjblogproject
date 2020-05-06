@@ -35,7 +35,7 @@ class UserLogin extends Component {
                 <div className="login_input">
                     <Row>
                         <Col span={10} className="imgbox">
-                            <img src={img}></img>
+                            <img src={img} alt="背景图片"></img>
                         </Col>
                         <Col span={14} className="input_form">
                             <div ref={(ref)=>{this.input_1 = ref}} className="form_box1">
@@ -237,7 +237,7 @@ class UserLogin extends Component {
     }
     onFieldsChangeA(values){
         if(values[0]){
-            if(values[0].name[0]=='email'){
+            if(values[0].name[0]==='email'){
                 this.setState({
                     email:values[0].value}
                 )
@@ -247,7 +247,7 @@ class UserLogin extends Component {
     //注册
     onFinishB(values){
         //if(va)
-        if(values.re_password!=values.password){
+        if(values.re_password!==values.password){
             message.error('2次密码输入不一致，请确认密码')
             return
         }
@@ -266,7 +266,7 @@ class UserLogin extends Component {
     }   
     //找回密码
     onFinishC(values){
-        if(values.re_password!=values.password){
+        if(values.re_password!==values.password){
             message.error('2次密码输入不一致，请确认密码')
             return
         }

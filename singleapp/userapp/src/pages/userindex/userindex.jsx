@@ -6,13 +6,11 @@ import {
     Redirect
 } from "react-router-dom";
 import { connect } from 'react-redux'
-import { getDataHomeAction } from '../../store/action_creator'
+import { getUserMsgAction } from '../../store/action_creator'
+import { getCate } from '../../api/index'
 
 
 class canvasBase {
-    constructor(){
-
-    }
     static s(){
         console.log("我是父级")
     }
@@ -149,16 +147,21 @@ dreamLike.degree = 20/360*Math.PI*2
 class UerIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = { };
+
+        this.state = { 
+            cate:[]
+        };
     }
+
     render() {
-        console.log(this.props.homeData)
+        //console.log(this.props.userData)
+        let {userData} = this.props;
         return (
             <div>
                 <header className="App_hd">
                     <Row className="hd_box">
                         <Col span={24}>
-                            <TJHeader></TJHeader>
+                            <TJHeader userData={userData} cateMsg={this.state.cate}></TJHeader>
                         </Col>
                     </Row>
                 </header>
@@ -204,8 +207,8 @@ class UerIndex extends Component {
             </div>
         )
     }
-
-    componentDidMount(){
+    //页面初始化
+    initPage(){
         new dreamLike({
             name:'bg1',
             circle:{
@@ -216,24 +219,44 @@ class UerIndex extends Component {
             },
             speed:0.5,
         }).init(".bgdiv .canvasbox");
-        //this.props.reqHomeData()
+        this.props.reqUserData()
+        //请求cgi获取cate
+        getCate().then(res=>{
+            console.log(res)
+            this.setState({
+                cate:res.data
+            })
+        })
     }
-}
+    //生命周期
+    componentDidMount(){
+        this.initPage()
+    }
 
+    //props监听
+    // static getDerivedStateFromProps(userData){
+    //     console.log(userData)
+    // }
+    // componentWillMount(){
+    //     this.props.reqHomeData()
+    // }
+}
+// redux的应用范例
 const mapState = (state)=>{
     return {
-
-        homeData:state.homeData
+        userData:state.userData
     }
 }
 
 const mapAtion = (dispatch) =>{
     return {
-        reqHomeData(){
-            const action = getDataHomeAction
+        reqUserData(){
+            const action = getUserMsgAction()
             dispatch(action)
         }
     }
 }
+
+//UerIndex.getDerivedStateFromProps(userData)
 //export default UerIndex;
 export default connect(mapState,mapAtion)(UerIndex)

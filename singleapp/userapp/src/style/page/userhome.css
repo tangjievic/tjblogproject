@@ -16,6 +16,9 @@
     padding-top: 30px;
     color: #4a68ad;
 }
+.userhome_box .msg li{
+    margin-top: 3px;
+}
 .userhome_box .box_tab{
     min-height: 300px;
 }

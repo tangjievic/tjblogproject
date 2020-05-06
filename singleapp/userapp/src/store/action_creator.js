@@ -1,9 +1,23 @@
 import * as constants from './action_types'
-import {getHomeData} from '../api/index'
+import {getUserMsg} from '../api/index'
 //获取首页数据
-export const getDataHomeAction = ()=>{
+let getUserMsgAction = ()=>{
     //type:constants.INIT_HOME_DATA
     return (dispatch)=>{
-        getHomeData()
+        getUserMsg().then(res=>{
+            let userData = res.data;
+            //console.log(userData)
+            dispatch({
+                type:constants.INIT_USER_DATA,
+                userData
+            })
+        }).catch(error=>{
+            console.log(error)
+        })
+
     }
+}
+
+export {
+    getUserMsgAction
 }
