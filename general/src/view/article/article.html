@@ -13,7 +13,6 @@
         <section class="page_content">
             <aside class="content__left ">
                 ${require('html-loader!../../components/elements/leftele/adcard/index.html')}
-                ${require('html-loader!../../components/elements/leftele/listdiv/index.html')}
                 ${require('html-loader!../../components/elements/leftele/hotart/index.html')}
                 ${require('html-loader!../../components/elements/leftele/reward/index.html')}
             </aside>
@@ -29,9 +28,11 @@
                                         <span class="art_label imgicon img-label-a">原</span>
                                                                     测试                    </h2>
                                         <div>
-                                            <span class="hd_belongto">文章所属：</span>
-                                            <span class="base-tag tag-success"><a href="jacascript::void(0)">前端大杂烩</a></span>
-                                            <span class="base-tag tag-primary"><a href="/lstindex/cid/5.html">HTML5/CSS3</a></span>
+                                            <span class="base-tag tag-cyan">公众文章</span>
+                                            <span class="base-tag tag-blue">普通文章</span>
+                                            <span class="base-tag tag-info">vip文章</span>
+                                            <span class="base-tag tag-success">前端大杂烩</span>
+                                            <span class="base-tag tag-primary">HTML5/CSS3</span>
                                         </div>
                                     </header>
 
@@ -137,7 +138,8 @@
                                      </article>
 
                                     <div class="art_btn">
-                                        <button class="btn btn-danger"><i class="iconfont icon-good-filling"></i>&nbsp;很赞哦！<span>(33)</span></button>
+                                        <button data-aid="10" id="zan" class="btn btn_default"><i class="iconfont icon-good"></i>&nbsp;很赞哦(<span>33</span>)</button>
+                                        <button data-aid="10" id="collection" class="btn btn_primary"><i class="iconfont icon-like"></i>&nbsp;收藏(<span>33</span>)</button>
                                     </div> 
 
 
@@ -161,9 +163,9 @@
 
                 <div class="bg-layout">
                     <b class="art_title">文章评论</b>
-                    <div class="pl_box"><input type="text"></div>
+                    <div class="pl_box"><textarea type="text" id="artcomment_input"></textarea></div>
                     <div class="btn-right">
-                        <button class="btn btn-danger">提交评论</button>
+                        <button class="btn btn_primary artcomment_input"  data-ripple="ripple">提交评论</button>
                     </div>
                 </div>
 
@@ -172,8 +174,8 @@
                     <ul class="art_recoment">
                         <li>
                             <div class="recoment">
-                                <span class="youke">游客:</span>
-                                <span>很实用，赞一个按揭房阿双方均按理说房价链接阿里发拉升发动机零售价分离的独家●■√♠♠aflka煞风景路撒地方开讲啦疯狂拉好地方咖啡咖啡咖啡喝口水都浪费抗衰老的发挥卡拉水电费卡上的符号卡机法兰克福打上来就很烦啦★★★★★◀◀◁♠☝▅▅▌▓▍▊✘☑▶♦☞☛♥♥♡♠咖啡壶 纱礼服和阿斯蒂芬</span>
+                                <div class="user"><span>游客:</span> <span class="base-tag tag-success sm">普通用户</span></div>
+                                <div class="recoment_content">很实用，赞一个按揭房阿双方均按理说房价链接阿里发拉升发动机零售价分离的独家●■√♠♠aflka煞风景路撒地方开讲啦疯狂拉好地方咖啡咖啡咖啡喝口水都浪费抗衰老的发挥卡拉水电费卡上的符号卡机法兰克福打上来就很烦啦★★★★★◀◀◁♠☝▅▅▌▓▍▊✘☑▶♦☞☛♥♥♡♠咖啡壶 纱礼服和阿斯蒂芬</div>
                             </div>
                             <span class="recoment-time">2018/12/23</span>
                         </li>

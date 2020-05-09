@@ -29,7 +29,7 @@
                         </div>
                     </template>
                 </a-table>
-                <a-modal v-model="edite_visible" title="Title" onOk="editeSubmit">
+                <a-modal v-model="edite_visible" title="栏目修改" onOk="editeSubmit">
                     <template slot="footer">
                         <a-button key="back" @click="editeCancel">取消修改</a-button>
                         <a-button key="submit" type="primary" :loading="edite_loading" @click="editeSubmit">
@@ -77,8 +77,8 @@
                     <label class="label_name">父级id(栏目):</label>
                     <a-input placeholder="0" disabled v-model="catedata.pid" />
                     <a-select v-model="catedata.pid" defaultValue="0" style="margin-left:7px;width:300px">
-                        <a-select-option :value="0" title="顶级栏目">顶级栏目</a-select-option>
-                        <a-select-option :value="item.id" :title="item.catename" v-for="item in catelistdata" :key="item.id">{{item.catename}}</a-select-option>
+                        <a-select-option :value="`0`" title="顶级栏目">顶级栏目</a-select-option>
+                        <a-select-option :value="item.id" :title="item.catename" v-for="item in seletcatelist" :key="item.id">{{item.catename}}</a-select-option>
                     </a-select>
                 </div>
                 <div class="input_line">
@@ -168,6 +168,7 @@ export default {
             pid:''
         },
         catelistdata: [],
+        seletcatelist:[],
         tagdatalist:[],
         tagscolumns:[
             {
@@ -275,12 +276,13 @@ export default {
     getCateList(){
         getCate().then(res=>{
             let temp = [];
+            this.catelistdata = res.data
             res.data.forEach(item=>{
                 if(item.pid ==0){
                     temp.push(item)
                 }
             })
-            this.catelistdata = temp;
+            this.seletcatelist = temp;
         })
     },
     getTagsList(){
@@ -329,7 +331,6 @@ export default {
     changeTbas(key){
         this.tabkey = key;
     },
-    //测试函数
     test(){
         
     }

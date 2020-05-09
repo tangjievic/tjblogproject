@@ -7,6 +7,15 @@ const getUserMsg = ()=>{
     return getApi('/user/getmsg',{},1)
 }
 
+const toZan = (params)=>{
+    return postApi('/use/artzan',params,1)
+}
+const toCollect = (params)=>{
+    return postApi('/use/artcollect',params,1)
+}
+
 export{
-    getUserMsg
+    getUserMsg,
+    toZan,
+    toCollect
 }

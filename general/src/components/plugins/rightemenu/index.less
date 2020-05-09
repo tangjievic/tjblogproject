@@ -1,47 +1,30 @@
-// #gooey-upper{
-//     position: fixed;
-//     right: 0;
-//     top：50%;
-// }
-#gooey-upper{
-    padding-top: 50px;
+.right_menubox{
+    margin-top: -50px;
     height: 100px;
-    width: 100px;
+    width: 300px;
     position: fixed;
     z-index: 9;
-    right:25px;
-    top: 40%;
+    right:-251px;
+    top: 50%;
     transition: right ease-in-out 0.3s;
-    &:hover{
-        right:150px;
+    visibility: visible;
+    overflow: hidden;
+    &.hover_box:hover{
+        right:-198px;
+    }
+    &.set_hover{
+        right:-110px;
     }
 }
-.open-button{
-    .img_box{
-        box-sizing: border-box;
-        overflow: hidden;
-        height: 100%;
-        padding: 20px;
-        .img_item{
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            img{
-                width: 100%;
-                height: 100%;
-                vertical-align: top;
-            }
-        }
-    }
+.gooeySVG{
+    width: 0;
+    height: 0;
 }
 .navimenu {
-    position                   : relative;
-    min-width                  : 100px;
-    min-height                 : 100px;
-    margin                     : auto auto auto -80px;
-    padding-top                : 20px;
-    padding-left               : 80px;
+    padding: 85px 170px 150px 70px;
+    position                   : absolute;
+    top:-75px;
+    left:-60px;
     box-sizing                 : border-box;
     text-align                 : left;
     -webkit-backface-visibility: hidden;

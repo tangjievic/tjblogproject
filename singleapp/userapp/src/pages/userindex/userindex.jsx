@@ -6,8 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import { connect } from 'react-redux'
-import { getUserMsgAction } from '../../store/action_creator'
-import { getCate } from '../../api/index'
+import { getUserMsgAction ,getCateMsg} from '../../store/action_creator'
 
 
 class canvasBase {
@@ -147,21 +146,18 @@ dreamLike.degree = 20/360*Math.PI*2
 class UerIndex extends Component {
     constructor(props) {
         super(props);
-
-        this.state = { 
-            cate:[]
-        };
+        this.state = { };
     }
 
     render() {
         //console.log(this.props.userData)
-        let {userData} = this.props;
+        let {userData,cateMsg} = this.props;
         return (
             <div>
                 <header className="App_hd">
                     <Row className="hd_box">
                         <Col span={24}>
-                            <TJHeader userData={userData} cateMsg={this.state.cate}></TJHeader>
+                            <TJHeader userData={userData} cateMsg={cateMsg}></TJHeader>
                         </Col>
                     </Row>
                 </header>
@@ -220,31 +216,18 @@ class UerIndex extends Component {
             speed:0.5,
         }).init(".bgdiv .canvasbox");
         this.props.reqUserData()
-        //请求cgi获取cate
-        getCate().then(res=>{
-            console.log(res)
-            this.setState({
-                cate:res.data
-            })
-        })
+        this.props.reqCateMsg()
     }
     //生命周期
     componentDidMount(){
         this.initPage()
     }
-
-    //props监听
-    // static getDerivedStateFromProps(userData){
-    //     console.log(userData)
-    // }
-    // componentWillMount(){
-    //     this.props.reqHomeData()
-    // }
 }
 // redux的应用范例
 const mapState = (state)=>{
     return {
-        userData:state.userData
+        userData:state.userData,
+        cateMsg:state.cateMsg
     }
 }
 
@@ -252,6 +235,10 @@ const mapAtion = (dispatch) =>{
     return {
         reqUserData(){
             const action = getUserMsgAction()
+            dispatch(action)
+        },
+        reqCateMsg(){
+            const action = getCateMsg()
             dispatch(action)
         }
     }

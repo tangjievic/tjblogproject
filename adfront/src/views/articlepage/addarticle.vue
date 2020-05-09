@@ -13,7 +13,21 @@ export default {
         writtenArt,
     },
     activated() {
-        
+        this.addartdata = {
+            title:'',
+            stitle:'',
+            descs:'',
+            author:'TANGJIE',
+            cate_id:'',
+            tag_id:'',
+            type:'0',
+            content:'',
+            marktext:'',
+            is_recomon:'0',
+            is_vip:'0',
+            path:'',
+            link_url:"",
+        }
     },
     data() {
         return {
@@ -30,6 +44,7 @@ export default {
                 marktext:'',
                 is_recomon:'0',
                 is_vip:'0',
+                is_login:"0",
                 path:'',
                 link_url:"",
             },
@@ -41,6 +56,9 @@ export default {
             let that = this;
             addArt(e).then(res=>{
                 that.$message.success(res.message);
+                setTimeout(()=>{
+                    this.$router.push({name:'artlist'})
+                },500)
             })
         }
     }

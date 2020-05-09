@@ -1,5 +1,5 @@
 import * as constants from './action_types'
-import {getUserMsg} from '../api/index'
+import {getUserMsg,getCate} from '../api/index'
 //获取首页数据
 let getUserMsgAction = ()=>{
     //type:constants.INIT_HOME_DATA
@@ -17,7 +17,18 @@ let getUserMsgAction = ()=>{
 
     }
 }
-
+let getCateMsg = ()=>{
+    return (dispatch)=>{
+        getCate().then(res=>{
+            let cateMsg = res.data;
+            dispatch({
+                type:constants.INIT_CATE_MSG,
+                cateMsg
+            })
+        })
+    }
+}
 export {
-    getUserMsgAction
+    getUserMsgAction,
+    getCateMsg
 }

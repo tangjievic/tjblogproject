@@ -18,11 +18,15 @@ const getUserMsg = ()=>{
 const getCate = ()=>{
     return getApi('/cate/usergetcate',{},1);
 }
+const getArtList = (params)=>{
+    return getApi('/user/artlist',params,1);
+}
 export {
     getCode,
     userLogin,
     userSignIn,
     useReplacePassowrd,
     getUserMsg,
-    getCate
+    getCate,
+    getArtList
 }

@@ -26,6 +26,15 @@
             >{{item.catename}}</a-select-option>
           </a-select>
         </div>
+        <div class="input_line">
+          <label class="label_name">是否登录查看:</label>
+          <a-radio-group
+            style="padding: 5px 0 0 0;"
+            :options="is_login"
+            v-model="artdata.is_login"
+            @change="onChangeLogin"
+          />
+        </div>
       </div>
       <div class="hd_fiexd">
         <div class="input_line">
@@ -72,7 +81,7 @@
       <label class="label_name">文章简介:</label>
       <a-textarea
         placeholder="文章简介"
-        :autosize="{ minRows: 2, maxRows: 6 }"
+        :autoSize="{ minRows: 2, maxRows: 6 }"
         v-model="artdata.descs"
       />
     </div>
@@ -131,6 +140,7 @@ export default {
         marktext: "",
         is_recomon: "0",
         is_vip: "0",
+        is_login:'0',
         path: "",
         link_url: ""
       },
@@ -140,6 +150,10 @@ export default {
         { label: "否", value: "0" }
       ],
       is_recomend: [
+        { label: "是", value: "1" },
+        { label: "否", value: "0" }
+      ],
+      is_login:[
         { label: "是", value: "1" },
         { label: "否", value: "0" }
       ],
@@ -175,6 +189,9 @@ export default {
     onChangeVip(e) {
       this.artdata.is_vip = e.target.value;
     },
+    onChangeLogin(e){
+      this.artdata.is_login = e.target.value;
+    },
     onChangeRecomon(e) {
       this.artdata.is_recomon = e.target.value;
     },
@@ -188,7 +205,6 @@ export default {
     //提交数据
     submitArt() {
       let data = this.artdata;
-      //console.log(data);
       this.$emit("getArtData", data);
     },
     //重置数据
@@ -200,7 +216,7 @@ export default {
       getCate({ type: "select" }).then(res => {
         let temp = [];
         res.data.forEach(item => {
-          if (item.pid == 0) {
+          if (item.pid !== 0) {
             temp.push(item);
           }
         });

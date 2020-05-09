@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Menu, Row, Col, Dropdown, Button, Badge, Tag,message } from 'antd';
 import { NotificationOutlined } from '@ant-design/icons'
 import TJAside from '../aside/aside'
+import {LINKURL} from '../../api/apimethods'
+
 const { SubMenu } = Menu;
 class TJHeader extends Component {
   constructor(props) {
@@ -34,7 +36,7 @@ class TJHeader extends Component {
     if(e.key === 'userindex'){
       return
     }
-    window.open(process.env.NODE_ENV!=='development'?`https://www.tangjietop.cn/artlist.html?cid=${e.key}`:`http://www.tjcms.com/artlist.html?cid=${e.key}`,'_self')
+    window.open(`${LINKURL}/artlist.html?cid=${e.key}`,'_self')
   };
 
 
@@ -44,7 +46,7 @@ class TJHeader extends Component {
     return (
       <Row className="tj_header">
         <Col span={4}>
-          <a className="logo_link" href="https://www.tangjietop.cn/">TANGJIE-BLOG</a>
+          <a className="logo_link" href={LINKURL}>TANGJIE-BLOG</a>
         </Col>
         <Col span={14}>
           <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">

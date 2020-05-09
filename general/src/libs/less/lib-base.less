@@ -79,6 +79,21 @@
     border-color: rgba(103,194,58,.2);
     color: #67c23a;
 }
+.base-tag.tag-info {
+    background-color: rgba(255, 85, 0,0.1);
+    border-color:  rgba(255, 85, 0,0.2);
+    color: rgba(255, 85, 0,1);
+}
+.base-tag.tag-blue{
+    background-color: rgba(45, 183, 245,0.1);
+    border-color:  rgba(45, 183, 245,0.2);
+    color: rgba(45, 183, 245,1);
+}
+.base-tag.tag-cyan{
+    background-color: #e6fffb;
+    border-color:  #87e8de;
+    color:#13c2c2;
+}
 //按钮基础样式
 .btn_wrapper{
     text-align: right;
@@ -95,6 +110,12 @@
     border-radius: 5px;
     cursor: pointer;
 }
+// .btn.disabled{
+//     background-color: #f5f5f5!important;
+//     border-color: rgba(0,0,0,.25);
+//     cursor: not-allowed;
+// }
+
 .btn.btn_default{
     background-color: #333333;
 }
@@ -105,15 +126,24 @@
 .btn.btn_default:active{
     background-color: #333333;
 }
+.btn.btn_default.disabled{
+    background-color: #c8c9cc!important;
+    cursor: not-allowed;
+}
 
-.btn_primary{
+.btn.btn_primary{
     background-color:#86c0c7;
 }
-.btn_primary:active{
-    background-color:#86c0c7;
+.btn.btn_primary:active{
+    color: #ffffff!important;
+    background-color:rgb(134, 192, 199);
 }
-.btn_primary:hover{
-    background-color: #c0e3e7;
+.btn.btn_primary:hover{
+    background-color: rgba(134, 192, 199,0.7);
+}
+.btn.btn_primary.disabled{
+    cursor: not-allowed;
+    background-color: rgba(134, 192, 199,0.7)!important;
 }
 .btn.btn-danger, .btn.btn-danger:active{
     color: #fff;
@@ -186,4 +216,37 @@
     background-color: #ffffff;
     border: 1px solid #e6e6e6;
     border-radius: 5px;
+}
+
+.tooltipify{
+    position: absolute;
+    background: #303133;
+    color: #fff;
+    border-radius: 4px;
+    padding:0 10px;
+    z-index: 8;
+    font-size: 12px;
+    height: 35px;
+    line-height: 35px;
+    min-width: 10px;
+    width: 170%;
+    word-wrap: break-word;
+    display: none;
+    .popper__arrow{
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        right: -12px;
+        top:50%;
+        margin-top: -6px;
+        border-width: 6px;
+        border-color: transparent transparent transparent #303133;
+    }
+    &.left{
+        right: 60px;
+        top:50%;
+        margin-top: -17.5px;
+    }
 }

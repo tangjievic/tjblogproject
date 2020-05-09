@@ -2,9 +2,8 @@ import * as constants from './action_types'
 
 //存放数据
 const default_state = {
-    userData:{
-        //username:'tangjie'
-    }
+    userData:{},
+    cateMsg:[]
 }
 
 export default (state = default_state,actions)=>{
@@ -15,6 +14,11 @@ export default (state = default_state,actions)=>{
         //console.log(actions.type,constants.INIT_USER_DATA,state)
         newState.userData = actions.userData;
         return newState;
+    }
+    if(actions.type === constants.INIT_CATE_MSG){
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.cateMsg = actions.cateMsg;
+        return newState
     }
     return state;
 }

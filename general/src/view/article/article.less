@@ -4,7 +4,6 @@
 @import '../../components/elements/bgdiv/index.less';
 @import '../../components/plugins/headnav/index.less';
 @import '../../components/elements/leftele/leftele.less';
-@import '../../components/elements/leftele/listdiv/index.less';
 @import '../../components/elements/leftele/hotart/index.less';
 @import '../../components/elements/leftele/reward/index.less';
 @import '../../components/elements/righttool/index.less';
@@ -15,7 +14,6 @@
 @import '../../components/plugins/rightemenu/index.less';
 @import '../../components/plugins/notice/index.css';
 @import '../../components/plugins/confirm/index.less';
-
 .index-page_title{
     font-size: 18px;
     margin-bottom: 40px;
@@ -170,11 +168,11 @@ pre,code{font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,mo
 .pl_box {
     border-radius: 10px;
     min-height: 50px;
-    border: 1px solid #e74851;
+    border: 1px solid #86c0c7;
     padding: 10px;
     margin-bottom: 15px;
 }
-.pl_box input {
+.pl_box textarea {
     display: block;
     width: 100%;
     border: 0;
@@ -192,18 +190,27 @@ pre,code{font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,mo
 		border-bottom: 1px dashed #e5e5e5;
 	}
 	.recoment{
-		width: 70%;
+		width: 100%;
 	}
-	.youke{
-		font-size: 20px;
+	.user{
+		font-size: 14px;
 		color: #e74851;
 	}
 	.recoment-time{
 		position: absolute;
 		right: 0;
 		top: 10px;
-		color: #555555;
-	}
+        color: #555555;
+        font-size: 14px;
+    }
+    .recoment_content{
+        margin-top: 8px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #f6f8fa;
+        color: #505050;
+        text-align: justify;
+    }
 }
 .bg-layout{
     padding: 20px;
