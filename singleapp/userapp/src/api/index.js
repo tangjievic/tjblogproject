@@ -21,6 +21,9 @@ const getCate = ()=>{
 const getArtList = (params)=>{
     return getApi('/user/artlist',params,1);
 }
+const userMsgEdite = (params) =>{
+    return postApi('/user/edite',params,1);
+}
 export {
     getCode,
     userLogin,
@@ -28,5 +31,6 @@ export {
     useReplacePassowrd,
     getUserMsg,
     getCate,
-    getArtList
+    getArtList,
+    userMsgEdite
 }

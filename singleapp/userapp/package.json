@@ -147,5 +147,6 @@
   },
   "devDependencies": {
     "axios": "^0.19.2"
-  }
+  },
+  "homepage":"./view/front/pc/singleapp"
 }

@@ -7,8 +7,11 @@ if(process.env.NODE_ENV === 'development'){
     LINKURL = 'http://www.tjcms.com'
 }else{
     //SEVERURL = 'http://www.tjcms.com/index.php'
-    SEVERURL = 'https://www.tangjietop.cn/index.php'
-    LINKURL = 'https://www.tangjietop.cn'
+    // SEVERURL = 'https://www.tangjietop.cn/index.php'
+    // LINKURL = 'https://www.tangjietop.cn'
+
+    SEVERURL = 'http://www.tjcms.com/index.php'
+    LINKURL = 'http://www.tjcms.com'
 }
 /* 
 axios封装 
@@ -46,10 +49,9 @@ let getApi = (api,params,type = 0) =>{
                 let data = error.response.data;
                 if(Number(error.response.status) === 500 && Number(data.error_code) === 10002){
                     setTimeout(()=>{
-                        window.location.href = '/#/login'
-                    },500)
+                        window.location.href = `${LINKURL}/user#/login`
+                    },1000)
                 }
-                console.log('xx')
                 message.error(data.message)
                 reject(data)
             }

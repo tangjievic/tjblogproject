@@ -28,7 +28,18 @@ let getCateMsg = ()=>{
         })
     }
 }
+
+let setQeryArtKeywords = (keywords)=>{
+    return (dispatch)=>{
+        let qeryKeywords = keywords;
+        dispatch({
+            type:constants.SET_QUERY_KEYWORDS,
+            qeryKeywords
+        })
+    }
+}
 export {
     getUserMsgAction,
-    getCateMsg
+    getCateMsg,
+    setQeryArtKeywords
 }

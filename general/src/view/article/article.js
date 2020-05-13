@@ -6,11 +6,11 @@ import "../../libs/js/ripple.js"
 import "../../components/plugins/rightemenu/index"
 import "../../components/plugins/notice/index"
 import "../../components/plugins/confirm/index"
-import {getUserMsg,toZan,toCollect}from '../../api/index'
+import Tool from '../../libs/js/tool'
+import {getUserMsg,toZan,toCollect,ArtComment,LINKURL}from '../../api/index'
 
 let personalCofrim = ()=>{
     let confirmEvent = ()=>{
-        //window.open('http://www.baidu.com','_self');
         $.DialogByZ.Close();
         spop({
             style: 'success',
@@ -19,7 +19,7 @@ let personalCofrim = ()=>{
             autoclose: 3000
         });
         setTimeout(()=>{
-            window.open('http://localhost:3000/#/login','_self');
+            window.open(`${LINKURL}/user#/login`,'_self');
         },3500)
     }
     $.DialogByZ.Confirm({Title: "尚未登录", Content: "此模块需要登录后，方可使用，请立即登录！",FunL:confirmEvent})
@@ -27,6 +27,7 @@ let personalCofrim = ()=>{
 
 let artPage = ()=>{
     let login_state = false//未登录状态
+    let user_msg = {}
     //初始化工具栏
     let gengduoneirong = $(`<div class="tooltipify left">个人中心看一看<div x-arrow class="popper__arrow"></div></div>`)
     let favorites=$('<div class="tooltipify left">想给本站点个赞<div x-arrow class="popper__arrow"></div></div>')
@@ -46,6 +47,7 @@ let artPage = ()=>{
     //获取用户信息
     getUserMsg().then(res=>{
         login_state = true
+        user_msg = res.data
         $('.user_box .user_msg').html(
             `<div>
                 <div class="user_state">已登录</div>
@@ -83,6 +85,22 @@ let artPage = ()=>{
         //尚未登录，个人空间不能做以下操作
         $('#features,#menu-v-example,#docs,#event-api,#h-spaced-menu').click(()=>{
             personalCofrim()
+        })
+
+        $('.loginorsign_btn').click(()=>{
+            let confirmEvent = ()=>{
+                $.DialogByZ.Close();
+                spop({
+                    style: 'success',
+                    position  : 'top-center',
+                    template: '正在跳转登录页面,请稍后',
+                    autoclose: 3000
+                });
+                setTimeout(()=>{
+                    window.open(`${LINKURL}/user#/login`,'_self');
+                },3500)
+            }
+            $.DialogByZ.Confirm({Title: "确认登录？", Content: "如需登录，请点击确认！",FunL:confirmEvent})
         })
     })
     //启动背景动画
@@ -190,10 +208,31 @@ let artPage = ()=>{
 
     //文章评论
     //artComent
-    $('.artcomment_input').click(()=>{
+    $('.artcomment_input').click((e)=>{
         if(login_state){
             let content = $('#artcomment_input').val()
-            console.log(content)
+            content = Tool.trim(content)
+            //console.log(content)
+            ArtComment({
+                a_id:e.target.dataset.aid,
+                content:content
+            }).then(res=>{
+                spop({
+                    template:`${res.message}`, 
+                    style:'success',
+                    autoclose: 2000,
+                    position  : 'top-center',
+                });
+                $('.art_recoment').prepend(`
+                    <li>
+                        <div class="recoment">
+                            <div class="user"><span>${user_msg.nickname?user_msg.nickname:user_msg.username}:</span> <span class="base-tag ${user_msg.level===0?'tag-success':'tag-info'} sm">${user_msg.level===0?'普通用户':'VIP用户'}</span></div>
+                            <div class="recoment_content">${res.data.content}</div>
+                        </div>
+                        <span class="recoment-time">${Tool.formatDate(res.data.createtime)}</span>
+                    </li>
+                `)
+            })
         }else{
             personalCofrim()
         }

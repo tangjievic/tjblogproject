@@ -3,7 +3,8 @@ import * as constants from './action_types'
 //存放数据
 const default_state = {
     userData:{},
-    cateMsg:[]
+    cateMsg:[],
+    qeryKeywords:''
 }
 
 export default (state = default_state,actions)=>{
@@ -18,6 +19,11 @@ export default (state = default_state,actions)=>{
     if(actions.type === constants.INIT_CATE_MSG){
         const newState = JSON.parse(JSON.stringify(state));
         newState.cateMsg = actions.cateMsg;
+        return newState
+    }
+    if(actions.type === constants.SET_QUERY_KEYWORDS){
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.qeryKeywords = actions.qeryKeywords;
         return newState
     }
     return state;

@@ -19,7 +19,11 @@
         <h1 class=hd_logo> 
             <a class=logo__link>TANGJIE-BLOG</a>
          </h1>
+        
         <ul class=hd_nav>
+            <li class=nav_item>
+                <a class=nav_link href=https://www.tangjietop.cn/ data-ripple=ripple target=_self>首页</a>
+            </li>
             <li class=nav_item>
                 <a class=nav_link data-ripple=ripple>前端大杂烩</a>
                 <ul class=nav_child>
@@ -29,10 +33,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav_item slected">
+            <li class=nav_item>
                 <a class=nav_link data-ripple=ripple data-ripple=ripple> php入门到精通</a>
                 <ul class=nav_child>
-                    <li class=nav_item__item><a class=nav_link href=javascript:void(0)>aaaa</a>
+                    <li class="nav_item__item slected"><a class=nav_link href=javascript:void(0)>aaaa</a>
                     </li>
                     <li class=nav_item__item><a class=nav_link href=javascript:void(0)>aaaa</a>
                     </li>
@@ -59,15 +63,6 @@
             <li class=login_item>
                 <div class=user_box>
                     <div class=user_msg>
-                        <div class=user_state>已登陆</div>
-                        <!-- <div class="user_state">未登陆</div> -->
-                        <div class="user_state text-ellipt"><a class=user_link>tangjiedfasfdsafsafdsfsa</a></div>
-                        <!-- <div class="user_state"><a class="loginorsign_btn">登录/注册</a></div> -->
-                        <!-- <div class="user_image"><img src="https://avatars0.githubusercontent.com/u/30660361?s=60&u=440898100fb6a8c06010aabe6d8bd9d1e0d6fa6c&v=4"></div> -->
-                        <!-- <ul class="user_btn">
-                            <li><a>退出登陆</a></li>
-                            <li><a>个人中心</a></li>
-                        </ul> -->
                     </div>
                 </div>
             </li>
@@ -90,7 +85,7 @@
                 <div class=left_planels>
     <h3>详细分类</h3>
     <ul class=more-list>
-        <li class=list__item>
+        <li class="list__item selected">
             <div class=item_hd><a class=item__link>HTML5/CSS3</a><i class=item_icon>new</i></div>
             <div class=item>
                 <span class="base-tag tag-primary sm">6篇</span>
@@ -229,27 +224,30 @@
                             <div class=right_tool>
     <ul class=tool__list>
         <li class=list__item>
-            <a class=item-link>
+            <a class="item-link gengduoneirong" href=javascript:void(0);>
+                <div class="tooltipify left">
+                        <div x-arrow class=popper__arrow></div>
+                </div>
                 <i class="iconfont icon-gengduoneirong"></i>
             </a>
         </li>
         <li class=list__item>
-            <a class=item-link>
+            <a class="item-link favorites">
                 <i class="iconfont icon-favorites"></i>
             </a>
         </li>
         <li class=list__item>
-            <a class=item-link>
+            <a class="item-link code">
                 <i class="iconfont icon-code"></i>
             </a>
         </li>
         <li class=list__item>
-            <a class=item-link> 
+            <a class="item-link dmail"> 
                 <i class="iconfont icon-icon_dmail"></i>
             </a>
         </li>
         <li class=list__item>
-            <a class=item-link>
+            <a class="item-link code1">
                 <i class="iconfont icon-code1"></i>
             </a>
         </li>
@@ -268,8 +266,8 @@
 					<div class="ato-content clearfix">
     <div class=ato-list-fl>
         <div class=ato-title>
-            <h2 class=art_title>个人项目集合</h2>
-            <p>项目是本人从入门到至今为止的基本所有个人项目的例举</p>
+            <h2 class=art_title>博主项目集合</h2>
+            <p>项目是博主本人从入门到至今为止的基本所有个人项目的例举</p>
         </div>
         <div class=ato-right-btn>
             <a href=javascript:; class=prev data-ripple=ripple>上一张</a>
@@ -369,7 +367,7 @@
                 <dt>LOL-ID：</dt>
                 <dd>断剑丨折翼不斩人(艾欧尼亚)</dd>
                 <dt>版权信息：</dt>
-                <dd>Copyright © 2018-2020 tangjie. 当前呈现版本 6.0.1</dd>
+                <dd>Copyright © 2018-2020 tangjie. 当前呈现版本 6.0.2</dd>
             </dl>
         </li>
         <li class=list-item> 
@@ -407,54 +405,6 @@
         <!-- 脚部设置]] -->
     </div>
     <!-- 页面背景设置[[ -->
-    <div class=login-wrap>
-    <div class=login-html>
-        <div class=close_btn><a href=javascript:; class=close>关闭</a></div>
-        <input id=tab-1 type=radio name=tab class=sign-in checked=checked><label for=tab-1 class=tab>Sign In</label>
-        <input id=tab-2 type=radio name=tab class=sign-up><label for=tab-2 class=tab>Sign Up</label>
-        <div class=login-form>
-            <div class=sign-in-htm>
-                <div class=group>
-                    <label for=user class=label>账户/邮箱</label>
-                    <input type=text class=input>
-                </div>
-                <div class=group>
-                    <label for=pass class=label>登陆密码</label>
-                    <input type=password class=input data-type=password>
-                </div>
-                <div class=group>
-                    <input type=submit class="button submit_login_btn" value=登陆>
-                </div>
-                <div class=hr></div>
-                <div class=foot-lnk>
-                    <a href=#forgot>忘记密码?</a>
-                </div>
-            </div>
-            <div class=sign-up-htm>
-                <div class=group>
-                    <label for=user class=label>注册账户</label>
-                    <input type=text class=input>
-                </div>
-                <div class=group>
-                    <label for=pass class=label>注册密码</label>
-                    <input type=password class=input data-type=password>
-                </div>
-                <div class=group>
-                    <label for=pass class=label>重新输入密码</label>
-                    <input type=password class=input data-type=password>
-                </div>
-                <div class=group>
-                    <label for=pass class=label>电子邮箱</label>
-                    <input type=text class=input>
-                </div>
-                <div class=group>
-                    <input type=submit class="button submit_sigin_btn" value=注册>
-                </div>
-                <div class=hr></div>
-            </div>
-        </div>
-    </div>
-</div>
     <div class=bgdiv>
     <div class=item_a>
         <svg height=519 width=758>
@@ -470,21 +420,20 @@
         <canvas class=canvas></canvas>
     </div>
 </div>
+    <div class="right_menubox hover_box">   
     <nav id=gooey-upper>
-    <input type=checkbox class=menu-open name=menu-open1 id=menu-open1>
-    <label class=open-button for=menu-open1>
-        <span class=text>尚未登陆</span>
-        <div class=img_box>
-            <!-- <div class="img_item"><img src="https://avatars0.githubusercontent.com/u/30660361?s=60&u=440898100fb6a8c06010aabe6d8bd9d1e0d6fa6c&v=4"></div> -->
-        </div>
-    </label>
+        <input type=checkbox class=menu-open name=menu-open1 id=menu-open1>
+        <label class="open-button text-ellipt" for=menu-open1 style="padding: 0 8px;box-sizing: border-box;">
+            <span class=text></span>
+        </label>
 
-    <a href=#features class=gooey-menu-item>个人中心</a>
-    <a href=#menu-v-example class=gooey-menu-item>vip中心</a>
-    <a href=#h-spaced-menu class=gooey-menu-item>退出登陆</a>
-    <a href=#docs class=gooey-menu-item>个人收藏</a>
-    <a href=#event-api class=gooey-menu-item>点赞文章</a>
-</nav>
+        <a id=features class=gooey-menu-item>个人中心</a>
+        <a id=menu-v-example class=gooey-menu-item>vip中心</a>
+        <a id=h-spaced-menu class=gooey-menu-item href=javascript:;>退出登陆</a>
+        <a id=docs class=gooey-menu-item>个人收藏</a>
+        <a id=event-api class=gooey-menu-item>点赞文章</a>
+    </nav>
+</div> 
     <!-- 页面背景设置]] -->
 <script type=text/javascript src=../js/list.js></script></body>
 </html>

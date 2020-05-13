@@ -2,6 +2,7 @@ import UerIndex from '../pages/userindex/userindex'
 import UserLogin from '../pages/userlogin/userlogin'
 import UserHome from '../pages/userindex/userhome/userhome'
 import UserEdite from '../pages/userindex/useredite/useredite'
+import QueryArt from '../pages/userindex/queryart/queryart'
 let routers = [
     {
         path:'/',
@@ -26,6 +27,10 @@ let routers = [
             {
                 path:"/main/edite",
                 component:UserEdite
+            },
+            {
+                path:"/main/queryart/:keywrods",
+                component:QueryArt
             }
         ]
     },

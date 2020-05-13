@@ -1,4 +1,4 @@
-import {postApi,getApi} from './apimethods'
+import {postApi,getApi,LINKURL} from './apimethods'
 
 // const getHomeData = (params) =>{//获取用户数据
 //     return getApi('admin/login',params,1);
@@ -14,8 +14,14 @@ const toCollect = (params)=>{
     return postApi('/use/artcollect',params,1)
 }
 
+const ArtComment = (params)=>{
+    return postApi('/art/comment',params,1)
+}
+
 export{
     getUserMsg,
     toZan,
-    toCollect
+    toCollect,
+    ArtComment,
+    LINKURL
 }

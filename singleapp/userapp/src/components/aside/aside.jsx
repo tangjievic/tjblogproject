@@ -5,6 +5,9 @@ import Tool from '../../common/tool';
 const { Search } = Input;
 
 class TJAside extends Component {
+    constructor(props){
+        super(props)
+    }
     render(){
         let {asidemsg} = this.props
         return(
@@ -17,7 +20,7 @@ class TJAside extends Component {
                                 <Search
                                 placeholder="查找值"
                                 enterButton
-                                onSearch={value => console.log(value)}
+                                onSearch={(value)=>{this.toSearchArt(value)}}
                                 />
                             </div>
                         </div>
@@ -36,7 +39,7 @@ class TJAside extends Component {
                             </li>
                             <li className="cell_box">
                                 <div className="cell_title">
-                                    <a href="/#">文章收藏集</a>
+                                    文章收藏集
                                 </div>
                                 <div className="cell_num">
                                     {asidemsg.columnum}
@@ -73,6 +76,13 @@ class TJAside extends Component {
                 </Row>
             </div>
         )
+    }
+    
+    toSearchArt(value){
+        console.log(this)
+        this.props.Route.push({
+            pathname:'/main/queryart/'+value
+        })
     }
 }
 

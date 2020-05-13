@@ -4,7 +4,9 @@
 @import './style/components/aside.css';
 @import './style/page/userhome.css';
 @import './style/page/login.css';
+@import './style/page/useredite.css';
 @import './style/animation.css';
+@import './style/page/queryart.css';
 .App {
   width: 100%;
   padding-top: 70px;

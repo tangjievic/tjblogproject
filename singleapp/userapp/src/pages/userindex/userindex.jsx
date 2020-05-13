@@ -157,7 +157,10 @@ class UerIndex extends Component {
                 <header className="App_hd">
                     <Row className="hd_box">
                         <Col span={24}>
-                            <TJHeader userData={userData} cateMsg={cateMsg}></TJHeader>
+                            <TJHeader 
+                            Route={this.props.history}
+                            userData={userData} 
+                            cateMsg={cateMsg}></TJHeader>
                         </Col>
                     </Row>
                 </header>

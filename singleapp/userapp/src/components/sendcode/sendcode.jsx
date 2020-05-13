@@ -15,7 +15,7 @@ class SendCode extends Component{
             return(<Button disabled={true}>{this.state.send_time}s后获取</Button>)
         }else{
             return(
-            <Button onClick={()=>this.sendCodeEvent()}>{this.props.btn_title}</Button>
+            <Button onClick={()=>this.sendCodeEvent()} disabled={this.props.disabled}>{this.props.btn_title}</Button>
             )
         }
     }
@@ -56,5 +56,6 @@ class SendCode extends Component{
 }
 SendCode.defaultProps ={
     btn_title:'Email发送',
+    disabled:false
 }
 export default SendCode

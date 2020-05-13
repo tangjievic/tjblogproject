@@ -62,8 +62,6 @@ class TJHeader extends Component {
                         return(<Menu.Item key={`${its.id}`}>{its.catename}</Menu.Item>)
                       })
                     }
-                    {/* <Menu.Item key="setting:1">子栏目一</Menu.Item>
-                    <Menu.Item key="setting:2">子栏目二</Menu.Item> */}
                   </SubMenu>)
                 }else{
                   return(
@@ -74,16 +72,6 @@ class TJHeader extends Component {
                 }
               })
             }
-            {/* <Menu.Item key="mail">
-              用户首页
-            </Menu.Item>
-            <Menu.Item key="app">
-              栏目一
-            </Menu.Item>
-            <SubMenu title={<>栏目二</>}>
-              <Menu.Item key="setting:1">子栏目一</Menu.Item>
-              <Menu.Item key="setting:2">子栏目二</Menu.Item>
-            </SubMenu> */}
           </Menu>
         </Col>
         <Col span={1}>
@@ -109,14 +97,19 @@ class TJHeader extends Component {
               }
             })()
           }
-          {/* <div className="user_class-tag"><Tag color="#2db7f5">VIP</Tag></div> */}
         </Col>
         <Col span={4} className="user_msg-box">
           <Dropdown overlay={this.menu} placement="bottomLeft">
             <Button className="user_front">用户名（账户）{userData.nickname?userData.nickname:userData.username}</Button>
           </Dropdown>
         </Col>
-        <TJAside></TJAside>
+        <TJAside 
+        Route={this.props.Route}
+        asidemsg={{
+          addtime:userData.create_time,
+          columnum:userData.collect_num,
+          zannum:userData.zan_num,
+        }}></TJAside>
       </Row>
     )
   }
@@ -128,7 +121,7 @@ class TJHeader extends Component {
     window.localStorage.setItem('tjuser_username','');
     message.success('退出登录成功')
     setTimeout(()=>{
-        this.props.history.replace('/login');
+        this.props.Route.replace('/login');
     },500)
   }
   //申请vip函数

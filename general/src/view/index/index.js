@@ -9,11 +9,10 @@ import "../../libs/js/ripple.js"
 import "../../components/plugins/rightemenu/index"
 import "../../components/plugins/notice/index"
 import "../../components/plugins/confirm/index"
-import {getUserMsg}from '../../api/index'
+import {getUserMsg,LINKURL}from '../../api/index'
 
 let personalCofrim = ()=>{
     let confirmEvent = ()=>{
-        //window.open('http://www.baidu.com','_self');
         $.DialogByZ.Close();
         spop({
             style: 'success',
@@ -22,12 +21,30 @@ let personalCofrim = ()=>{
             autoclose: 3000
         });
         setTimeout(()=>{
-            window.open('http://localhost:3000/#/login','_self');
+            window.open(`${LINKURL}/user#/login`,'_self');
         },3500)
     }
     $.DialogByZ.Confirm({Title: "尚未登录", Content: "此模块需要登录后，方可使用，请立即登录！",FunL:confirmEvent})
 }
 let indexPage = ()=>{
+
+    //初始化工具栏
+    let gengduoneirong = $(`<div class="tooltipify left">个人中心看一看<div x-arrow class="popper__arrow"></div></div>`)
+    let favorites=$('<div class="tooltipify left">想给本站点个赞<div x-arrow class="popper__arrow"></div></div>')
+    let code = $('<div class="tooltipify left">垃圾代码看一看<div x-arrow class="popper__arrow"></div></div>')
+    let dmail =$('<div class="tooltipify left">想给作者发邮箱<div x-arrow class="popper__arrow"></div></div>')
+    let code1 = $('<div class="tooltipify left">想给本站留个言<div x-arrow class="popper__arrow"></div></div>')
+    $('.item-link.gengduoneirong').append(gengduoneirong)
+    $('.item-link.favorites').append(favorites)
+    $('.item-link.code').append(code)
+    $('.item-link.dmail').append(dmail)
+    $('.item-link.code1').append(code1)
+    $('.icon-gengduoneirong').mouseenter(()=>{gengduoneirong.fadeIn()}).mouseleave(()=>{gengduoneirong.fadeOut()})
+    $('.icon-favorites').mouseenter(()=>{favorites.fadeIn()}).mouseleave(()=>{favorites.fadeOut()})
+    $('.icon-code').mouseenter(()=>{code.fadeIn()}).mouseleave(()=>{code.fadeOut()})
+    $('.icon-icon_dmail').mouseenter(()=>{dmail.fadeIn()}).mouseleave(()=>{dmail.fadeOut()})
+    $('.icon-code1').mouseenter(()=>{code1.fadeIn()}).mouseleave(()=>{code1.fadeOut()})
+
     //初始化导航栏高亮
     $('.hd_nav .nav_item')[0].classList.add('slected')
     //请求cgi确认用户是否登录
@@ -69,6 +86,22 @@ let indexPage = ()=>{
         $('#features,#menu-v-example,#docs,#event-api,#h-spaced-menu').click(()=>{
             personalCofrim()
         })
+
+        $('.loginorsign_btn').click(()=>{
+            let confirmEvent = ()=>{
+                $.DialogByZ.Close();
+                spop({
+                    style: 'success',
+                    position  : 'top-center',
+                    template: '正在跳转登录页面,请稍后',
+                    autoclose: 3000
+                });
+                setTimeout(()=>{
+                    window.open(`${LINKURL}/user#/login`,'_self');
+                },3500)
+            }
+            $.DialogByZ.Confirm({Title: "确认登录？", Content: "如需登录，请点击确认！",FunL:confirmEvent})
+        })
     })
     //启动背景动画
     new dreamLike({
@@ -109,29 +142,29 @@ let indexPage = ()=>{
         bgColor: "#68d099",
         contentColor: "white",
         style: "circle",
-        horizontal: {
-            menuItemPosition: "glue"
-        },
-        vertical: {
-            menuItemPosition: "spaced",
-            direction: "up"
-        },
         circle: {
-            radius: 80
+            radius: 85
         },
-        margin: "small",
-        size: 90,
-        bounce: true,
-        bounceLength: "small",
-        transitionStep: 100,
-        hover: "#5dbb89"
+        size: 80,
+        hover: "#5dbb89",
+        open:function(){
+            $('.right_menubox').css({
+                overflow:'visible'
+            }).addClass('set_hover').removeClass('hover_box')
+        },
+        close:function(){
+            setTimeout(()=>{
+                $('.right_menubox').css({
+                    overflow:'hidden',
+                }).removeClass('set_hover')
+            },500)
+            setTimeout(()=>{
+                $('.right_menubox').css({
+                    overflow:'hidden',
+                }).addClass('hover_box')
+            },1200)
+        }
     });
 
-    // setTimeout(()=>{
-    //     spop({
-    //         template: '3 seconds autoclose',
-    //         autoclose: 3000
-    //     });
-    // },1500)
 }
 indexPage();

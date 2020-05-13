@@ -1,11 +1,16 @@
 import axios from 'axios'
 import '../components/plugins/notice/index'
 let SEVERURL = '';
+let LINKURL = '';
 if(process.env.NODE_ENV == 'development'){
     SEVERURL = 'http://www.tjcms.com/index.php'
+    LINKURL = 'http://www.tjcms.com'
 }else{
     //SEVERURL = 'http://www.tjcms.com/index.php'
-    SEVERURL = 'https://www.tangjietop.cn/index.php'
+    //SEVERURL = 'https://www.tangjietop.cn/index.php'
+    //LINKURL = 'https://www.tangjietop.cn'
+    SEVERURL = 'http://www.tjcms.com/index.php'
+    LINKURL = 'http://www.tjcms.com'
 }
 /* 
 axios封装 
@@ -118,5 +123,6 @@ let postApi = (api,params,type=0,upload=false) => {
 export {
     getApi,
     postApi,
+    LINKURL,
     SEVERURL
 }
