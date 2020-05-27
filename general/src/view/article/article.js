@@ -8,7 +8,9 @@ import "../../components/plugins/notice/index"
 import "../../components/plugins/confirm/index"
 import Tool from '../../libs/js/tool'
 import {getUserMsg,toZan,toCollect,ArtComment,LINKURL}from '../../api/index'
-
+setTimeout(()=>{
+    $('.loading_box').fadeOut()
+},1000)
 let personalCofrim = ()=>{
     let confirmEvent = ()=>{
         $.DialogByZ.Close();
@@ -67,11 +69,14 @@ let artPage = ()=>{
                 autoclose: 3000
             });
             //window.location.reload();
+            //if($('#loading-artmsg').data(''))
             setTimeout(()=>{
                 window.location.reload();
             },1500)
         })
-
+        // setTimeout(()=>{
+        //     $('.loading_box').fadeOut()
+        // },2000)
 
     }).catch(error=>{
         login_state = false
@@ -100,8 +105,11 @@ let artPage = ()=>{
                     window.open(`${LINKURL}/user#/login`,'_self');
                 },3500)
             }
-            $.DialogByZ.Confirm({Title: "确认登录？", Content: "如需登录，请点击确认！",FunL:confirmEvent})
+            $.DialogByZ.Confirm({Title: "确认登录/注册？", Content: "如需登录/注册，请点击确认！",FunL:confirmEvent})
         })
+        setTimeout(()=>{
+            $('.loading_box').fadeOut()
+        },2000)
     })
     //启动背景动画
     new dreamLike({
@@ -246,5 +254,7 @@ let artPage = ()=>{
             personalCofrim()
         }
     })
+    
+
 }
 artPage();

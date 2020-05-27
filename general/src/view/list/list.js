@@ -95,7 +95,7 @@ let listPage = ()=>{
                     window.open(`${LINKURL}/user#/login`,'_self');
                 },3500)
             }
-            $.DialogByZ.Confirm({Title: "确认登录？", Content: "如需登录，请点击确认！",FunL:confirmEvent})
+            $.DialogByZ.Confirm({Title: "确认登录/注册？", Content: "如需登录/注册，请点击确认！",FunL:confirmEvent})
         })
     })
     
@@ -147,5 +147,23 @@ let listPage = ()=>{
             },1200)
         }
     });
+
+    $('.artlist-link').each((index,e)=>{
+        let username = localStorage.getItem('tjuser_username')?localStorage.getItem('tjuser_username'):''
+        let token = localStorage.getItem('tjuser_token')?localStorage.getItem('tjuser_token'):''
+        let url = $(e).attr('href')
+        $(e).attr({
+            "href":`${url}&username=${username}&token=${token}`
+        })
+    })
+
+    $('.art_detail-link').each((index,e)=>{
+        let username = localStorage.getItem('tjuser_username')?localStorage.getItem('tjuser_username'):''
+        let token = localStorage.getItem('tjuser_token')?localStorage.getItem('tjuser_token'):''
+        let url = $(e).attr('href')
+        $(e).attr({
+            "href":`${url}&username=${username}&token=${token}`
+        })
+    })
 }
 listPage();

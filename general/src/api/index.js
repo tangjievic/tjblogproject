@@ -4,7 +4,7 @@ import {postApi,getApi,LINKURL} from './apimethods'
 //     return getApi('admin/login',params,1);
 // }
 const getUserMsg = ()=>{
-    return getApi('/user/getmsg',{},1)
+    return getApi('/user/getmsg',{},1,true)
 }
 
 const toZan = (params)=>{

@@ -27,7 +27,13 @@ let personalCofrim = ()=>{
     $.DialogByZ.Confirm({Title: "尚未登录", Content: "此模块需要登录后，方可使用，请立即登录！",FunL:confirmEvent})
 }
 let indexPage = ()=>{
-
+    //文章查询
+    $('#search_btn').click(()=>{
+        //artlist.html?cid
+        let text = $('.search_input').val()
+        window.open(`${LINKURL}/artlist.html?keywords=${text}`,'_self');
+        //console.log(text)
+    })
     //初始化工具栏
     let gengduoneirong = $(`<div class="tooltipify left">个人中心看一看<div x-arrow class="popper__arrow"></div></div>`)
     let favorites=$('<div class="tooltipify left">想给本站点个赞<div x-arrow class="popper__arrow"></div></div>')
@@ -100,7 +106,7 @@ let indexPage = ()=>{
                     window.open(`${LINKURL}/user#/login`,'_self');
                 },3500)
             }
-            $.DialogByZ.Confirm({Title: "确认登录？", Content: "如需登录，请点击确认！",FunL:confirmEvent})
+            $.DialogByZ.Confirm({Title: "确认登录/注册？", Content: "如需登录/注册，请点击确认！",FunL:confirmEvent})
         })
     })
     //启动背景动画
@@ -165,6 +171,44 @@ let indexPage = ()=>{
             },1200)
         }
     });
+    //微信小程序版和git地址按钮处理
+    $('.gowxapp').click(()=>{
+        spop({
+            style: 'warning',
+            position  : 'top-center',
+            template: '项目开发中，敬请期待',
+            autoclose: 3000
+        });
+    })
+    $('.gobloggit').click(()=>{
+        setTimeout(()=>{
+            window.location.href = 'https://github.com/tangjievic/tjblogproject'
+        },2000)
+        spop({
+            style: 'success',
+            position  : 'top-center',
+            template: '正在打开git地址',
+            autoclose: 2000
+        });
+    })
 
+    //文章列表点击事件
+    $('.artlist-link').each((index,e)=>{
+        let username = localStorage.getItem('tjuser_username')?localStorage.getItem('tjuser_username'):''
+        let token = localStorage.getItem('tjuser_token')?localStorage.getItem('tjuser_token'):''
+        let url = $(e).attr('href')
+        $(e).attr({
+            "href":`${url}&username=${username}&token=${token}`
+        })
+    })
+
+    $('.art_detail-link').each((index,e)=>{
+        let username = localStorage.getItem('tjuser_username')?localStorage.getItem('tjuser_username'):''
+        let token = localStorage.getItem('tjuser_token')?localStorage.getItem('tjuser_token'):''
+        let url = $(e).attr('href')
+        $(e).attr({
+            "href":`${url}&username=${username}&token=${token}`
+        })
+    })
 }
 indexPage();

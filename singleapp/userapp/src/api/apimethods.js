@@ -7,11 +7,11 @@ if(process.env.NODE_ENV === 'development'){
     LINKURL = 'http://www.tjcms.com'
 }else{
     //SEVERURL = 'http://www.tjcms.com/index.php'
-    // SEVERURL = 'https://www.tangjietop.cn/index.php'
-    // LINKURL = 'https://www.tangjietop.cn'
+    SEVERURL = 'https://www.tangjietop.cn/index.php'
+    LINKURL = 'https://www.tangjietop.cn'
 
-    SEVERURL = 'http://www.tjcms.com/index.php'
-    LINKURL = 'http://www.tjcms.com'
+    // SEVERURL = 'http://www.tjcms.com/index.php'
+    // LINKURL = 'http://www.tjcms.com'
 }
 /* 
 axios封装 

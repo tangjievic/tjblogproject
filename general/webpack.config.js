@@ -47,14 +47,15 @@ module.exports = {
       index:entryMode('index'),
       list:entryMode('list'),
       article:entryMode('article'),
-      mindex:entryMmode('mindex'),
-      mlist:entryMmode('mlist'),
-      marticle:entryMmode('marticle')
+      lost:entryMode('lost'),
+      // mindex:entryMmode('mindex'),
+      // mlist:entryMmode('mlist'),
+      // marticle:entryMmode('marticle')
       
   	},//入口
   	output: {//出口
     	//filename: 'js/[name].[hash].js',
-      filename:'js/[name].js',
+      filename:'js/[name].[hash].js',
     	path: __dirname + '/dist'
   	},
   	module: {
@@ -129,14 +130,15 @@ module.exports = {
       minimizer: [new TerserPlugin()],
     },
   	plugins: [
-        new ExtractTextPlugin('css/[name].css'),
+        new ExtractTextPlugin('css/[name].[hash].css'),
         new OptimizeCssAssetsPlugin(),
         outputHtml('index'),
         outputHtml('list'),
         outputHtml('article'),
-        outputmHtml('mindex'),
-        outputmHtml('mlist'),
-        outputmHtml('marticle')
+        outputHtml('lost')
+        // outputmHtml('mindex'),
+        // outputmHtml('mlist'),
+        // outputmHtml('marticle')
    	]
 
 };
