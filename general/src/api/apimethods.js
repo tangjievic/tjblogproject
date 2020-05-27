@@ -51,14 +51,6 @@ let getApi = (api,params,type=0,init=false) =>{
                         let is_login_tip = window.sessionStorage.getItem('is_login_tip')
                         if(Number(is_login_tip)===1){
                             window.sessionStorage.setItem('is_login_tip','1')
-                        }else{
-                            spop({
-                                template: "token失效或不合法，如有需要请登录",
-                                style: 'error',
-                                autoclose: 3000,
-                                position  : 'top-center',
-                            });
-                            window.sessionStorage.setItem('is_login_tip','1')
                         }
                     }else{
                         spop({

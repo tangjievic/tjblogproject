@@ -5,10 +5,12 @@ import '../../components/plugins/slidershow/index'
 import '../../components/plugins/showreel/index'
 import '../../../static/fonts/iconfont/iconfont.css'
 import "../../libs/js/ripple.js"
-import "../../components/plugins/rightemenu/index"
+import rightMenu from "../../components/plugins/rightemenu/index"
 import "../../components/plugins/notice/index"
 import {getUserMsg,LINKURL}from '../../api/index'
-
+setTimeout(()=>{
+    $('.loading_box').fadeOut()
+},1500)
 let personalCofrim = ()=>{
     let confirmEvent = ()=>{
         $.DialogByZ.Close();
@@ -25,7 +27,7 @@ let personalCofrim = ()=>{
     $.DialogByZ.Confirm({Title: "尚未登录", Content: "此模块需要登录后，方可使用，请立即登录！",FunL:confirmEvent})
 }
 let listPage = ()=>{
-
+    rightMenu.init()
     let gengduoneirong = $(`<div class="tooltipify left">个人中心看一看<div x-arrow class="popper__arrow"></div></div>`)
     let favorites=$('<div class="tooltipify left">想给本站点个赞<div x-arrow class="popper__arrow"></div></div>')
     let code = $('<div class="tooltipify left">垃圾代码看一看<div x-arrow class="popper__arrow"></div></div>')
@@ -44,7 +46,6 @@ let listPage = ()=>{
 
     //启动背景动画
     getUserMsg().then(res=>{
-        console.log(res)
         $('.user_box .user_msg').html(
             `<div>
                 <div class="user_state">已登录</div>
@@ -67,7 +68,7 @@ let listPage = ()=>{
                 window.location.reload();
             },1500)
         })
-
+       rightMenu.success()
 
     }).catch(error=>{
         $('.user_box .user_msg').html(
@@ -78,10 +79,7 @@ let listPage = ()=>{
         )
         $('#gooey-upper .text').text('尚未登录')
         //尚未登录，个人空间不能做以下操作
-        $('#features,#menu-v-example,#docs,#event-api,#h-spaced-menu').click(()=>{
-            personalCofrim()
-        })
-
+        rightMenu.fail(personalCofrim)
         $('.loginorsign_btn').click(()=>{
             let confirmEvent = ()=>{
                 $.DialogByZ.Close();

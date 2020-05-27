@@ -610,7 +610,9 @@ class UserHome extends Component {
                 message.warning('本文章需是本站vip用户方可查看，如有需要，请申请');
             }
         }else{
-            window.open(`${LINKURL}/artical.html?aid=${item.id}`);
+            let username = localStorage.getItem('tjuser_username')?localStorage.getItem('tjuser_username'):''
+            let token = localStorage.getItem('tjuser_token')?localStorage.getItem('tjuser_token'):''
+            window.open(`${LINKURL}/artical.html?aid=${item.id}&username=${username}&token=${token}`,"_blank");
         }
     }
 }

@@ -4,6 +4,13 @@
     ${require('html-loader!../../components/elements/head/index.html')}
     <!-- head模块设置]] -->
 <body>
+    <div class="loading_box">
+        <div id="artmsg" data-isvip="1" data-islogin="1"></div>
+        <div class="loader">
+            <span class="text">Loading</span>
+            <span class="spinner"></span>
+        </div>
+    </div>
     <div  class="pageview">
         <!-- head导航栏设置[[ -->
         ${require('html-loader!../../components/plugins/headnav/index.html')}

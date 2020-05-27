@@ -3,14 +3,14 @@ import {dreamLike} from '../../components/plugins/canvasbg/dreamlike/index.js'
 import '../../components/plugins/slidershow/index'
 import '../../../static/fonts/iconfont/iconfont.css'
 import "../../libs/js/ripple.js"
-import "../../components/plugins/rightemenu/index"
+import rightMenu from "../../components/plugins/rightemenu/index"
 import "../../components/plugins/notice/index"
 import "../../components/plugins/confirm/index"
 import Tool from '../../libs/js/tool'
 import {getUserMsg,toZan,toCollect,ArtComment,LINKURL}from '../../api/index'
 setTimeout(()=>{
     $('.loading_box').fadeOut()
-},1000)
+},1500)
 let personalCofrim = ()=>{
     let confirmEvent = ()=>{
         $.DialogByZ.Close();
@@ -28,6 +28,7 @@ let personalCofrim = ()=>{
 }
 
 let artPage = ()=>{
+    rightMenu.init()
     let login_state = false//未登录状态
     let user_msg = {}
     //初始化工具栏
@@ -74,9 +75,7 @@ let artPage = ()=>{
                 window.location.reload();
             },1500)
         })
-        // setTimeout(()=>{
-        //     $('.loading_box').fadeOut()
-        // },2000)
+        rightMenu.success()
 
     }).catch(error=>{
         login_state = false
@@ -88,9 +87,7 @@ let artPage = ()=>{
         )
         $('#gooey-upper .text').text('尚未登录')
         //尚未登录，个人空间不能做以下操作
-        $('#features,#menu-v-example,#docs,#event-api,#h-spaced-menu').click(()=>{
-            personalCofrim()
-        })
+        rightMenu.fail(personalCofrim)
 
         $('.loginorsign_btn').click(()=>{
             let confirmEvent = ()=>{
