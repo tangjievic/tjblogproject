@@ -1,4 +1,0 @@
-<!-- <view class="iconfont icon-minus-circle">
-</view> -->
-<view class="ws-class iconfont {{ type === '' ? '' : 'icon-' +  type }}" 
- style ="font-size: {{ size }}rpx; {{ color ? 'color:' + color : '' }}"></view>

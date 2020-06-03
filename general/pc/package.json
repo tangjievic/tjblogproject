@@ -1,0 +1,40 @@
+{
+  "name": "bolinjz_pc",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".src/index.ts",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode=development --config ./build/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --mode=production --config ./build/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "tangjie",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "typescript": "^3.9.2"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^1.0.0",
+    "extract-loader": "^3.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    
+    
+    "html-webpack-plugin": "^4.3.0",
+    "html-withimg-loader": "^0.1.16",
+    "jquery": "^3.5.1",
+    "less": "^3.11.2",
+    "less-loader": "^6.1.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^2.3.5",
+    "ts-loader": "^7.0.4",
+    "tslint": "^6.1.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
