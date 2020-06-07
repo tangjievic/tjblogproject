@@ -1,0 +1,181 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    box-sizing: border-box
+}
+
+body {
+    background-color: #353535
+}
+
+a {
+    text-decoration: none
+}
+
+ul {
+    list-style: none
+}
+
+img {
+    border: none
+}
+
+.slideBox {
+    width: 100%;
+    height: 468px;
+    overflow: hidden;
+    position: relative
+}
+
+.slideBox .hd {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1
+}
+
+.slideBox .hd ul {
+    text-align: center
+}
+
+.slideBox .hd ul li {
+    width: 80px;
+    height: 36px;
+    margin: 0 3px;
+    display: inline-block;
+    position: relative
+}
+
+.slideBox .hd ul li .dot {
+    width: 80px;
+    height: 4px;
+    background-color: hsla(0, 0%, 60%, .4)
+}
+
+.slideBox .hd ul li span {
+    display: none;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    left: 0;
+    top: 0;
+    line-height: 36px;
+    cursor: pointer
+}
+
+.slideBox .hd ul li.on .liner {
+    width: 80px;
+    height: 4px;
+    animation: liner 2.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #198cff, #8847c1)
+}
+
+.slideBox .hd ul li:hover .dot {
+    display: none
+}
+
+.slideBox .hd ul li:hover {
+    width: 206px;
+    height: 36px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #198cff, #8847c1);
+    transition: all .1s ease
+}
+
+.slideBox .hd ul li:hover span {
+    display: inline-block
+}
+
+@keyframes liner {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+.slideBox .bd {
+    width: 100%;
+    position: relative;
+    height: 468px;
+    overflow: hidden
+}
+
+.slideBox .bd li {
+    text-align: center
+}
+
+.slideBox .bd img {
+    width: 1600px;
+    height: 468px
+}
+
+.slideBox .bd:hover~.prev {
+    display: block
+}
+
+.slideBox .bd:hover~.next {
+    display: block
+}
+
+.slideBox .prev:hover {
+    display: block
+}
+
+.slideBox .next:hover {
+    display: block
+}
+
+.slideBox .prev {
+    display: none;
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    margin-top: -25px;
+    width: 29px;
+    height: 52px;
+    background: url(../../../static/left_array.png) no-repeat;
+    background-size: cover
+}
+
+.slideBox .next {
+    display: none;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    margin-top: -25px;
+    width: 29px;
+    height: 52px;
+    background: url(../../../static/right_array.png) no-repeat;
+    background-size: cover
+}
+
+.slideBox .bd li.active {
+    animation-name: ai-big-out;
+    animation-duration: .3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards
+}
+
+@keyframes ai-big-out {
+    0% {
+        z-index: 3;
+        transform: scale(1.1);
+        opacity: 1
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: .5
+    }
+    to {
+        transform: scale(1.3);
+        opacity: 1
+    }
+}

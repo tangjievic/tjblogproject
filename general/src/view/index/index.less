@@ -1,0 +1,23 @@
+.page_view{
+    background-color: #ffffff;
+    &::before{
+        content: '';
+        display: block;
+        height: 70px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .page_view{
+        &::before{
+            content: '';
+            display: block;
+            height: 1.2rem;
+        }
+    } 
+}
+
+.page_content{
+    width: 1200px;
+    margin: 0 auto;
+    height: 1200px;
+}

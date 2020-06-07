@@ -46,3 +46,19 @@ body {
     top: 0;
     left: 0;
 }
+
+
+/* 清除浮动 */
+
+.wxt-clear_ft::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* div水平居中 */
+
+.wxt-center__leve {
+    margin: 0 auto;
+}
