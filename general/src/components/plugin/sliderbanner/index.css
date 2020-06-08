@@ -24,7 +24,7 @@ img {
 
 .slideBox {
     width: 100%;
-    height: 468px;
+    height: 280px;
     overflow: hidden;
     position: relative
 }
@@ -73,7 +73,7 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, #198cff, #8847c1)
+    background: linear-gradient(90deg, rgb(90, 194, 231), rgb(145, 218, 245))
 }
 
 .slideBox .hd ul li:hover .dot {
@@ -84,7 +84,7 @@ img {
     width: 206px;
     height: 36px;
     transform: translateY(-50%);
-    background: linear-gradient(90deg, #198cff, #8847c1);
+    background: linear-gradient(90deg, rgb(90, 194, 231), rgb(145, 218, 245));
     transition: all .1s ease
 }
 
@@ -113,8 +113,8 @@ img {
 }
 
 .slideBox .bd img {
-    width: 1600px;
-    height: 468px
+    width: 100%;
+    height: 280px;
 }
 
 .slideBox .bd:hover~.prev {

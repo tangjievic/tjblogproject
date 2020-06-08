@@ -1,0 +1,45 @@
+.right_tool{
+    position: absolute;
+    top: -1px;
+    right: -59px;
+    background: #ffffff;
+    width: 60px;
+    border-radius: 3px;
+    &::before{
+        position: absolute;
+        z-index: 2;
+        bottom: -57px;
+        left: 1px;
+        content: '';
+        display: block;
+        border-style: solid;
+        border-color: #ffffff transparent transparent #ffffff;
+        border-width: 30px;
+    }
+    &::after{
+        position: absolute;
+        bottom: -58px;
+        left: 1px;
+        content: '';
+        display: block;
+        border-style: solid;
+        border-color: #e6e6e6 transparent transparent #e6e6e6;
+        border-width: 30px;
+        z-index: 1;
+    }
+    .tool__list{
+        border:1px solid #e6e6e6;
+        border-left: none;
+        .item-link{
+            display: block;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            .iconfont{
+                font-size: 30px;
+            }
+        }
+    }
+}

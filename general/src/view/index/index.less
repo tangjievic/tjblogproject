@@ -1,11 +1,83 @@
 .page_view{
-    background-color: #ffffff;
+    // background-color: #ffffff;
     &::before{
         content: '';
         display: block;
         height: 70px;
     }
 }
+.page_content{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    .content_box{
+        &::before{
+            content: '';
+            display: block;
+            width: 70px;
+            float: left;
+            height: 10px;
+        }
+    }
+    .content_panel{
+        padding: 25px;
+    }
+    .content_title{
+        font-size: 18px;
+        margin-bottom: 40px;
+        padding-bottom: 0;
+        font-weight: 600;
+        margin: 0;
+        color: #444443;
+    }
+    .box_center{
+        float: right;
+        width: 810px;
+        overflow: hidden;
+        height: 100%;
+        .center_content{
+            position: relative;
+            margin-right: 60px;
+            background-color: #ffffff;
+            border: 1px solid #e6e6e6;
+        }
+    }
+    .blog_msg{
+        padding-top: 0;
+        .blog_msg__desc{
+            text-align: justify;
+            color: #666666;
+            line-height: 26px;
+        }
+    }
+    .centent_footer{
+        margin-top: 20px;
+        // padding: 25px;
+        background-color: #ffffff;
+    }
+
+
+    .box_left{
+        float: left;
+        width: 300px;
+        // background-color: pink;
+        //height: 500px;
+    }
+    .box_left-fixed{
+        position: fixed;
+        top: 0;
+        width: 70px;
+        left: 0;
+        bottom: 0;
+        background-color: rgb(90, 194, 231);
+        z-index: 101;
+    }
+
+}
+
+//第二套样式 针对移动端
 @media screen and (max-width: 1200px){
     .page_view{
         &::before{
@@ -14,10 +86,4 @@
             height: 1.2rem;
         }
     } 
-}
-
-.page_content{
-    width: 1200px;
-    margin: 0 auto;
-    height: 1200px;
 }

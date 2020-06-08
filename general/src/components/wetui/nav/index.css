@@ -6,10 +6,12 @@
     height: 70px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #323232;
+    z-index: 100;
 }
 
 .wet-nav_logo {
     flex: 0 1 500px;
+    padding-left: 60px;
 }
 
 .wet-nav_box {

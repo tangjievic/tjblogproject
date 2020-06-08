@@ -9,17 +9,49 @@
             <%= require('html-loader!../../components/wetui/nav/index.html') %>
                 <div class="wet-pc page_content">
                     <!-- 公司基本简介[[ -->
-                    <div class="">
-                        <div></div>
-                        <div>
-                            <%= require('html-loader!../../components/plugin/sliderbanner/index.html') %>
+                    <div class="content_box wxt-clear_ft">
+                        <div class="box_center">
+                            <div class="center_content">
+                                <h2 class="content_panel content_title">前端学习·分享</h2>
+                                <div class="content_panel">
+                                <%= require('html-loader!../../components/plugin/sliderbanner/index.html') %>
+                                </div>
+                                <div class="content_panel blog_msg">
+                                    <h4 class="blog_msg__title">个人博客pc端</h4>
+                                    <p class="blog_msg__desc">
+                                        简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。本博客主要是webpack4，HTML5,CSS3,JS等技术实现的，本博客不支持ie10以下的，ie11及新版的ie才会有最佳的呈现效果。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混用，毕竟没做服务器端渲染，要普通网页来增加SEO的能力。
+                                    </p>
+                                </div>
+                                <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                                <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
+                                
+                                <%= require('html-loader!../../components/elements/righttool/index.html') %>
+                            </div>
+                            <div class="center_content" style="margin-top: 20px;">
+                                <%= require('html-loader!../../components/elements/artlist/index.html') %>
+                                <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                                <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
+                            </div>
+                            <div class="centent_footer blog_boder">
+                                <%= require('html-loader!../../components/plugin/showreel/index.html') %>
+                            </div>
                         </div>
+                        <aside class="box_left">
+                            <%= require('html-loader!../../components/elements/leftele/mycard/index.html') %>
+                            <%= require('html-loader!../../components/elements/leftele/dynamic/index.html') %>
+                            <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
+                            <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
+                        </aside>
+                        <aside class="box_left-fixed">
+
+                        </aside>
                     </div>
                     <!-- 公司基本简介]] -->
+                    
                 </div>
-                <div>
-
-                </div>
+                <!-- 脚部[[ -->
+                <%= require('html-loader!../../components/elements/footer/index.html') %>
+                <!-- 脚部]] -->
         </div>
     </body>
 
