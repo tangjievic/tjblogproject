@@ -20,3 +20,13 @@
     font-size: 14px;
     border-radius: 4px;
 }
+
+.wxt-btn:hover {
+    color: #5AC2E7;
+    border-color: #5AC2E7;
+}
+
+.wxt-btn:active {
+    color: #606266;
+    border-color: #dcdfe6;
+}

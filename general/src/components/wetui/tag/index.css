@@ -1,0 +1,36 @@
+.wet-tag {
+    display: inline-block;
+    background: #f6f6f6;
+    border-radius: 15px;
+    height: 30px;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 10px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.wet-tag::before {
+    content: "#";
+    display: inline-block;
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 2.5px;
+    top: 2.5px;
+    overflow: hidden;
+}
+
+.wet-tag.primary {
+    color: rgb(90, 194, 231);
+    background-color: rgba(90, 194, 231, 0.2);
+}
+
+.wet-tag.primary::before {
+    background: #409eff;
+    color: #ffffff;
+}
