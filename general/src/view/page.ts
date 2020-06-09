@@ -1,5 +1,7 @@
 import '../libs/rest.css';
 import '../libs/style.less';
+import '../static/fonticon/iconfont.css'
+
 import '../components/wetui/row/index.css';
 import '../components/wetui/col/index.css';
 import '../components/wetui/icon/index.css';
@@ -15,6 +17,7 @@ import '../components/elements/leftele/hotart/index.less';
 import '../components/elements/righttool/index';
 import '../components/elements/bubbleline/index.css';
 import '../components/elements/adlist/index.less';
+import '../components/elements/asideleft/index';
 
 import '../libs/rem.js';
 

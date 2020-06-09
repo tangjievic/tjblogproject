@@ -17,7 +17,7 @@
                                 <%= require('html-loader!../../components/plugin/sliderbanner/index.html') %>
                                 </div>
                                 <div class="content_panel blog_msg">
-                                    <h4 class="blog_msg__title">个人博客pc端</h4>
+                                    <h4 class="blog_msg__title">博客简介</h4>
                                     <p class="blog_msg__desc">
                                         简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。本博客主要是webpack4，HTML5,CSS3,JS等技术实现的，本博客不支持ie10以下的，ie11及新版的ie才会有最佳的呈现效果。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混用，毕竟没做服务器端渲染，要普通网页来增加SEO的能力。
                                     </p>
@@ -42,9 +42,7 @@
                             <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
                             <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
                         </aside>
-                        <aside class="box_left-fixed">
-
-                        </aside>
+                        <%= require('html-loader!../../components/elements/asideleft/index.html')%>
                     </div>
                     <!-- 公司基本简介]] -->
                     

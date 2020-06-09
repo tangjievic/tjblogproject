@@ -5,6 +5,9 @@
     background: #ffffff;
     width: 60px;
     border-radius: 3px;
+    .iconfont{
+        color: #444443;
+    }
     &::before{
         position: absolute;
         z-index: 2;
@@ -37,8 +40,16 @@
             text-align: center;
             position: relative;
             cursor: pointer;
+            &:hover{
+                .iconfont{
+                    color: #5ac2e7;
+                }  
+            }
             .iconfont{
                 font-size: 30px;
+            }
+            .iconfont.actived{
+                color: #5ac2e7;
             }
         }
     }

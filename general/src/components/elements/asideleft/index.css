@@ -1,0 +1,29 @@
+.box_left-fixed{
+    color: #ffffff;
+}
+.box_left-fixed li{
+    margin-bottom: 4px;
+}
+.box_left-fixed a{
+    color: #e8eef7;
+    display: block;
+    padding: 4px 0;
+}
+.box_left-fixed a span{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+.box_left-fixed .icon{
+    margin-bottom: 3px;
+}
+.box_left-fixed .icon .iconfont{
+    font-size: 28px;
+}
+.box_left-fixed .fixed{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 10px;
+}
