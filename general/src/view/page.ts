@@ -10,6 +10,7 @@ import '../components/wetui/base/animation.css';
 import '../components/wetui/input/index.css';
 import '../components/wetui/btn/index.css';
 import '../components/wetui/tag/index.css';
+import '../components/wetui/pagenation/index.css';
 
 import '../components/elements/footer/index.less';
 import '../components/elements/leftele/leftele.less';
