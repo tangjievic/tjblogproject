@@ -18,7 +18,6 @@ import '../components/elements/leftele/hotart/index.less';
 import '../components/elements/righttool/index';
 import '../components/elements/bubbleline/index.css';
 import '../components/elements/adlist/index.less';
-import '../components/elements/asideleft/index';
 
 import '../libs/rem.js';
 
@@ -35,3 +34,4 @@ window.$ = window.jQuery = jq
 import '../components/wetui/nav/index'
 import '../components/elements/listroll/index';
 import '../components/elements/artlist/index';
+import '../components/elements/asideleft/index.ts';
