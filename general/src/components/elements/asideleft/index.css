@@ -86,6 +86,8 @@
 }
 
 .box_left-fixed .box_left-catgrey {
+    position: fixed;
+    top:0;
     bottom: 0;
     background-color: rgb(69, 174, 212);
     overflow: auto;
@@ -142,4 +144,43 @@
 
 .box_left-fixed .fixed .tool .tool-list a:hover {
     background-color: #5ac2e7;
+}
+
+.box_left-fixed .wet-ui_content{
+    padding: 20px;
+}
+.box_left-fixed .wet-ui_content .li_ul{
+    padding-left: 20px;
+}
+.box_left-fixed .li_ul a{
+    text-decoration: underline moccasin ;
+}
+.box_left-fixed .desc{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.box_left-fixed .business_content{
+    padding: 20px;
+
+}
+.box_left-fixed .bs_item_sup{
+    display: flex;
+}
+.box_left-fixed .bs_litem{
+    margin: 10px;
+}
+.box_left-fixed .scode .title{
+    margin-bottom: 15px;
+    padding:0;
+}
+#blog_hangye:hover>a,
+#blog_wetui:hover>a,
+#blog_yewu:hover>a{
+    background-color: rgb(69, 174, 212);
+}
+#blog_hangye:hover .box_left-catgrey.hidden_list,
+#blog_wetui:hover .box_left-catgrey.hidden_list,
+#blog_yewu:hover .box_left-catgrey.hidden_list
+ {
+    transform: translateX(0);
 }
