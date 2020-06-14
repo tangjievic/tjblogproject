@@ -1,6 +1,8 @@
 import '../libs/rest.css';
 import '../libs/style.less';
 import '../static/fonticon/iconfont.css'
+import './common.less';
+import '../components/plugin/shuibo/index.ts'
 
 import '../components/wetui/row/index.css';
 import '../components/wetui/col/index.css';
@@ -35,3 +37,4 @@ import '../components/wetui/nav/index'
 import '../components/elements/listroll/index';
 import '../components/elements/artlist/index';
 import '../components/elements/asideleft/index.ts';
+import '../components/plugin/showreel/index.js';

@@ -1,1 +1,47 @@
-<html></html>
+<!DOCTYPE html>
+<html>
+<!-- head模块设置[[ -->
+<%= require('html-loader!../../components/elements/head/index.html') %>
+    <!-- head模块设置]] -->
+
+    <body class="wet-bgcolor__gray">
+        <div class="page_view">
+            <%= require('html-loader!../../components/wetui/nav/index.html') %>
+                <div class="wet-pc blog_art-list page_content">
+                    <div class="content_box wxt-clear_ft">
+                        <div class="box_center">
+                            <div class="center_content">
+                                <h2 class="content_panel content_title">博客文章分类</h2>
+                                <div class="content_panel">
+                                    <div class="list_hd">
+                                        爱和死有一点相同：无论是帝王的高堂大殿还是牧人的茅屋草舍，它<span style="color: #333333;">都闯进去！</span>你与我也有一点相同：无论是相隔万里还是近在咫尺，它都是缘分;原谅我的无病<span style="color: #333333;">呻吟，喜欢</span>的给博客点个赞！！！
+                                    </div>
+                                </div>
+                                <div class="content_panel">
+                                    <%= require('html-loader!../../components/elements/artlist/index.html') %>
+                                </div>
+                                <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                                    <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
+                                        <%= require('html-loader!../../components/elements/righttool/index.html') %>
+                            </div>
+                            <div class="centent_footer blog_boder">
+                                <%= require('html-loader!../../components/plugin/showreel/index.html') %>
+                            </div>
+                        </div>
+
+                        <aside class="box_left">
+                            <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
+                                <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
+                        </aside>
+                        <%= require('html-loader!../../components/elements/asideleft/index.html')%>
+
+
+                    </div>
+                </div>
+                <!-- 脚部[[ -->
+                <%= require('html-loader!../../components/elements/footer/index.html') %>
+                    <!-- 脚部]] -->
+        </div>
+    </body>
+
+</html>
