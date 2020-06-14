@@ -37,4 +37,3 @@ import '../components/wetui/nav/index'
 import '../components/elements/listroll/index';
 import '../components/elements/artlist/index';
 import '../components/elements/asideleft/index.ts';
-import '../components/plugin/showreel/index.js';
