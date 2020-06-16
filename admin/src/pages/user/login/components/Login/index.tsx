@@ -24,7 +24,7 @@ export interface LoginProps {
 interface LoginType extends React.FC<LoginProps> {
   Tab: typeof LoginTab;
   Submit: typeof LoginSubmit;
-  Username: React.FunctionComponent<LoginItemProps>;
+  UserName: React.FunctionComponent<LoginItemProps>;
   Password: React.FunctionComponent<LoginItemProps>;
   Mobile: React.FunctionComponent<LoginItemProps>;
   Captcha: React.FunctionComponent<LoginItemProps>;
@@ -32,10 +32,9 @@ interface LoginType extends React.FC<LoginProps> {
 
 const Login: LoginType = (props) => {
   const { className } = props;
-  const [form] = Form.useForm();
   const [tabs, setTabs] = useState<string[]>([]);
   const [active, setActive] = useState({});
-  const [tabActiveType, setType] = useMergeValue('', {
+  const [type, setType] = useMergeValue('', {
     value: props.activeKey,
     onChange: props.onTabChange,
   });
@@ -67,10 +66,10 @@ const Login: LoginType = (props) => {
         },
         updateActive: (activeItem) => {
           if (!active) return;
-          if (active[tabActiveType]) {
-            active[tabActiveType].push(activeItem);
+          if (active[type]) {
+            active[type].push(activeItem);
           } else {
-            active[tabActiveType] = [activeItem];
+            active[type] = [activeItem];
           }
           setActive(active);
         },
@@ -78,7 +77,7 @@ const Login: LoginType = (props) => {
     >
       <div className={classNames(className, styles.login)}>
         <Form
-          form={props.from || form}
+          form={props.from}
           onFinish={(values) => {
             if (props.onSubmit) {
               props.onSubmit(values as LoginParamsType);
@@ -91,7 +90,7 @@ const Login: LoginType = (props) => {
                 destroyInactiveTabPane
                 animated={false}
                 className={styles.tabs}
-                activeKey={tabActiveType}
+                activeKey={type}
                 onChange={(activeKey) => {
                   setType(activeKey);
                 }}
@@ -112,7 +111,7 @@ const Login: LoginType = (props) => {
 Login.Tab = LoginTab;
 Login.Submit = LoginSubmit;
 
-Login.Username = LoginItem.Username;
+Login.UserName = LoginItem.UserName;
 Login.Password = LoginItem.Password;
 Login.Mobile = LoginItem.Mobile;
 Login.Captcha = LoginItem.Captcha;

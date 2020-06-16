@@ -2,19 +2,15 @@
 import { defineConfig } from 'umi';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
-
 const { REACT_APP_ENV } = process.env;
-
 export default defineConfig({
+  history: {
+    type: 'hash',
+  },
   hash: true,
   antd: {},
   dva: {
     hmr: true,
-  },
-  layout: {
-    name: 'Ant Design Pro',
-    locale: true,
-    siderWidth: 208,
   },
   locale: {
     // default zh-CN
@@ -33,46 +29,71 @@ export default defineConfig({
   routes: [
     {
       path: '/user',
-      layout: false,
+      component: '../layouts/UserLayout',
       routes: [
         {
           name: 'login',
           path: '/user/login',
           component: './user/login',
         },
-      ],
-    },
-
-    {
-      path: '/welcome',
-      name: 'welcome',
-      icon: 'smile',
-      component: './Welcome',
-    },
-    {
-      path: '/admin',
-      name: 'admin',
-      icon: 'crown',
-      access: 'canAdmin',
-      component: './Admin',
-      routes: [
         {
-          path: '/admin/sub-page',
-          name: 'sub-page',
+          name: '查询表格',
           icon: 'smile',
-          component: './Welcome',
+          path: '/users',
+          component: './UserList',
         },
       ],
     },
     {
-      name: 'list.table-list',
-      icon: 'table',
-      path: '/list',
-      component: './ListTableList',
-    },
-    {
       path: '/',
-      redirect: '/welcome',
+      component: '../layouts/SecurityLayout',
+      routes: [
+        {
+          path: '/',
+          component: '../layouts/BasicLayout',
+          authority: ['admin', 'user'],
+          routes: [
+            {
+              path: '/',
+              redirect: '/welcome',
+            },
+            {
+              path: '/welcome',
+              name: 'welcome',
+              icon: 'smile',
+              component: './Welcome',
+            },
+            {
+              path: '/admin',
+              name: 'admin',
+              icon: 'crown',
+              component: './Admin',
+              authority: ['admin'],
+              routes: [
+                {
+                  path: '/admin/sub-page',
+                  name: 'sub-page',
+                  icon: 'smile',
+                  component: './Welcome',
+                  authority: ['admin'],
+                },
+              ],
+            },
+            {
+              name: 'list.table-list',
+              icon: 'table',
+              path: '/list',
+              component: './ListTableList',
+            },
+            {
+              component: './404',
+            },
+          ],
+        },
+        {
+          component: './404',
+        },
+      ],
     },
     {
       component: './404',

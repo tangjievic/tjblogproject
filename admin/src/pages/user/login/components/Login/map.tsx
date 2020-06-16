@@ -3,10 +3,10 @@ import React from 'react';
 import styles from './index.less';
 
 export default {
-  Username: {
+  UserName: {
     props: {
       size: 'large',
-      id: 'username',
+      id: 'userName',
       prefix: (
         <UserOutlined
           style={{

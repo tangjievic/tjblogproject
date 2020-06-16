@@ -7,7 +7,7 @@ export interface TableListItem {
   owner: string;
   desc: string;
   callNo: number;
-  status: number;
+  status: string;
   updatedAt: Date;
   createdAt: Date;
   progress: number;

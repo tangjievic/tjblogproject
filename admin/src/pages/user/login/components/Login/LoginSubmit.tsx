@@ -1,9 +1,11 @@
-import { Button } from 'antd';
+import { Button, Form } from 'antd';
 
 import { ButtonProps } from 'antd/es/button';
 import React from 'react';
 import classNames from 'classnames';
 import styles from './index.less';
+
+const FormItem = Form.Item;
 
 interface LoginSubmitProps extends ButtonProps {
   className?: string;
@@ -11,7 +13,11 @@ interface LoginSubmitProps extends ButtonProps {
 
 const LoginSubmit: React.FC<LoginSubmitProps> = ({ className, ...rest }) => {
   const clsString = classNames(styles.submit, className);
-  return <Button size="large" className={clsString} type="primary" htmlType="submit" {...rest} />;
+  return (
+    <FormItem>
+      <Button size="large" className={clsString} type="primary" htmlType="submit" {...rest} />
+    </FormItem>
+  );
 };
 
 export default LoginSubmit;
