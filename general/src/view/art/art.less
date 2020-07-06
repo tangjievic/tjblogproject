@@ -1,6 +1,28 @@
 .blog_art-content{
     color: #444443;
     font-size: 16px;
+    article{
+        background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.04) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(50, 0, 0, 0.04) 3%, rgba(0, 0, 0, 0) 3%);
+        background-size: 20px 20px;
+        background-position: center center;
+    }
+    .art_deline{
+        border-bottom: 4px solid #40B8FA;
+        width: 700px;
+        margin: 30px auto 0;
+        position: relative;
+        &::before{
+            content: '';
+            display: block;
+            width: 200px;
+            height: 10px;
+            border-top-left-radius: 20px;
+            position: absolute;
+            right: 0;
+            background-color: rgba(64, 184, 250,0.3);
+            top: -10px;
+        }
+    }
     .center_content{
         header{
             padding: 20px 20px 0 20px;
@@ -32,7 +54,7 @@
     .art_hd{
         min-height: 50px;
         color: #ffffff;
-        background: linear-gradient(to top left,#409eff,#5ac2e7);
+        background: linear-gradient(to top left,#46b2ec,#6ecef1);
         border-radius: 4px;
         position: relative;
         overflow: hidden;

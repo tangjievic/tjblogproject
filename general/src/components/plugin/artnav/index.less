@@ -1,45 +1,41 @@
-.toc,
-.toc * {
+.toc_box{
+    transform: translateY(0);
+    transition: top 0.2s ease-in-out,transform 0.2s ease-in-out;
+}
+.toc_box.fixed-top{
+    position: fixed;
+    top: 95px;
+    width: 300px;
+}
+.toc{
     box-sizing: border-box;
+    padding:20px 0;
+    overflow: hidden;
 }
 
 .toc {
-    padding      : 70px 0;
-    /* box-shadow: 0 0 .2*10px .2*10px #eee; */
     width        : 100%;
     max-width    : 350px;
-    margin       : 70px 0;
     color        : #333;
     position     : relative;
     background   : #fff;
 }
-
-.toc.shadow {
-    box-shadow: 0 0 0.5*10px #eee;
-}
-
-.toc.toc-fixed {
-    position: fixed;
-    top     : 24px;
-    z-index : 10;
-}
-
 .toc-hightlight {
-    width      : 100%;
+    width      : 278px;
     background : #eee;
     position   : absolute;
-    left       : 0;
+    left       : 10px;
     top        : 0;
-    border-left: 3px solid #009a61;
+    border-left: 3px solid rgb(90, 194, 231);
     transition : all .2s ease;
 }
 
 
 
 .toc-brand {
-    padding      : 0 1.25*10px;
+    padding      : 0 15px;
     font-weight  : bold;
-    font-size    : 70px;
+    font-size    : 18px;
     line-height  : inherit;
     white-space  : nowrap;
     display      : block;
@@ -64,9 +60,12 @@
 .toc-navbar {
     position       : relative;
     display        : block;
-    /* max-height  : 500px;
-    overflow-y     : auto; */
     scroll-behavior: smooth;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 400px!important;
+    overflow-y: auto!important;
+    overflow-x: hidden;
 }
 
 /* 滚动条 */
@@ -109,6 +108,7 @@
 }
 
 .toc-nav {
+    box-sizing: border-box;
     display      : block;
     padding-left : 0;
     margin-bottom: 0;
@@ -116,45 +116,32 @@
 }
 
 .toc-link {
+    box-sizing: border-box;
     display        : block;
     padding        : 0.2*10px 1.7*10px;
-    font-size      : 0.9*10px;
+    font-size      : 14px;
     text-decoration: none;
     color          : #555;
     position       : relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
-.toc-link::before {
-    content   : ' ';
-    height    : .25*10px;
-    width     : 0.25*10px;
-    background: #555;
-    position  : absolute;
-    top       : .8*10px;
-    left      : 70px;
-}
-
 .toc-link.active::before,
 .toc-link:hover::before {
-    background: #009a61;
+    background: rgb(90, 194, 231);
 }
 
 .toc-link.active,
 .toc-link:hover {
-    color: #009a61;
+    color: rgb(90, 194, 231);
+    font-weight: 600;
 }
 
-/* .toc-link+.toc-nav{
-    max-height: 0;
-    overflow  : hidden;
-}
-
-.toc-link.active+.toc-nav{
-    max-height: 1000*10px;
-} */
 
 .toc-link.ml-1 {
-    margin-left: 70px !important;
+    font-weight: 600;
+    margin-left: 10px !important;
 }
 
 .toc-link.ml-2 {
