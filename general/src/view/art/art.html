@@ -48,80 +48,243 @@
                                     </div>
                                 </div>
                                 <div class="content_panel art_content-b">
-                                    <article class="markdown-body">
-                                        <h4>
-                                            <a id="JavaScript_0" target="_blank"></a>前端JavaScript数据结构和算法——基本概念</h4>
-                                        <p>简介：本部分主要是介绍数据结构和算法的基本概念，尤其是讲解了时间复杂度，提及了空间复杂度。</p>
-                                        <p>第一部分：<br> 1.数据结构基本概念
-                                            <br>
-                                            <strong>a.数据</strong><br> 数据是信息的载体，是描述事物属性的
-                                            <strong>数，字符串</strong>，以及所有能输入到计算机中并被计算机<strong>识别和处理的符号集合</strong><br>
-                                            <strong>b.数据元素</strong><br> 数据元素是数据的基本单位，一个数据元素可由多个数据项构成
-                                            <br>
-                                            <strong>c.数据对象</strong><br> 是具有相同性质的数据元素的集合。是数据的一个子集
-                                            <br>
-                                            <strong>d.数据类型</strong><br> 数据类型是一个值的集合和定义在此集合上的一组操作的总称
-                                            <br> （1）原子类型：其值不能再分割的数据类型
-                                            <br> （2）结构类型：其值可再分为若干成分的数据类型
-                                            <br> （3）抽象数据类型：抽象数据组织及相关操作
-                                            <br>
-                                            <strong>e.抽象数据类型</strong><br> 指的是一个数学模型及定义在该模型上的一组操作。（抽象数据类型的定义仅仅取决于它的一组逻辑特性，与其在计算机内如何表示和实现无关。也就是说不管他内部结构如何变化，只要他的数学特性不变，就不影响其外部使用），通常用（数据对象、数据关系、基本操作集）这样三元组来表示抽象数据类型。
-                                            <br>
-                                            <strong>f.数据结构</strong><br> 任何问题中，数据元素都不是孤立的。他们之间的关系称为结构。也就是数据结构是相互之间存在一种或多种特定关系的数据元素的集合。一般包括这三个方面（逻辑结构、存储结构、和数据的运算）。（数据的逻辑结构和存储结构是密不可分的。
-                                            <strong>一个算法的设计取决于所选定的逻辑结构，算法的实现依赖于所采用的存储结构</strong>）</p>
-                                        <p>2.数据结构三要素<br>
-                                            <strong>a.逻辑结构</strong><br> 指的是数据之间的逻辑关系。与数据的存储无关是独立于计算机的。（一般分为线性结构[例如：线性表]和非线性结构[例如集合、树、图]）
-                                            <br> （1）线性结构：数据之间只存在一对一的关系
-                                            <br> （2）树形结构：数据之间存在一对多的关系
-                                            <br> （3）图或网状结构：数据之间存在多对多的关系
-                                            <br>
-                                            <strong>b.数据的存储结构</strong><br> 即数据结构在计算机中的表示（物理结构），（数据的存储结构是由计算机语言实现的逻辑结构（比如JavaScript），依赖于计算机语言），数据的存储结构主要有：顺序存储、链式存储、索引存储、散列存储
-                                        </p>
-                                        <p>第二部分：</p>
-                                        <p><strong>3.算法</strong><br> 算法是对特定问题求解步骤的一种描述
-                                            <br> 算法5特性如下：
-                                            <br>
-                                            <strong>a.有穷性<br>
- b.确定性<br>
- c.可行性<br>
- d.输入<br>
- e.输出</strong></p>
-                                        <p><strong>4.时间复杂度</strong><br> 一条语句的频度是指该语句在算法中被重复执行的次数。算法中所有语句的频度之和记为T(n)，他是问题规模n的函数。时间复杂度主要是分析T(n)的数量级。因为算法中基本运算的频度与T(n)通数量级，所以采用算法基本运算频度f(n)来分析算法的时间复杂度。
-                                        </p>
-                                        <p>一般有一条准则就是：一般是考虑最坏时间复杂度，以保证算法的运行时间不会比它更长。<br> 时间复杂度的加法规则：T(n,m)=T1(n)+T2(n)=O(max(f(n),g(m))
-                                            <br> 时间复杂度的乘法规则：
-                                            <br> （1）T(n,m)=T1(n)∗T2(m)=O(f(n)∗g(m))T(n,m)=T1(n)∗T2(m)=O(f(n)∗g(m))
-                                            <br> （2）O(n)∗O(m)=O(n∗m
-                                        </p>
-                                        <p>常见的渐进的时在这里插入代码片间复杂度为：O(1)&lt;O(log2n)&lt;O(n)&lt;O(nlog2n)&lt;O(n²)&lt;O(n³)&lt;O(2ⁿ)&lt;O(n!)&lt;O(nⁿ)</p>
-                                        <p><strong>5.时间复杂度的实例分析：</strong></p>
-                                        <pre><div class="hljs"><code class="lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test1</span>(<span class="hljs-params">n</span>)</span>{
-     <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;
-     <span class="hljs-keyword">while</span>(a&lt;=n){
-         a = a*<span class="hljs-number">2</span>;
+                                    <article class="markdown-body" data-toc="#toc">
+                                        <h3><a id="Mixin_0"></a>Mixin设计思想和应用</h3>
+<h4><a id="1_1"></a>1.基本概念</h4>
+<p><mark>Mixin</mark> 就是 混入的意思，主要是为了解决多<mark>重继承</mark> 带来<mark>复杂继承链</mark>的问题，或者说是<mark>多重继承实现</mark>的一种技巧</p>
+<h4><a id="2_3"></a>2.基本代码示例</h4>
+<p>以 廖雪峰的官方网站中的 Animal 类层次设计为例，有下面4个动物：</p>
+<ul>
+<li>Dog - 狗狗</li>
+<li>Bat - 蝙蝠</li>
+<li>Parrot - 鹦鹉</li>
+<li>Ostrich - 鸵鸟</li>
+<li></li>
+</ul>
+<p>此类设计中有多种设计方法，比如根据哺乳动物和鸟类归类 或者 按照“能跑”和“能飞”来归类，其设计类如下：</p>
+<pre><div class="hljs"><code class="lang-Java"><span class="hljs-comment">//按哺乳动物和鸟类归类</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">callname</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是动物'</span>)
+    }
+ }
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mammal</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_m</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我出生后要吃奶'</span>)
+    }
+ }
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_b</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我长大后能飞'</span>)
+    }
+ }
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mammal</span></span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skill_d</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+         console.log(<span class="hljs-string">'我是单身狗'</span>)
      }
  }
- <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test2</span>(<span class="hljs-params">n</span>)</span>{
-     <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-     <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i&lt;n;i++){
-         a ++;
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mammal</span></span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_mb</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是蝙蝠'</span>)
      }
  }
- </code></div></pre>
-                                        <p>首先分析函数test1。<br> 设执行a= a * 2 这条语句执行了t次，根据a = a*2,a=1 有a= 2^t那么又while中的条件可知 2^t = n;推出t = log2n 因此次函数的时间复杂度为O（log2n）</p>
-                                        <p>函数test1就比较简单了，a++这条语句一直执行n次因此时间复杂度为O（n）</p>
-                                        <p>再来一个实例如下：</p>
-                                        <pre><div class="hljs"><code class="lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test3</span>(<span class="hljs-params">n</span>)</span>{
-     <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>,sum = <span class="hljs-number">0</span>;
-     <span class="hljs-keyword">while</span>(sum&lt;n){
-         sum += ++i;
-         <span class="hljs-keyword">return</span> i;
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parrot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bird</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_p</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是鹦鹉'</span>)
+    }
+ }
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ostrich</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Bird</span></span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_o</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+         console.log(<span class="hljs-string">'我是鸵鸟'</span>)
      }
  }
- </code></div></pre>
-                                        <p>test3函数的时间复杂度是O（n^(1/2)）；具体解决见下期（js算法——数组（线性表））</p>
-                                        <p><strong>5.空间复杂度</strong><br> 空间复杂度是指：算法的空间复杂度S(n)定义为该算法所耗费的存储空间。他是问题规模n的函数。（一般来说：一段程序除了本身所用的指令、常数、变量、和输入数据以外，还需要一些对数据进行操作的工作单元和存储为实现计算所需要的一些信息的辅助空间，比如递归是常见的空间复杂度很高的一种场景）
-                                        </p>
+</code></div></pre>
+<pre><div class="hljs"><code class="lang-Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">callname</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是动物'</span>)
+    }
+ }
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Run</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_r</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是地上跑的'</span>)
+    }
+ }
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fly</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_f</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'是天上飞的'</span>)
+    }
+ }
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Run</span></span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skill_dr</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+         console.log(<span class="hljs-string">'我是能跑的单身狗'</span>)
+     }
+ }
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fly</span></span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_mf</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是蝙蝠，可能不会飞'</span>)
+     }
+ }
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parrot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fly</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_pr</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+        console.log(<span class="hljs-string">'我是鹦鹉'</span>)
+    }
+ }
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ostrich</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Run</span></span>{
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">skil_or</span><span class="hljs-params">()</span>:<span class="hljs-keyword">void</span></span>{
+         console.log(<span class="hljs-string">'我是鸵鸟，不会飞智慧跑'</span>)
+     }
+ }
+</code></div></pre>
+<p>如果再多其他几种分类，如宠物类”和“非宠物类”，这结构会越来越庞大，这种类设计完全是不可取的，正确的方法，我们应该采用多重继承来完成。</p>
+<p>在设计类的继承关系时，通常，主线都是单一继承下来的，例如，Ostrich继承自Bird。但是，如果需要“混入”额外的功能，通过多重继承就可以实现，比如，让Ostrich除了继承自Bird外，再同时继承Runnable。这种设计通常称之为MixIn。`</p>
+<h4><a id="3mixinless_95"></a>3.mixin在less的表现</h4>
+<p>在 Less 中， 可以定义一种叫 “mixins” 的东西 — 和编程语言中的函数有一点的相似。<br>
+在 Less 中， 它被用来灵活的组件化 CSS 中可重复使用的 class。 Mixin 允许你把一个 class 的所有属性嵌入到另外的一个 class 中 —— 就像它的一个属性一样， 仅仅通过简单的 include class 的名字。 它仅仅是一个变量，但是拥有一个 class 的属性。 任何的 CSS class 和 id 规则都可以混在里面。</p>
+<p>copy官网示例：</p>
+<pre><div class="hljs"><code class="lang-css"><span class="hljs-selector-class">.bordered</span> {
+  <span class="hljs-attribute">border-top</span>: dotted <span class="hljs-number">1px</span> black;
+  <span class="hljs-attribute">border-bottom</span>: solid <span class="hljs-number">2px</span> black;
+}
+</code></div></pre>
+<p>如果希望在其它规则集中使用这些属性呢？没问题，我们只需像下面这样输入所需属性的类（class）名称即可，如下所示:</p>
+<pre><div class="hljs"><code class="lang-css"><span class="hljs-selector-id">#menu</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#111</span>;
+  .bordered();
+}
+
+<span class="hljs-selector-class">.post</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: red;
+  .bordered();
+}
+</code></div></pre>
+<p>.bordered 类所包含的属性就将同时出现在 #menu a 和 .post a 中了。（注意，你也可以使用 #ids 作为 mixin 使用。）</p>
+<h4><a id="4_mixinvue_120"></a>4. mixin在vue的表现</h4>
+<p>在vue中混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。</p>
+<p>例子我就不举明了，vue官网有详细的教程，<a href="https://cn.vuejs.org/v2/guide/mixins.html" target="_blank">vue官网</a>;</p>
+<h5><a id="41__125"></a>4.1 简单说明</h5>
+<p>先创建混入对象</p>
+<pre><div class="hljs"><code class="lang-JavaScript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mixinstest = {
+    data(){
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-attr">testMix</span>: <span class="hljs-string">'混入对象的data'</span>
+        }
+    },
+    created(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这是混入对象的created'</span>)
+    },
+    <span class="hljs-attr">methods</span>:{
+        mixinsFun(){
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'调用混入对象的methods的函数'</span>)
+        }
+    },
+    <span class="hljs-attr">computed</span>:{
+        testMix2(){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.testMix+<span class="hljs-string">'：这是混入对象计算结果。'</span>
+        }
+    },
+    <span class="hljs-attr">watch</span>: {
+        testMix(newVal,oldVal){
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'混入对象的watch'</span>)
+        }
+    }
+}
+</code></div></pre>
+<p>再在组件内引入并引用混入</p>
+<pre><div class="hljs"><code class="lang-JavaScript">&lt;template&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{testMix}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{testMix}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"testMix"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{testMix2}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span>
+&lt;script&gt;
+<span class="hljs-keyword">import</span> {mixinstest} <span class="hljs-keyword">from</span> <span class="hljs-string">'../../mixins/index'</span> 
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">mixins</span>: [mixinstest],
+    data (){
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-attr">testMix</span>:<span class="hljs-string">'这是组件的数据'</span>
+        }
+    },
+    created(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这是组件的created'</span>)
+    },
+    <span class="hljs-attr">methods</span>: {
+        mixinsFun(){
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'调用组件的methods的函数'</span>)
+        }
+    },
+    <span class="hljs-attr">computed</span>:{
+        testMix2(){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.testMix+<span class="hljs-string">':这是组件计算结果'</span>
+        }
+    },
+    <span class="hljs-attr">watch</span>: {
+        testMix(newVal,oldVal){
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'组件的watch'</span>)
+        }
+    }
+}
+&lt;<span class="hljs-regexp">/script&gt;
+</span></code></div></pre>
+<p>【注意：】</p>
+<ul>
+<li>a、当在组件中和混入中有相同的‘testMix’这个数据时，显示组件中’testMix’对应的数据，当只用混入中有’testMix‘函数时，显示混入中’testMix’对应的数据。</li>
+<li>b、在组件中和混入中有相同的函数mixinsFun()时，在组件中调用时，调用的是组件中的mixinsFun()函数，当只用混入中有mixinsFun()函数时，在组件中调用mixinsFun()是调用混入中的。</li>
+<li>c、在组件中和混入中有相同的computed函数testMix2()时，在组件中调用时，调用的是组件中的testMix2()函数，当只用混入中有computed函数testMix2()时，在组件中调用testMix2()是调用混入中的。</li>
+<li>d、在组件中和混入中有相同的created()函数时，先执行混入中的created,再执行组件中的created。其他生命周期也应该是一样。</li>
+<li>e、在组件中和混入中有相同的watch()函数testMix时，先执行混入中watch的testMix,再执行组件中watch的testMix。</li>
+</ul>
+<h4><a id="5_reactmixins_201"></a>5. react放弃mixins的设计模式</h4>
+<ul>
+<li>a、mixins 引入了不清晰的依赖关系</li>
+<li>b、mixins 导致命名空间的冲突</li>
+<li>c、Mixins 导致滚雪球般的复杂度</li>
+</ul>
+<h4><a id="6_Mixins__206"></a>6.在小程序中实现 Mixins 方案</h4>
+<p>虽然mixin设计有其缺点，但是在小规模项目中，优点很明确，尤其是小程序，毕竟小程序你在怎么做，其规模不会很大，mixin就能解决在小程序开发中很多痛点</p>
+<pre><div class="hljs"><code class="lang-JavaScript"><span class="hljs-keyword">const</span> originPage = Page;
+<span class="hljs-keyword">const</span> originProperties = [<span class="hljs-string">'data'</span>, <span class="hljs-string">'properties'</span>, <span class="hljs-string">'options'</span>];
+<span class="hljs-keyword">const</span> originMethods = [<span class="hljs-string">'onLoad'</span>, <span class="hljs-string">'onReady'</span>, <span class="hljs-string">'onShow'</span>, <span class="hljs-string">'onHide'</span>, <span class="hljs-string">'onUnload'</span>, <span class="hljs-string">'onPullDownRefresh'</span>, <span class="hljs-string">'onReachBottom'</span>, <span class="hljs-string">'onShareAppMessage'</span>, <span class="hljs-string">'onPageScroll'</span>, <span class="hljs-string">'onTabItemTap'</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">merge</span> (<span class="hljs-params">mixins, options</span>) </span>{
+    mixins.forEach(<span class="hljs-function">(<span class="hljs-params">mixin</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.prototype.toString.call(mixin) !== <span class="hljs-string">'[object Object]'</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'mixin 类型必须为对象！'</span>)
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [key, value] <span class="hljs-keyword">of</span> <span class="hljs-built_in">Object</span>.entries(mixin)) {
+            <span class="hljs-keyword">if</span> (originProperties.includes(key)) {
+                options[key] = { ...value, ...options[key] }
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (originMethods.includes(key)) {
+                <span class="hljs-keyword">const</span> originFunc = options[key];
+                options[key] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>{
+                    value.call(<span class="hljs-keyword">this</span>, ...args);
+                    <span class="hljs-keyword">return</span> originFunc &amp;&amp; originFunc.call(<span class="hljs-keyword">this</span>, ...args)
+                }
+            } <span class="hljs-keyword">else</span> {
+                options = { ...mixin, ...options }
+            }
+        }
+    });
+    <span class="hljs-keyword">return</span> options
+}
+
+Page = <span class="hljs-function">(<span class="hljs-params">options</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> mixins = options.mixins;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(mixins)) {
+        <span class="hljs-keyword">delete</span> options.mixins;
+        options = merge(mixins, options)
+    }
+    originPage(options)
+};
+</code></div></pre>
                                     </article>
                                 </div>
                                 <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
@@ -165,6 +328,7 @@
 
                         <aside class="box_left">
                             <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
+                            <%= require('html-loader!../../components/plugin/artnav/index.html') %>
                         </aside>
                         <%= require('html-loader!../../components/elements/asideleft/index.html')%>
 
