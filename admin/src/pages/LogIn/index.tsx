@@ -23,26 +23,28 @@ type LogInPage = React.DOMAttributes<HTMLElement> & LoginProps;
 const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
 };
-const LogIn: React.FC<LogInPage> = (props) => {
+const LogIn: React.FC<LogInPage> = (props:any) => {
     const {
         adminLogin,
         ...restProps
     } = props
     const onFinish = (values: any) => {
-        if(values.password !== values.rpassword){
-            message.error('两次密码不一致,请核实在登录');
-            return;
-        }
-        adminLogin().adminLogin({
-            username:values.username,
-            password:values.password
-        }).then((res:any)=>{
-            let adminData = res.data;
-            adminLogin().dispatch({
-                type:constants.AUTH_DATA,
-                adminData
-            })
-        })
+        props.history.replace('/main')
+        // if(values.password !== values.rpassword){
+        //     message.error('两次密码不一致,请核实在登录');
+        //     return;
+        // }
+        // adminLogin().adminLogin({
+        //     username:values.username,
+        //     password:values.password
+        // }).then((res:any)=>{
+            
+        //     // let adminData = res.data;
+        //     // adminLogin().dispatch({
+        //     //     type:constants.AUTH_DATA,
+        //     //     adminData
+        //     // })
+        // })
     };
     return (
         <div className="loginpage">
