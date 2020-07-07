@@ -1,2 +1,9 @@
 import './404.less';
-import '../page';//引入页面公共ts方法模块
+let wait:any = document.getElementById('wait')
+let interval = setInterval(function () {
+    let time = --wait.innerHTML;
+    if (time <= 0) {
+        clearInterval(interval);
+        window.history.back()
+    }
+}, 1000);
