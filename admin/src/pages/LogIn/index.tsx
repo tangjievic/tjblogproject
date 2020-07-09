@@ -30,6 +30,7 @@ const LogIn: React.FC<LogInPage> = (props:any) => {
     } = props
     const onFinish = (values: any) => {
         props.history.replace('/main')
+
         // if(values.password !== values.rpassword){
         //     message.error('两次密码不一致,请核实在登录');
         //     return;
@@ -45,6 +46,7 @@ const LogIn: React.FC<LogInPage> = (props:any) => {
         //     //     adminData
         //     // })
         // })
+        
     };
     return (
         <div className="loginpage">
