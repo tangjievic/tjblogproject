@@ -4,11 +4,11 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { StopOutlined } from '@ant-design/icons';
 import HeaderLayOut from '../HeaderLayOut';
 import routers from '../../router/index';
-import {
-    FileOutlined
-  } from '@ant-design/icons';
+// import {
+//     FileOutlined
+//   } from '@ant-design/icons';
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+// const { SubMenu } = Menu;
 interface MainLayOutProps {
 
 }
