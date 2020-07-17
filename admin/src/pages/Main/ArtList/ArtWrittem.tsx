@@ -43,7 +43,7 @@ const toolbar = {
 }
 class ArtWrittem extends React.Component{
     $vm:any;
-    state:StateProps
+    state:StateProps;
     //addImg:()=>void;
     constructor(props:any) {
         super(props);
