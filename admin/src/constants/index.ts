@@ -1,6 +1,0 @@
-const INIT_ADMIN_DATA = 'INIT_ADMIN_DATA';
-const AUTH_DATA = 'AUTH_DATA';
-export {
-    INIT_ADMIN_DATA,
-    AUTH_DATA
-}
