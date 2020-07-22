@@ -1,86 +1,11 @@
-@import '../../libs/less/lib-reset.less';
-@import '../../libs/less/lib-base.less';
-@import '../../components/elements/bgdiv/index.less';
-@import '../../components/plugins/headnav/index.less';
-@import '../../components/elements/leftele/leftele.less';
-@import '../../components/elements/leftele/mycard/index.less';
-@import '../../components/elements/leftele/search/index.less';
-@import '../../components/elements/leftele/listdiv/index.less';
-@import '../../components/elements/leftele/hotart/index.less';
-@import '../../components/elements/leftele/reward/index.less';
-@import '../../components/plugins/slidershow/index.less';
-@import '../../components/elements/tab/index.less';
-@import '../../components/elements/righttool/index.less';
-@import '../../components/elements/artlist/index.less';
-@import '../../components/plugins/showreel/index.less';
-@import '../../components/elements/footer/index.less';
-@import '../../components/plugins/rightemenu/index.less';
-@import '../../components/plugins/notice/index.css';
-@import '../../components/plugins/confirm/index.less';
-.index-page_title{
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-.right_main_hd{
-    &::after{
-        content: '';
-        display: block;
-        clear: both;
-    }
-    .slider-show{
-        float: left;
-    }
-    .right_tip{
-        width: 210px;
-        float: right;
-        font-size: 16x;
-        h3{
-            font-size: 16px;
-            margin-bottom: 7px;
-        }
-        &>div{
-            height: 80px;
-            p{
-                height: 40px;
-                line-height: 20px;
-                position: relative;
-                overflow: hidden;
-                &::after{
-                    content:'...';
-                    font-weight: bold;
-                    position: absolute;
-                    bottom:0 ;right: 0;
-                }
-            }
-        }
-        .tip_updata{
-            margin:10px 0px;
+.page_content{
+    .blog_msg{
+        padding-top: 0;
+        .blog_msg__desc{
+            text-align: justify;
+            color: #666666;
+            line-height: 26px;
+            font-size:14px;
         }
     }
 }
-.blog_msg{
-    margin-top: 20px;
-    .blog_msg__title{
-        margin-bottom: 20px;
-    }
-    .blog_msg__desc{
-        color: #333333;
-        text-align: justify;
-    }
-}
-.msg_tab{
-    padding: 15px 0;
-}
-.layout-model{
-    padding: 20px;
-    margin-top: 20px;;
-}
-
-.loading_box{
-    position: fixed;
-    top: 0;left: 0;right: 0;bottom: 0;
-    z-index: 9999;
-    background-color: #ffffff;
-    overflow: hidden;
-}
-.loader{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);text-align:center;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.loader .text{position:absolute;top:58px;left:4px;z-index:5;font-size:2em;text-transform:uppercase;-webkit-animation:text 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-moz-animation:text 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-ms-animation:text 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-o-animation:text 2.5s cubic-bezier(.75,0,.5,1) infinite normal;animation:text 2.5s cubic-bezier(.75,0,.5,1) infinite normal}.spinner{position:relative;width:5em;height:5em;color:#fff}.spinner:before,.spinner:after{content:"";position:relative;display:block}.spinner:before{-webkit-animation:spinner 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-moz-animation:spinner 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-ms-animation:spinner 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-o-animation:spinner 2.5s cubic-bezier(.75,0,.5,1) infinite normal;animation:spinner 2.5s cubic-bezier(.75,0,.5,1) infinite normal;width:10em;height:10em;background-color:#db2f00}.spinner:after{-webkit-animation:shadow 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-moz-animation:shadow 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-ms-animation:shadow 2.5s cubic-bezier(.75,0,.5,1) infinite normal;-o-animation:shadow 2.5s cubic-bezier(.75,0,.5,1) infinite normal;animation:shadow 2.5s cubic-bezier(.75,0,.5,1) infinite normal;position:relative;bottom:-1.75em;height:.25em;border-radius:50%;background-color:#322b27}@-webkit-keyframes spinner{50%{-webkit-border-radius:50%;-webkit-transform:scale(.5) rotate(360deg);background-color:#13a3a5}100%{-webkit-transform:scale(1) rotate(720deg);background-color:#db2f00}}@-moz-keyframes spinner{50%{-moz-border-radius:50%;-moz-transform:scale(.5) rotate(360deg);background-color:#13a3a5}100%{-moz-transform:scale(1) rotate(720deg);background-color:#db2f00}}@-moz-keyframes spinner{50%{-moz-border-radius:50%;-moz-transform:scale(.5) rotate(360deg);background-color:#13a3a5}100%{-moz-transform:scale(1) rotate(720deg);background-color:#db2f00}}@-o-keyframes spinner{50%{-o-border-radius:50%;-o-transform:scale(.5) rotate(360deg);background-color:#13a3a5}100%{-o-transform:scale(1) rotate(720deg);background-color:#db2f00}}@keyframes spinner{50%{border-radius:50%;transform:scale(.5) rotate(360deg);background-color:#13a3a5}100%{transform:scale(1) rotate(720deg);background-color:#db2f00}}@-webkit-keyframes shadow{50%{-webkit-transform:scale(.5);background-color:#322b27}}@-moz-keyframes shadow{50%{-moz-transform:scale(.5);background-color:#322b27}}@-moz-keyframes shadow{50%{-moz-transform:scale(.5);background-color:#322b27}}@-o-keyframes shadow{50%{-o-transform:scale(.5);background-color:#322b27}}@keyframes shadow{50%{transform:scale(.5);background-color:#322b27}}@-webkit-keyframes text{0%{-webkit-transform:scale(1,1)}50%{-webkit-transform:scale(.5,.5)}100%{-webkit-transform:scale(1,1)}}@-moz-keyframes text{0%{-moz-transform:scale(1,1)}50%{-moz-transform:scale(.5,.5)}100%{-moz-transform:scale(1,1)}}@-moz-keyframes text{0%{-moz-transform:scale(1,1)}50%{-moz-transform:scale(.5,.5)}100%{-moz-transform:scale(1,1)}}@-o-keyframes text{0%{-o-transform:scale(1,1)}50%{-o-transform:scale(.5,.5)}100%{-o-transform:scale(1,1)}}@keyframes text{0%{transform:scale(1,1)}50%{transform:scale(.5,.5)}100%{transform:scale(1,1)}}

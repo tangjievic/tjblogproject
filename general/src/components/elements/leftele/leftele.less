@@ -1,36 +1,31 @@
+@import './mycard/index.less';
+@import './reward/index.less';
 .left_planels{
     position: relative;
-    width: 280px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding-bottom:20px;
+    // width: 280px;
+    box-sizing: border-box;
+    //padding-bottom:20px;
     background-color: #ffffff;
     border: 1px solid #e6e6e6;
-    -webkit-box-shadow: -10px -10px 0 #c0e3e7;
-            box-shadow: -10px -10px 0 #c0e3e7;
-    margin-left:10px;
-    margin-top: 10px;
+    // padding: 20px;
+    color: #444443;
+    font-size: 14px;
     margin-bottom: 20px;
-    padding: 20px;
     h3{
-        position: relative;
-        margin-bottom: 15px;
-        font-size: 18px;
-        border-left: 4px solid #333;
-        padding-left: 8px;
-        &::after{
-            content: '';
-            display: block;
-            width: 100%;
-            position: absolute;
-            border-bottom: 1px solid rgba(151, 151, 151, 0.2);
-            bottom: -10px;left: -4px;
-        }
+        padding: 20px;
+        color: #444443;
     }
     .msglist{
+        padding: 20px;
         .msglist__item{
             margin-bottom: 15px;
-            color: #333;
+            color: #444443;
+            &:last-child{
+                margin-bottom: 0;
+            }
         }
+    }
+    .reward-desc{
+        padding: 20px;
     }
 }

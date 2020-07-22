@@ -1,8 +1,0 @@
-.vscode
-.idea
-node_modules/
-dist
-.DS_Store
-package-lock.json
-git_stats
-upload.js

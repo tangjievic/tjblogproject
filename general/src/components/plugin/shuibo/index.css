@@ -1,0 +1,24 @@
+.shuibo_box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.plugin-circle {
+    animation: plugin-circle_grow 3s linear;
+    border: 1px solid rgba(90, 194, 231, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+@keyframes plugin-circle_grow {
+    to {
+        opacity: 0;
+        transform: scale(5);
+    }
+}

@@ -1,3 +1,0 @@
-<view class= "ws-class ws-flex {{dir?'ws-dir_'+dir:'ws-dir_left'}} {{main?'ws-main_'+main:'ws-main_around'}} {{cross?'ws-cross_'+cross:'ws-cross_stretch'}} {{wrap?'ws-wrap_'+wrap:'ws-wrap_nowrap'}}">
-    <slot></slot>
-</view>

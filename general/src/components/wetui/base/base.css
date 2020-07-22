@@ -1,0 +1,64 @@
+body {
+    font-family: "PingFang SC", "Microsoft yahei", arial, "PingFangSC-Regular", sans-serif;
+}
+
+
+/* 背景基础颜色 */
+
+.wet-bgcolor__gray {
+    background-color: #eff3f5;
+}
+
+.wet-bgcolor__default {
+    background-color: #ffffff;
+}
+
+.wet-bgcolor__primary {
+    /* #5AC2E7 */
+    background-color: rgb(90, 194, 231);
+}
+
+.wet-bgcolor__success {
+    /* #46D4A4 */
+    background-color: rgb(106, 240, 208)
+}
+
+.wet-bgcolor__info {
+    /* #4E5E6E */
+    background-color: rgb(78, 94, 110)
+}
+
+.wet-bgcolor__warn {
+    /* #E36F40 */
+    background-color: rgb(227, 111, 64);
+}
+
+.wet-bgcolor__risk {
+    /* #FA4E4E */
+    background-color: rgb(250, 78, 78);
+}
+
+
+/* 定位 */
+
+.wet-fiexd__lt {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/* 清除浮动 */
+
+.wxt-clear_ft::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* div水平居中 */
+
+.wxt-center__leve {
+    margin: 0 auto;
+}

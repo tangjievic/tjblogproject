@@ -1,105 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <!-- head模块设置[[ -->
-    ${require('html-loader!../../components/elements/head/index.html')}
+<!-- head模块设置[[ -->
+<%= require('html-loader!../../components/elements/head/index.html') %>
     <!-- head模块设置]] -->
-<body>
-    <div class="loading_box">
-        <div id="artmsg" data-isvip="1" data-islogin="1"></div>
-        <div class="loader">
-            <span class="text">Loading</span>
-            <span class="spinner"></span>
-        </div>
-    </div>
-    <div  class="pageview">
-        <!-- head导航栏设置[[ -->
-        ${require('html-loader!../../components/plugins/headnav/index.html')}
-        <!-- head导航栏设置]] -->
 
-        <!-- 主体结构[[ -->
-        <section class="page_content">
-            <aside class="content__left ">
-                ${require('html-loader!../../components/elements/leftele/mycard/index.html')}
-                ${require('html-loader!../../components/elements/leftele/search/index.html')}
-                ${require('html-loader!../../components/elements/leftele/listdiv/index.html')}
-                ${require('html-loader!../../components/elements/leftele/hotart/index.html')}
-                ${require('html-loader!../../components/elements/leftele/reward/index.html')}
-            </aside>
+    <body class="wet-bgcolor__gray">
+        <div class="page_view">
+            <%= require('html-loader!../../components/wetui/nav/index.html') %>
+                <div class="wet-pc page_content">
+                    <!-- 公司基本简介[[ -->
+                    <div class="content_box wxt-clear_ft">
+                        <div class="box_center">
+                            <div class="center_content">
+                                <h2 class="content_panel content_title">前端学习·分享</h2>
+                                <div class="content_panel">
+                                    <%= require('html-loader!../../components/plugin/sliderbanner/index.html') %>
+                                </div>
+                                <div class="content_panel blog_msg">
+                                    <h4 class="blog_msg__title">博客简介</h4>
+                                    <p class="blog_msg__desc">
+                                        简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。本博客主要是webpack4，HTML5,CSS3,JS等技术实现的，本博客不支持ie10以下的，ie11及新版的ie才会有最佳的呈现效果。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混用，毕竟没做服务器端渲染，要普通网页来增加SEO的能力。
+                                    </p>
+                                </div>
+                                <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                                    <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
 
-            <div class="content__right">
-                <div class="boder_decorate_a">
-                    <div class="boder_decorate_b">
-                        <div class="right__planel">
-                            <div class="right__mian_box">
-                                <h2 class="index-page_title">前端学习分享</h2>
-                                <section class="right_main_hd">
-                                    <!-- 轮播图[[ -->
-                                    <div class="slider-show">
-                                        ${require('html-loader!../../components/plugins/slidershow/index.html')}
-                                    </div>
-                                     <!-- 轮播图]] -->
-                                    <div class="right_tip">
-										<div class="tip_item">
-											<h3>[公告:]</h3>
-											<p class="item__desc">网站功能完善中......</p>
-										</div>
-										<div class="tip_item tip_updata">
-											<h3>[近期规划:]</h3>
-											<p class="item__desc">DOTA2谁与争锋</p>
-										</div>
-										<div class="tip_item">
-											<h3>[更新:]</h3>
-											<p class="item__desc">2020/5/10,更新</p>
-										</div>
-									</div>
-                                </section>
-
-                                <section class="blog_msg border_base_1">
-									<h4 class="blog_msg__title">个人博客pc端</h4>
-									<p class="blog_msg__desc">
-										简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。本博客主要是webpack4，HTML5,CSS3,JS等技术实现的，本博客不支持ie10以下的，ie11及新版的ie才会有最佳的呈现效果。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混用，毕竟没做服务器端渲染，要普通网页来增加SEO的能力。
-									</p>
-									<div class="btn_wrapper">
-										<button class="btn btn_default write_type gowxapp">微信小程序版</button>
-										<button class="btn btn_primary write_type gobloggit">blog前端代码git地址</button>
-									</div>
-                                </section>
-                                
-                                <section class="msg_tab border_base_1">
-                                    ${require('html-loader!../../components/elements/tab/index.html')}
-                                </section>
-                                <section class="ad_level border_base_1">
-									<img src="${require('../../../static/images/ad.gif')}"/>
-                                </section>
-                                
-                                <section>
-									${require('html-loader!../../components/elements/artlist/index.html')}
-								</section>
+                                        <%= require('html-loader!../../components/elements/righttool/index.html') %>
                             </div>
-                            <!-- 右侧主要内容区域]] -->
-                            ${require('html-loader!../../components/elements/righttool/index.html')}
-                            <!-- 右侧主要内容区域[[ -->
+                            <div class="center_content" style="margin-top: 20px;">
+                                <%= require('html-loader!../../components/elements/artlist/index.html') %>
+                                    <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                                        <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
+                            </div>
+                            <div class="centent_footer blog_boder">
+                                <%= require('html-loader!../../components/plugin/showreel/index.html') %>
+                            </div>
                         </div>
+                        <aside class="box_left">
+                            <%= require('html-loader!../../components/elements/leftele/mycard/index.html') %>
+                                <%= require('html-loader!../../components/elements/leftele/dynamic/index.html') %>
+                                    <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
+                                        <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
+                        </aside>
+                        <%= require('html-loader!../../components/elements/asideleft/index.html')%>
                     </div>
-                </div>
+                    <!-- 公司基本简介]] -->
 
-                <div class="bg-layout ad_level layout-model">
-					<img src="${require(`../../../static/images/ad.gif`)}"/>
                 </div>
-                
-                <div class="bg-layout layout-model">
-					${require('html-loader!../../components/plugins/showreel/index.html')}
-				</div>
-            </div>
-        </section>
-        <!-- 主体结构]] -->
-        <!-- 脚部设置[[ -->
-        ${require('html-loader!../../components/elements/footer/index.html')}
-        <!-- 脚部设置]] -->
-    </div>
-    <!-- 页面背景设置[[ -->
-    ${require('html-loader!../../components/elements/bgdiv/index.html')}
-    ${require('html-loader!../../components/plugins/rightemenu/index.html')}
-    <!-- 页面背景设置]] -->
-</body>
+                <!-- 脚部[[ -->
+                <%= require('html-loader!../../components/elements/footer/index.html') %>
+                    <!-- 脚部]] -->
+        </div>
+    </body>
+
 </html>

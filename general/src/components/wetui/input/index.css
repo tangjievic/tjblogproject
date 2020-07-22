@@ -1,0 +1,77 @@
+.wxt_input {
+    width: 100%;
+    line-height: normal;
+    display: inline-table;
+    border-collapse: separate;
+    border-spacing: 0;
+    position: relative;
+    font-size: 14px;
+}
+
+.wxt_input.wxt_input__group .input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.wxt_input.wxt_input__group .input_sub {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+.wxt_input .input {
+    vertical-align: middle;
+    display: table-cell;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    font-size: inherit;
+    height: 32px;
+    line-height: 32px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    width: 100%;
+}
+
+.wxt_input .input:focus {
+    outline: none;
+    border-color: #5AC2E7!important;
+}
+
+.wxt_input .input:hover {
+    border-color: rgba(96, 98, 102, 0.5);
+}
+
+.wxt_input .input_sub {
+    position: relative;
+    width: 80px;
+    display: table-cell;
+}
+
+.wxt_input .input_sub .wxt-btn {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+    border: 1px solid rgb(90, 194, 231);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 15px;
+    background-color: rgb(90, 194, 231);
+    color: #ffffff;
+}
+
+.wxt_input .input_sub .wxt-btn:active {
+    background-color: rgb(90, 194, 231, 0.6);
+}
