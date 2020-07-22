@@ -1,33 +1,26 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
+import RouterItem from './data.d';
+import LeftNavRouter from './leftnav';
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path:'/',
-    name:'loginpage',
-    //component:()=>import('../views/loginpage/loginpage.vue'),
-    // meta:{
-    //   keepalive:false
-    // },
-  },
-  // {
-  //   path:'/homepage',
-  //   name:'homepage',
-  //   component:()=>import('../views/homepage/homepage.vue'),
-  //   meta:{
-  //     keepalive:false
-  //   },
-  //   children:[
-  //     {
-  //       path:"sliderpage",
-  //       name:'sliderpage',
-  //       component:()=>import('../views/sliderpage/sliderpage.vue'),
-  //       meta:{
-  //         keepalive:true,
-  //       }
-  //     },
+const routes:RouterItem[] = [
+    {
+        path:'/login',
+        name:'login',
+        component:()=>import('../views/login/Login.vue')
+    },
+    {
+        path:'/',
+        component:()=>import('../views/main/Main.vue'),
+        children:LeftNavRouter
+
+    },
+    {
+        path:'*',
+        component:()=>import('../views/404.vue')
+    },
+
   //     {
   //       path:'adminlist',
   //       name:'adminlist',

@@ -1,0 +1,1 @@
+import RouterItem from './data.d';
