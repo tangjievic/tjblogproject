@@ -20,7 +20,8 @@ import {
   Radio,
   Row,
   Col,
-  Divider
+  Divider,
+  Dropdown
 } from 'ant-design-vue'
 
 Vue.use(Form);
@@ -37,6 +38,7 @@ Vue.use(Input);
 Vue.use(Row);
 Vue.use(Col);
 Vue.use(Divider);
+Vue.use(Dropdown);
 Vue.component(Button.name,Button);
 Vue.component(Alert.name,Alert);
 Vue.component(Icon.name,Icon);

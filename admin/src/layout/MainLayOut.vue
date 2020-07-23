@@ -15,11 +15,12 @@
         position: relative;
         header{
             position: absolute;
+            z-index: 100;
             top: 0;left: 0;
             right: 0;
             height: 65px;
             background-color:#ffffff;
-                box-shadow: 0 1px 4px rgba(0,21,41,.08);
+            box-shadow: 0 1px 4px rgba(0,21,41,.08);
         }
         .content{
             position: absolute;
@@ -33,6 +34,9 @@
             }
         }
     }
+    .panel_breadcrumb{
+        padding: 20px 20px 0 20px;
+    }
 }
 </style>
 <template>
@@ -42,9 +46,17 @@
         </div>
         <div class="panel_right">
             <header>
-
+                <header-nav></header-nav>
             </header>
             <section class="content">
+                <div class="panel_breadcrumb">
+                    <a-breadcrumb>
+                        <a-breadcrumb-item>Home</a-breadcrumb-item>
+                        <a-breadcrumb-item>Application Center</a-breadcrumb-item>
+                        <a-breadcrumb-item>Application List</a-breadcrumb-item>
+                        <a-breadcrumb-item>An Application</a-breadcrumb-item>
+                    </a-breadcrumb>
+                </div>
                 <slot></slot>
                 <footer> tangjie-blog管理平台 </footer>
             </section>
@@ -54,9 +66,11 @@
 <script lang="ts">
 import Vue from 'vue'
 import LeftNav from './LeftNav.vue'
+import HeaderNav from './HeaderNav.vue'
 export default Vue.extend({
     components:{
-        LeftNav
+        LeftNav,
+        HeaderNav
     },
     data(){
         return{

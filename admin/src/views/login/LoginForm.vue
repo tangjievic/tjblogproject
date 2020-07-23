@@ -52,9 +52,9 @@ export default Vue.extend({
         }
     },
     methods: {
-        handleSubmit(e) {
+        handleSubmit(e:any) {
             e.preventDefault();
-            this.form.validateFields((err, values) => {
+            this.form.validateFields((err:any, values:any) => {
                 if (!err) {
                     console.log('Received values of form: ', values);
                     if(values.password !== values.rpassword){

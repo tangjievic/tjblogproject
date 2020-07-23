@@ -10,7 +10,7 @@
 </style>
 <script lang="ts">
 import Vue from "vue";
-import leftnav from '../router/leftnav';
+import { Router as leftnav} from '../router/leftnav';
 export default Vue.extend({
     data() {
         return {
@@ -23,23 +23,29 @@ export default Vue.extend({
     created(){
         let root_index = 0;
         leftnav.forEach((item:any)=>{
-            if(item.children){
+            if(item.multiple){
                 this.rootSubmenuKeys.push(root_index);
                 root_index ++ ;
             }
         })
     },
     methods: {
-        onOpenChange(openKeys) {
+        onOpenChange(openKeys:any) {
             const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
+            console.log(latestOpenKey)
             if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-                this.openKeys = openKeys;
+                this.openKeys = latestOpenKey ? [latestOpenKey] : [];
             } else {
                 this.openKeys = latestOpenKey ? [latestOpenKey] : [];
             }
+            console.log(this.openKeys)
         },
-        goPage(item){
-            console.log(item)
+        goPage(item:any){
+            if(this.$route.name !== item.key){
+                this.$router.push({
+                    name:item.key
+                })  
+            }
         }
     },
 });
@@ -59,13 +65,13 @@ export default Vue.extend({
         @click="goPage"
         >
             <template v-for="(item,index) in leftnav">
-                <a-menu-item :key="item.name" v-if="!item.children">
+                <a-menu-item :key="item.name" v-if="!item.multiple">
                     <a-icon :type="item.icon" />
                     <span>{{item.label}}</span>
                 </a-menu-item>
                 <a-sub-menu :key="index" v-else>
                     <span slot="title"><a-icon :type="item.icon" /><span>{{item.label}}</span></span>
-                    <a-menu-item :key="its.name" v-for="its in item.children">
+                    <a-menu-item :key="its.name" v-for="its in item.multiple">
                         {{its.label}}
                     </a-menu-item>
                 </a-sub-menu>

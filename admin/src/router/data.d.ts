@@ -2,7 +2,8 @@ interface MetaItem{
     keepalive?:boolean;
 }
 interface RedirectItem{
-    name:string;
+    name?:string;
+    path?:string
 }
 export default interface RouterItem {
     path:string;
@@ -13,5 +14,5 @@ export default interface RouterItem {
     meta?:MetaItem;
     redirect?:RedirectItem;
     children?:RouterItem[];
-    
+    multiple?:RouterItem[];
 }

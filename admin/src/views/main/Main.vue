@@ -23,7 +23,7 @@ export default Vue.extend({
 <template>
     <main-layout>
         <div class="main_panel-box">
-
+            <router-view></router-view>
         </div>
     </main-layout>
 </template>
