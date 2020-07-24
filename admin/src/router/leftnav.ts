@@ -16,24 +16,30 @@ let Router:RouterItem[] = [
         name:'admin',
         label:'管理员类',
         icon:'github',
-        component:()=>import('../views/main/admin/Admin.vue')
+        component:()=>import('../views/main/admin/Admin.vue'),
+        meta:{
+            keepalive:true,
+        }
     },
     {
         path:"user",
         name:'user',
         label:"用户管理",
         icon:'user',
-        component:()=>import('../views/main/user/User.vue')
+        component:()=>import('../views/main/user/User.vue'),
+        meta:{
+            keepalive:true,
+        }
     },
     {
         path:'',
-        label:"分类/标签",
+        label:"分类&标签",
         icon:'appstore',
         multiple:[
             {
                 path:'/blogct',
                 name:'blogct',
-                label:'博文分类/标签',
+                label:'博文分类&标签',
                 component:()=>import('../views/main/catetag/BlogCatetag.vue')
             }
         ]

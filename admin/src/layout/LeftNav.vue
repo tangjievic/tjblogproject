@@ -10,6 +10,7 @@
 </style>
 <script lang="ts">
 import Vue from "vue";
+import { mapMutations } from 'vuex'
 import { Router as leftnav} from '../router/leftnav';
 export default Vue.extend({
     data() {
@@ -17,19 +18,73 @@ export default Vue.extend({
             defaultSelectedKeys:[leftnav[0].name],
             rootSubmenuKeys: [],
             openKeys: [],
-            leftnav:leftnav
+            leftnav:leftnav,
+            selectedKeys:null
         };
     },
     created(){
         let root_index = 0;
-        leftnav.forEach((item:any)=>{
+        this.selectedKeys  = this.$route.name //初始化导航高亮
+        leftnav.forEach((item:any,index:number)=>{
             if(item.multiple){
                 this.rootSubmenuKeys.push(root_index);
                 root_index ++ ;
+                item.multiple.forEach((its:any)=>{
+                    if(its.name === this.$route.name){
+                        this.openKeys = [index]
+                    }
+                })
             }
         })
+        this.changeBreadCrumb()
+    },
+    watch: {
+        $route(value:any){
+            this.selectedKeys  = value.name
+            leftnav.forEach((item:any,index:number)=>{
+                if(item.multiple){
+                    item.multiple.forEach((its:any)=>{
+                        if(its.name === value.name){
+                            this.openKeys = [index]
+                        }
+                    })
+                }
+            })
+            this.changeBreadCrumb()
+        }
     },
     methods: {
+        ...mapMutations({
+			setBreadState:'breadcrumb/setBreadState'
+        }),
+        changeBreadCrumb(){
+            let breadarray:any[] = [];
+            for(let i = 0;i<leftnav.length;i++){
+            if( this.$route.name === leftnav[i].name ){
+                breadarray.push(leftnav[i])
+                break;
+            }else{
+                let list:any = leftnav[i]
+                if(list.multiple){
+                    let result = true;
+                    list.multiple.forEach((item:any,index:number) =>{
+                        if(item.name === this.$route.name){
+                            breadarray.push(leftnav[i])
+                            breadarray.push(item);
+                            result = false
+                            return;
+                        }
+                    })
+                    if(!result){
+                        break;
+                    }
+                }else{
+                    continue;
+                }
+            }
+        }
+            this.setBreadState(breadarray)
+        },
         onOpenChange(openKeys:any) {
             const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
             console.log(latestOpenKey)
@@ -58,9 +113,9 @@ export default Vue.extend({
         <a-menu
         mode="inline"
         theme="dark"
-        :defaultSelectedKeys="defaultSelectedKeys"
         :open-keys="openKeys"
         style="width: 256px"
+        :selectedKeys="[`${selectedKeys}`]"
         @openChange="onOpenChange"
         @click="goPage"
         >

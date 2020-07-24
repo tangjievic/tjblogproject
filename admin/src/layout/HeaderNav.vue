@@ -15,12 +15,18 @@
 </style>
 <script lang="ts">
 import Vue from 'vue'
+import {mapState} from 'vuex'
 export default Vue.extend({
     data(){
         return{
 
         }
     },
+    computed:{
+        ...mapState({
+            adminmsg:(state:any)=>state.adminmsg,
+        })
+	},
     methods:{
         handleMenuClick(e:any) {
             console.log('click', e);
@@ -33,11 +39,9 @@ export default Vue.extend({
         <div class="username">
             <a-dropdown>
                 <a-menu slot="overlay" @click="handleMenuClick">
-                    <a-menu-item key="1"> <a-icon type="user" />1st menu item </a-menu-item>
-                    <a-menu-item key="2"> <a-icon type="user" />2nd menu item </a-menu-item>
-                    <a-menu-item key="3"> <a-icon type="user" />3rd item </a-menu-item>
+                    <a-menu-item key="1">退出登陆</a-menu-item>
                 </a-menu>
-                <a-button style="margin-left: 8px"> 用户名 <a-icon type="down" /> </a-button>
+                <a-button style="margin-left: 8px"> {{adminmsg.adminname}} <a-icon type="down" /> </a-button>
             </a-dropdown>
         </div>
     </div>

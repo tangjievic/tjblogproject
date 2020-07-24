@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import './mock/index.ts';
 import {
   Button,
   Input,
@@ -43,8 +44,7 @@ Vue.component(Button.name,Button);
 Vue.component(Alert.name,Alert);
 Vue.component(Icon.name,Icon);
 Vue.prototype.$message = message;
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   router,

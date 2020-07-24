@@ -6,3 +6,4 @@
 <style lang="less">
 @import './libs/reset.less';
 </style>
+

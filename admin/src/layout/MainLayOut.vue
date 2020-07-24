@@ -28,15 +28,28 @@
             left: 0;right: 0;
             bottom: 0;
             overflow: auto;
+            display: flex;
+            flex-direction: column;
             footer{
-                text-align: center;
-                padding: 20px;
+                flex: 0 0 auto;
+                line-height: 40px;
+                height: 40px;
+                text-align: center
+            }
+            .slot_box{
+                flex:1;
+                margin: 20px 20px 0 20px;
+                background-color: #ffffff;
+            }
+            .panel_breadcrumb{
+                flex: 0 0 auto;
+                padding: 20px 20px 0 20px;
             }
         }
     }
-    .panel_breadcrumb{
-        padding: 20px 20px 0 20px;
-    }
+    // .panel_breadcrumb{
+    //     padding: 20px 20px 0 20px;
+    // }
 }
 </style>
 <template>
@@ -51,13 +64,12 @@
             <section class="content">
                 <div class="panel_breadcrumb">
                     <a-breadcrumb>
-                        <a-breadcrumb-item>Home</a-breadcrumb-item>
-                        <a-breadcrumb-item>Application Center</a-breadcrumb-item>
-                        <a-breadcrumb-item>Application List</a-breadcrumb-item>
-                        <a-breadcrumb-item>An Application</a-breadcrumb-item>
+                        <a-breadcrumb-item v-for="(item,index) in breadcrumb" :key="index">{{item.label}}</a-breadcrumb-item>
                     </a-breadcrumb>
                 </div>
-                <slot></slot>
+                <div class="slot_box">
+                    <slot></slot>
+                </div>
                 <footer> tangjie-blog管理平台 </footer>
             </section>
         </div>
@@ -65,6 +77,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+import {mapState} from 'vuex'
 import LeftNav from './LeftNav.vue'
 import HeaderNav from './HeaderNav.vue'
 export default Vue.extend({
@@ -72,6 +85,11 @@ export default Vue.extend({
         LeftNav,
         HeaderNav
     },
+    computed:{
+        ...mapState({
+            breadcrumb:(state:any)=>state.breadcrumb.list,
+        })
+	},
     data(){
         return{
 
