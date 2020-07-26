@@ -23,8 +23,8 @@ export default Vue.extend({
         };
     },
     created(){
-        let root_index = 0;
-        this.selectedKeys  = this.$route.name //初始化导航高亮
+        let root_index:number = 0;
+        (this as any).selectedKeys  = this.$route.name //初始化导航高亮
         leftnav.forEach((item:any,index:number)=>{
             if(item.multiple){
                 this.rootSubmenuKeys.push(root_index);
@@ -40,7 +40,7 @@ export default Vue.extend({
     },
     watch: {
         $route(value:any){
-            this.selectedKeys  = value.name
+            (this as any).selectedKeys  = value.name
             leftnav.forEach((item:any,index:number)=>{
                 if(item.multiple){
                     item.multiple.forEach((its:any)=>{
@@ -86,14 +86,12 @@ export default Vue.extend({
             this.setBreadState(breadarray)
         },
         onOpenChange(openKeys:any) {
-            const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1);
-            console.log(latestOpenKey)
-            if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-                this.openKeys = latestOpenKey ? [latestOpenKey] : [];
+            const latestOpenKey:any = openKeys.find( (key:any) => this.openKeys.indexOf(key) === -1);
+            if ((this as any).rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+                (this as any).openKeys = latestOpenKey ? [latestOpenKey] : [];
             } else {
-                this.openKeys = latestOpenKey ? [latestOpenKey] : [];
+                (this as any).openKeys = latestOpenKey ? [latestOpenKey] : [];
             }
-            console.log(this.openKeys)
         },
         goPage(item:any){
             if(this.$route.name !== item.key){

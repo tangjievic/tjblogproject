@@ -11,6 +11,7 @@ import {
   Layout,
   Icon,
   message,
+  Tag,
   Tabs,
   Select,
   Modal,
@@ -24,7 +25,7 @@ import {
   Divider,
   Dropdown
 } from 'ant-design-vue'
-
+Vue.use(Tag);
 Vue.use(Form);
 Vue.use(Menu);
 Vue.use(Layout);

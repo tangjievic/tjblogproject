@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 
 let SEVERURL = ''; //服务器请求地址
 if(process.env.NODE_ENV == 'development'){
-    SEVERURL = 'http://www.tjcms.com/index.php'
+    SEVERURL = 'http://www.tangjietop.cn/index.php'
 }else{
     SEVERURL = 'https://www.tangjietop.cn/index.php'
 }
@@ -25,7 +25,19 @@ let cgiGet = (api:string,params:any) => {
         }).then((res:any)=>{
             resolve(res.data)
         }).catch((error:any)=>{
-            let data = error.response.data;
+            //console.log(error)
+            let data:any = null;
+            if(error.responese){
+                data = error.response.data
+            }else{
+                Vue.prototype.$message.error('系统繁忙，请稍后再试')
+                setTimeout(()=>{
+                    Router.push({name:"login",params:{
+                        type:'relogin'
+                    }})
+                },1000)
+                return
+            }
             if(error.response.status === 500){
                 Vue.prototype.$message.error(data.message)
             }else{
@@ -59,7 +71,18 @@ let cgiPost = (api:string,params:any) => {
         }).then((res:any)=>{
             resolve(res.data)
         }).catch((error:any)=>{
-            let data = error.response.data;
+            let data:any = null;
+            if(error.responese){
+                data = error.response.data
+            }else{
+                Vue.prototype.$message.error('系统繁忙，请稍后再试')
+                setTimeout(()=>{
+                    Router.push({name:"login",params:{
+                        type:'relogin'
+                    }})
+                },1000)
+                return
+            }
             if(error.response.status === 500){
                 Vue.prototype.$message.error(data.message)
             }else{

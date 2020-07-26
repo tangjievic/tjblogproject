@@ -1,6 +1,3 @@
-<style lang="less" scoped>
-
-</style>
 <script lang="ts">
 import Login from './login';
 export default Login 
@@ -8,6 +5,6 @@ export default Login
 
 <template>
     <login-layout>
-        <login-form></login-form>
+        <login-form @getLoginData="subData"></login-form>
     </login-layout>
 </template>

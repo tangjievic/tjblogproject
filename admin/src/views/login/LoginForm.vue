@@ -56,10 +56,15 @@ export default Vue.extend({
             e.preventDefault();
             this.form.validateFields((err:any, values:any) => {
                 if (!err) {
-                    console.log('Received values of form: ', values);
+                    //console.log('Received values of form: ', values);
                     if(values.password !== values.rpassword){
                         this.$message.error('前后密码输入不一致，验证失败');
+                        return
                     }
+                    (this as any).$emit("getLoginData", {
+                        username:values.adminname,
+                        password:values.password
+                    });
                 }
             });
         },
@@ -80,12 +85,12 @@ export default Vue.extend({
                     />
                 </a-form-item>
                 <a-form-item label="登陆密码">
-                    <a-input
+                    <a-input-password 
                     v-decorator="['password', { rules: [{ required: true, message: '请输入密码!' }] }]"
                     />
                 </a-form-item>
                  <a-form-item label="密码验证">
-                    <a-input
+                    <a-input-password 
                     v-decorator="['rpassword', { rules: [{ required: true, message: '请再次输入密码!' }] }]"
                     />
                 </a-form-item>

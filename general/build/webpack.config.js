@@ -28,8 +28,8 @@ module.exports = {
     // 指定入口文件
     // 这里我们在src文件夹下创建一个index.ts
     entry: {
-        //index: entryMode('index')
-        //list: entryMode('list')
+        index: entryMode('index'),
+        lists: entryMode('lists'),
         art: entryMode('art')
     },
     // 指定输出文件名
@@ -127,8 +127,8 @@ module.exports = {
         new ExtractTextPlugin('css/[name].css'),
         new OptimizeCssAssetsPlugin(),
         // 这里我们指定编译需要用模板，模板文件是./src/template/index.html，所以接下来我们要创建一个index.html文件
-        //outputHtml('index')
-        //outputHtml('list')
-        outputHtml("art")
+        outputHtml('index'),
+        outputHtml('lists'),
+        outputHtml("art"),
     ]
 };

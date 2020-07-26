@@ -3,7 +3,7 @@ import admin from './admin';
 import user from './user';
 // Mock函数
 const { mock } = Mock
-let is_mock = true //是否启用mock
+let is_mock = false //是否启用mock
 Mock.setup({
     timeout: 400
 })

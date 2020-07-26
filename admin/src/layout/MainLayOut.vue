@@ -47,9 +47,6 @@
             }
         }
     }
-    // .panel_breadcrumb{
-    //     padding: 20px 20px 0 20px;
-    // }
 }
 </style>
 <template>
