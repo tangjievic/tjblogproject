@@ -6,7 +6,7 @@ function lisenSroll (){
     let document_height:any = $(document).height()
     $(document).scroll(()=>{
        let scroll_top:any = $(window).scrollTop()
-       console.log(document_height - scroll_top)
+       //console.log(document_height - scroll_top)
        if(scroll_top>360){
             if((document_height - scroll_top)<1050){
                 $('.toc_box').css({

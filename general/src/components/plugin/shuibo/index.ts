@@ -1,6 +1,6 @@
 import './index.css';
 const box = document.createElement('div');
-box.classList.add('shuibo_box');
+box.classList.add('shuibo_box','wet-pc');
 document.body.appendChild(box);
 function createCircle() {
     const circleEl = document.createElement('div');

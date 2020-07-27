@@ -24,7 +24,10 @@
 .wxt-btn.middle {
     padding: 8px 16px;
 }
-
+.wxt-btn.small{
+    padding: 6px 12px;
+    font-size: 12px;
+}
 .wxt-btn:hover {
     color: #5AC2E7;
     border-color: #5AC2E7;

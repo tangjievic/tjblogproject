@@ -30,8 +30,10 @@
                 margin-right: 20px;
             }
         }
-        h2{
+        .title{
             margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 600;
             span{
                 vertical-align: baseline;
             }
@@ -50,6 +52,9 @@
     }
     .art_msg{
         padding: 20px 20px 0 25px;
+        span{
+            margin-right: 10px;
+        }
     }
     .art_hd{
         min-height: 50px;
@@ -160,6 +165,167 @@
             text-align: center;
             padding: 20px;
             color: rgba(231,122,140,.5);
+        }
+    }
+}
+.wet-mb.mb_page{
+    /* 移动端模式 此部分用作移动端组件参考 */
+
+    .wet-mnav {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 45px;
+        background-color: #ffffff;
+        color: #464242;
+        box-shadow: 0 0 5px rgba(51,51,51,.3);
+        /* align-items: center;
+        text-align: center; */
+    }
+
+    .wet-mnav .back {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 35px;
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+
+    /* 移动端下划线一般设计 */
+
+
+    .wet-mnav .title {
+        font-size: 16px;
+        text-align: center;
+        height: 45px;
+        line-height: 45px;
+        width: 100%;
+    }
+
+    .wet-mnav .icon-back {
+        width:18px;
+        height:18px;
+        position: absolute;
+        top: 50%;
+        margin-top: -9px;
+        left: 9px;
+    }
+    .mb_art{
+        &::before{
+            content: '';
+            display: block;
+            height: 45px;
+        }
+        padding: .5rem;
+    }
+    .footer_comment{
+        position: fixed;
+        z-index: 100;
+        bottom: 0;left: 0;right: 0;
+        display: flex;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(51,51,51,.3);
+        padding: 8px 0.5rem;
+        .wxt_input{
+            flex:4;
+            display: flex;
+            .input{
+                flex: 3;
+                margin-right: 5px;
+            }
+            .wxt-btn{
+                flex: 1;
+            }
+        }
+        .icon_box{
+            margin-left: 5px;
+            flex:2;
+            display: flex;
+            align-items: center;
+            justify-content:flex-end;
+            .iconfont{
+                font-size: 22px;
+            }
+            .num{
+                font-size: 14px;
+                margin-left: 5px;
+                position: relative;
+                bottom: 3px;
+            }
+            .good{
+                margin-right: 15px;
+                vertical-align: top;
+            }
+        }
+    }
+    .mb_art-hd{
+        .title,.art_msg{
+            font-size: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .art_msg{
+            font-size: 14px;
+            margin: 10px 0;
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
+    .art_desc{
+        min-height: 50px;
+        color: #ffffff;
+        background: linear-gradient(to top left,#46b2ec,#6ecef1);
+        border-radius: 4px;
+        font-size: 14px;
+        position: relative;
+        overflow: hidden;
+        padding: 10px;
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(to top left,rgba(90, 194, 231,0.1),rgba(255, 255, 255,0.6));
+            left: -20px;
+            top: -5px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            
+        }
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to top left,rgba(90, 194, 231,0.1),rgba(255, 255, 255,0.3));
+            border-radius: 50%;
+        }
+    }
+    .art_deline{
+        border-bottom: 4px solid #40B8FA;
+        width: 100%;
+        margin: 20px auto 10px;
+        position: relative;
+        &::before{
+            content: '';
+            display: block;
+            width: 200px;
+            height: 10px;
+            border-top-left-radius: 20px;
+            position: absolute;
+            right: 0;
+            background-color: rgba(64, 184, 250,0.3);
+            top: -10px;
         }
     }
 }

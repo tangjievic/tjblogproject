@@ -5,8 +5,10 @@
     <!-- head模块设置]] -->
 
     <body class="wet-bgcolor__gray">
+        <%= require('html-loader!../../components/elements/pageloading/index.html') %>
         <div class="page_view">
             <%= require('html-loader!../../components/wetui/nav/index.html') %>
+                <!-- pc端布局 [[-->
                 <div class="wet-pc page_content">
                     <!-- 公司基本简介[[ -->
                     <div class="content_box wxt-clear_ft">
@@ -47,14 +49,99 @@
                     <!-- 公司基本简介]] -->
 
                 </div>
+                <!-- pc端布局 ]]-->
                 <!-- 手机版布局[[ -->
                 <div class="wet-mb mb_page">
-                    <%= require('html-loader!../../components/plugin/sliderbanner/index.html') %>
+                    <div class="wet_mb-bg">
+                        <div class="ball ball_1"></div>
+                        <div class="page_thd">
+                            <span>TANGJIE-BLOG</span>
+                            <span>·首页</span>
+                        </div>
+                        <div class="new_list">
+                            <%= require('html-loader!../../components/plugin/newlist/index.html') %>
+                        </div>
+                    </div>
+                    <div class="blog-desc">
+                        <section class="desc-item">
+                            <div style="position: relative;z-index: 10;">简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混搭。</div>
+                        </section>
+                        <section class="desc-item">
+                            <div class="item">
+                                十年磨一剑
+                            </div>
+                            <div class="item">
+                                一剑断九州
+                            </div>
+                        </section>
+                    </div>
+                    <div class="art-list">
+                        <div class="hot_box">
+                            <div class="hd">
+                                <span class="iconfont icon-fire"></span>
+                                <span>热门推荐</span>
+                            </div>
+                            <ul>
+                                <li class="hot_art-item">
+                                    <a class="item-link">
+                                        <div class="art_msg">
+                                            <span>作者·</span>
+                                            <span>时间·</span>
+                                            <span>作品分类</span>
+                                        </div>
+                                        <h2 class="title">标题</h2>
+                                        <div>简介</div>
+                                        <div style="text-align: right;">
+                                            <span class="iconfont icon-see" style="margin-right: 20px;">0</span>
+                                            <span class="iconfont icon-Good">0</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art-list">
+                        <div class="hot_box">
+                            <div class="hd">
+                                <span class="iconfont icon-book"></span>
+                                <span>全部文章</span>
+                            </div>
+                            <ul>
+                                <li class="hot_art-item">
+                                    <a class="item-link">
+                                        <div class="art_msg">
+                                            <span>作者·</span>
+                                            <span>时间·</span>
+                                            <span>作品分类</span>
+                                        </div>
+                                        <h2 class="title">标题</h2>
+                                        <div>简介</div>
+                                        <div style="text-align: right;">
+                                            <span class="iconfont icon-see" style="margin-right: 20px;">0</span>
+                                            <span class="iconfont icon-Good">0</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="articel_page">
+                                <ul class="pagination">
+                                    <li class="disabled"><span>«</span></li>
+                                    <li class="active"><span>1</span></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        TANGJIE-BLOG，个人前端技术分享网站
+                    </div>
                 </div>
                 <!-- 手机版布局]]  -->
                 <!-- 脚部[[ -->
                 <%= require('html-loader!../../components/elements/footer/index.html') %>
-                    <!-- 脚部]] -->
+                <!-- 脚部]] -->
         </div>
     </body>
 
