@@ -1,0 +1,7 @@
+<view class="wet-alert">
+    <view wx:for="{{alerts_array}}" wx:for-index="index" wx:for-item="item" wx:key="id"
+    class="alert_item {{item.type}} {{item.visible?'show':'hide'}}">
+        <view class="icon {{item.type}}"></view>
+        <text>{{item.content}}</text>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wet-btn":"../../wetui/base/btn/index",
+    "wet-alert":"../../wetui/base/alert/index"
+  }
+}

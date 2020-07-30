@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view style="margin:20px">
+    <view style="display:none">
+        <wet-btn bind:click="testClick" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="success" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="primary" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="info" round loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="warn" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="risk" loading>默认按钮</wet-btn>
+
+        <wet-btn bind:click="testClick" disabled>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="success" disabled round>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="primary" disabled round>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="info" disabled>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="warn" disabled>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="risk" disabled>默认按钮</wet-btn>
+
+        <wet-btn bind:click="testClick" plain>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="success" plain disabled>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="primary" plain>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="info" plain round loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="warn" plain loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="risk" plain disabled>默认按钮</wet-btn>
+
+        <wet-btn bind:click="testClick" >默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="success" inline size="small" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="primary" inline size="mini" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="info" inline size="middle" loading>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="warn" plain round disabled inline size="small">默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="risk" plain inline size="small">默认按钮</wet-btn>
+
+        <wet-btn bind:click="testClick" color="pink">默认按钮</wet-btn>
+    </view>
+    <view >
+        <wet-btn bind:click="showAlert" type="success">打开Alert</wet-btn>
+    </view>
+
+    <wet-alert id="wet-alert"></wet-alert>
+</view>

@@ -1,0 +1,37 @@
+{
+    "name": "tjblog",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "gulp",
+        "build": "gulp build",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "tangjie",
+    "license": "ISC",
+    "repository": {},
+    "devDependencies": {
+        "autoprefixer": "^9.8.5",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-changed": "^4.0.2",
+        "gulp-clean": "^0.4.0",
+        "gulp-json-transform": "^0.4.7",
+        "gulp-less": "^4.0.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-sync": "^0.1.4",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "gulp-uglify": "^3.0.2",
+        "husky": "^4.2.5",
+        "miniprogram-api-typings": "^2.8.3-1",
+        "path": "^0.12.7",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "stream-combiner2": "^1.1.1",
+        "tslint": "^6.1.2",
+        "typescript": "^3.3.3333"
+    }
+}
