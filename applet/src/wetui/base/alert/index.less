@@ -10,16 +10,16 @@
 .wet-alert{
     position: fixed;
     transform: translateZ(0);
-    top: 16rpx;
+    top: 0;
     left: 16rpx;
     right: 16rpx;
     z-index: 1000;
     .alert_item{
         position: relative;
         background-color: #ffffff;
-        margin-top: 20rpx;
-        padding: 20rpx;
-        border-radius: 16rpx;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 8px;
         font-size: @wet-fs-base;
         font-family: @wet-ftf-sans-serif;
         text-align: center;
@@ -52,7 +52,7 @@
         background-position: center;
         background-size: 100%;
         background-repeat: no-repeat;
-        margin-right: 16rpx;
+        margin-right: 16px;
         position: absolute;
         top:50%;
         margin-top: -8px;
@@ -74,7 +74,7 @@
 
 @keyframes AlertfadeIn{
     0%{opacity:0;
-        transform:translateY(-20rpx);
+        transform:translateY(-10px);
     }
     100%{
         opacity:1;
@@ -88,6 +88,6 @@
     }
     100%{
         opacity:0;
-        transform:translateY(-20rpx)
+        transform:translateY(-10px)
     }
 }

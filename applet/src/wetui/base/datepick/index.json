@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents":{
+        "wet-rollbox":"../rollbox/index",
+        "wet-btn":"../btn/index"
+    }
+}

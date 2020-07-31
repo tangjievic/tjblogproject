@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "wet-btn":"../../wetui/base/btn/index",
-    "wet-alert":"../../wetui/base/alert/index"
+    "wet-alert":"../../wetui/base/alert/index",
+    "wet-datepick":"../../wetui/base/datepick"
   }
 }

@@ -33,6 +33,7 @@
     </view>
     <view >
         <wet-btn bind:click="showAlert" type="success">打开Alert</wet-btn>
+        <wet-datepick></wet-datepick>
     </view>
 
     <wet-alert id="wet-alert"></wet-alert>
