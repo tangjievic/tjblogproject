@@ -8,6 +8,16 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    pickerList:[
+        {
+            label:'免确认',
+            value:false
+        },
+        {
+            label:'需确认',
+            value:true
+        },
+    ]
   },
   // 事件处理函数
   bindViewTap() {

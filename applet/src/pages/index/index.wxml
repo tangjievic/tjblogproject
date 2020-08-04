@@ -33,7 +33,8 @@
     </view>
     <view >
         <wet-btn bind:click="showAlert" type="success">打开Alert</wet-btn>
-        <wet-datepick></wet-datepick>
+        <!-- <wet-datepick></wet-datepick> -->
+        <!-- <wet-pick pickerList="{{pickerList}}"></wet-pick> -->
     </view>
 
     <wet-alert id="wet-alert"></wet-alert>

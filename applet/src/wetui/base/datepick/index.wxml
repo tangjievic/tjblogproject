@@ -1,51 +1,55 @@
-<view>
-    <view class="wet-mask show"></view>
-    <view class="wet-datepick">
-        <view class="box">
-            <view class="title">时间选择器</view>
-            <view class="row yearmonth_box">
-                <view class="left">
-                    <button class="btn" hover-class="wet-btn-hover" type="primary" bindtap="onTap"></button>
-                </view>
-                <view class="row yearmonth">
-                    <view class="year">
-                        <wet-rollbox option="{{year_option}}"></wet-rollbox>
-                    </view>
-                    <view class="month">
-                        <wet-rollbox option="{{month_option}}"></wet-rollbox>
-                    </view>
-                </view>
-                <view class="right">
-                    <button class="btn" hover-class="wet-btn-hover" type="primary" bindtap="onTap"></button>
-                </view>
+<wxs module="timeFormat">
+    function timeToFormat (value){
+        if(value<10){
+            return '0'+value
+        }else{
+            return value
+        }
+    }
+    module.exports ={
+        timeToFormat:timeToFormat
+    }
+</wxs>
+<view class="wet-picker">
+    <view class="picker_btn-box">
+        <button class="cancel" hover-class="wet-btn-hover">取消</button>
+        <view class="title">时间选择</view>
+        <button class="confirm" hover-class="wet-btn-hover">确定</button>
+    </view>
+    <view>
+        <view class="picker__columns">
+            <!-- 年 -->
+            <view data-type="year"  class="columns_item" style="transform:{{year.move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{year.selectnum===index?'selected':''}}" wx:for="{{maxyear-minyear+1}}" wx:for-index="index" wx:for-item="item" wx:key="index" data-value="{{minyear+index}}">{{minyear+index}}</view>
             </view>
-            <view class="time_show">
-                <view class="row">
-                    <view class="cell">日</view>
-                    <view class="cell">一</view>
-                    <view class="cell">二</view>
-                    <view class="cell">三</view>
-                    <view class="cell">四</view>
-                    <view class="cell">五</view>
-                    <view class="cell">六</view>
-                </view>
-                <view>
-                    <view class="row" wx:for="{{6}}" wx:for-index="rowid" wx:key="rowid">
-                        <view wx:for="{{7}}" wx:key="index" wx:for-index="index" class="cell">
-                            {{ rowid === 0?(index >=firstday_date?(idx+index+rowid*7-firstday_date):'x'):(idx+7*rowid+index-firstday_date>month_lastday?'xx':idx+7*rowid+index-firstday_date)}}
-                        </view>
-                    </view>
-                </view>
+            <!-- 月 -->
+            <view data-type="month" class="columns_item" style="transform:{{month.move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{month.selectnum===index?'selected':''}}" wx:for="{{12}}" wx:for-index="index" wx:key="index">{{timeFormat.timeToFormat(index+1)}}</view>
             </view>
-            <view class="datapicker_btn">
-                <view class="btn_box">
-                    <wet-btn size="small" wet-class="confrim">确认</wet-btn>
-                    <!-- <button>确认</button> -->
-                </view>
-                <view class="btn_box">
-                    <wet-btn size="small" wet-class="cancel">取消</wet-btn>
-                    <!-- <button>取消</button> -->
-                </view>
+            <!-- 日 -->
+            <view data-type="date" class="columns_item" style="transform:{{date.move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{date.selectnum===index?'selected':''}}" wx:for="{{month_lastday}}" wx:for-index="index" wx:for-item="item" wx:key="index" data-value="{{index+1}}">{{index+1}}</view>
+            </view>
+            <!-- 时 -->
+            <view data-type="hours" wx:if="{{type==='datetime'||type==='dateseconds'}}"
+            class="columns_item" style="transform:{{hours.move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{hours.selectnum===index?'selected':''}}" wx:for="{{24}}" wx:for-index="index" wx:key="index">{{timeFormat.timeToFormat(index)}}</view>
+            </view>
+            <!-- 分 -->
+            <view data-type="minutes" wx:if="{{type==='datetime'||type==='dateseconds'}}"
+            class="columns_item" style="transform:{{minutes.move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{minutes.selectnum===index?'selected':''}}" wx:for="{{60}}" wx:for-index="index" wx:key="index">{{timeFormat.timeToFormat(index)}}</view>
+            </view>
+            <!-- 秒 -->
+            <view data-type="seconds" wx:if="{{type==='dateseconds'}}"
+            class="columns_item" style="transform:{{seconds.move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{seconds.selectnum===index?'selected':''}}" wx:for="{{60}}" wx:for-index="index" wx:key="index">{{timeFormat.timeToFormat(index)}}</view>
             </view>
         </view>
     </view>

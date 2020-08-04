@@ -1,0 +1,15 @@
+<view class="wet-picker">
+    <view class="picker_btn-box">
+        <button class="cancel" hover-class="wet-btn-hover">取消</button>
+        <view class="title"></view>
+        <button class="confirm" hover-class="wet-btn-hover">确定</button>
+    </view>
+    <view>
+        <view class="picker__columns">
+            <view class="columns_item" style="transform:{{move_string}};transition:all 0.3s ease 0s"
+             bind:touchmove="moveIng" bind:touchstart="moveStart" bind:touchend="moveEnd">
+                <view class="picker_item {{selectnum===index?'selected':''}}" wx:for="{{pickerList}}" wx:for-index="index" wx:for-item="item" wx:key="index" data-value="{{item.value}}">{{item.label}}</view>
+            </view>
+        </view>
+    </view>
+</view>
