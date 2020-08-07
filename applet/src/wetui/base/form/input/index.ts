@@ -1,0 +1,57 @@
+Component({
+    externalClasses: ['wet-class'],
+    relations:{
+        '../item/index':{
+            type:'parent'
+        },
+    },
+    properties:{
+        label:{
+            type:String,
+            value:''
+        },
+        defaultValue:{
+            type:String,
+            value:''
+        },
+        round:{
+            type:Boolean,
+            value:false
+        },
+        type:{
+            type:String,
+            value:'text'//text、textarea、password、number
+        },
+        disabled:{
+            type:Boolean,
+            value:false
+        }
+    },
+    data:{
+        isfocus:false,
+    },
+    methods:{
+        focusEvent(){
+            this.setData({
+                isfocus:true
+            })
+        },
+        blurEvent(){
+            this.setData({
+                isfocus:false
+            })
+        },
+        inputEvent(e){
+            const parent = this.getRelationNodes('../item/index');
+            //console.log(parent)
+            if(parent.length === 0){
+                this.triggerEvent('input',{
+                    value:e.detail.value
+                })
+            }else{
+                //console.log(parent)
+                parent[0].emitEventInput(e.detail.value)
+            }
+        }
+    }
+})

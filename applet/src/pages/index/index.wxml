@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view style="margin:20px">
+<view>
     <view style="display:none">
         <wet-btn bind:click="testClick" loading>默认按钮</wet-btn>
         <wet-btn bind:click="testClick" type="success" loading>默认按钮</wet-btn>
@@ -31,10 +31,27 @@
 
         <wet-btn bind:click="testClick" color="pink">默认按钮</wet-btn>
     </view>
-    <view >
-        <wet-btn bind:click="showAlert" type="success">打开Alert</wet-btn>
+    <view style="margin:20px">
+        <!-- <wet-btn bind:click="showAlert" type="success">打开Alert</wet-btn> -->
         <!-- <wet-datepick></wet-datepick> -->
         <!-- <wet-pick pickerList="{{pickerList}}"></wet-pick> -->
+        <!-- <wet-tabs current="{{ current }}" bindchange="handleChange">
+            <wet-tabs-item key="tab1" title="选项1">选项一</wet-tabs-item>
+            <wet-tabs-item key="tab2" title="选项2">选项二</wet-tabs-item>
+        </wet-tabs> -->
+        <!-- <wet-input round></wet-input>
+        <wet-input type="textarea" label="文本输入"></wet-input>
+        <wet-input type="password" label="密码输入"></wet-input>
+        <wet-input type="number" disabled defaultValue="djfsajfkdsjf" label="数字输入"></wet-input> -->
+        <wet-input type="password" label="密码输入"></wet-input>
+        <wet-form bind:submit="FormData">
+            <wet-form-item label="用户名" decorator="username" rules="{{[{ ownrules:'required',message:'用户名不能为空'}]}}">
+                <wet-input></wet-input>
+            </wet-form-item>
+            <wet-form-item label="用户名" decorator="password" rules="{{[{ ownrules:'required',message:'密码不能为空'}]}}">
+                <wet-input></wet-input>
+            </wet-form-item>
+        </wet-form>
     </view>
 
     <wet-alert id="wet-alert"></wet-alert>

@@ -1,0 +1,28 @@
+@import '../../../styles/_font.less';
+@import '../../../styles/_minxins.less';
+@wet-defualt:#ffffff;
+@wet-primary:#1abc9c;
+@wet-success:#2ecc71;
+@wet-info:#3498db;
+@wet-warn:#f1c40f;
+@wet-risk:#FA4E4E;
+@wet-inverse:#34495E;
+
+.wet-form__item{
+    display: flex;
+    margin: 5px 0;
+    .label{
+        flex:0 0 auto;
+        width: 85px;
+        font-size: @wet-fs-base;
+        line-height: 35px;
+        color: @wet-inverse;
+        .ellipsis();
+        .required{
+            color: @wet-risk;
+        }
+    }
+    .item_box{
+        flex: 1;
+    }
+}

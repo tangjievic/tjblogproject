@@ -1,0 +1,25 @@
+<view class="wet-input {{round?'round':''}} {{isfocus?'focus':''}}">
+    <view class="label" wx:if="{{label}}">{{label}}</view>
+    <view class="input_box {{isfocus?'focus':''}}">
+        <textarea wx:if="{{type === 'textarea'}}" 
+        class="input {{disabled?'disabled':''}}"
+        bindfocus="focusEvent"
+        bindblur="blurEvent"
+        disabled="{{disabled}}"
+        auto-height
+        value="{{defaultValue}}"
+        bindinput="inputEvent"
+        ></textarea>
+
+        <input
+        wx:else
+        bindinput="inputEvent"
+        disabled="{{disabled}}"
+        value="{{defaultValue}}"
+        type="{{type==='password'?'text':type}}"
+        password="{{type==='password'}}"
+        bindfocus="focusEvent"
+        bindblur="blurEvent"
+        class="input {{disabled?'disabled':''}}" />
+    </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="wet-form__item">
+    <view class="label">
+        <text class="required">*</text>
+        <text>{{label}}</text>
+    </view>
+    <view class="item_box">
+        <slot></slot>
+    </view>
+</view>

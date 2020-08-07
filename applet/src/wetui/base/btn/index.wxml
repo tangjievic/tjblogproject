@@ -1,4 +1,4 @@
-<view class="wet-btn_wrapper {{type}} {{boxShow?'box_show':''}} {{disabled?'disabled':''}} {{round?'round':''}} {{plain?'plain':''}} {{inline?'inline':''}}" bindtap="changeBoxShow" >
+<view class="wet-class wet-btn_wrapper {{type}} {{boxShow?'box_show':''}} {{disabled?'disabled':''}} {{round?'round':''}} {{plain?'plain':''}} {{inline?'inline':''}}" bindtap="changeBoxShow" >
     <button class="wet-class wet-btn {{size}} {{type}} {{loading}} {{disabled?'disabled':''}} {{plain?'plain':''}} " hover-class="wet-btn-hover" bindtap="handleTap" open-type="{{ openType }}" app-parameter="{{ appParameter }}" hover-stop-propagation="{{ hoverStopPropagation }}" hover-start-time="{{ hoverStartTime }}" hover-stay-time="{{ hoverStayTime }}" session-from="{{ sessionFrom }}" send-message-title="{{ sendMessageTitle }}" send-message-path="{{ sendMessagePath }}" send-message-img="{{ sendMessageImg }}" show-message-card="{{ showMessageCard }}" bindcontact="bindcontact" bindgetuserinfo="bindgetuserinfo" bindgetphonenumber="bindgetphonenumber" binderror="binderror" plain="true">
         <view class="wet-loading" wx:if="{{loading}}">
             <view class="one"></view>
