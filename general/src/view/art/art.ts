@@ -1,7 +1,8 @@
 import './art.less';
 import '../page';//引入页面公共ts方法模块
 import '../../components/plugin/artnav/index.js';
-
+import  TGTool from '../../components/wetui/alert/index';
+let WetAlert = TGTool();
 function lisenSroll (){
     let document_height:any = $(document).height()
     $(document).scroll(()=>{
@@ -27,3 +28,10 @@ function lisenSroll (){
     })
 }
 lisenSroll();
+
+$('.wet-submit_comment').on('click',(e:any)=>{
+    WetAlert.warning('系统升级中，暂停使用')
+})
+$('.wet-back').on('click',(e:any)=>{
+    window.history.back()
+})

@@ -30,7 +30,8 @@ module.exports = {
     entry: {
         index: entryMode('index'),
         lists: entryMode('lists'),
-        art: entryMode('art')
+        art: entryMode('art'),
+        404: entryMode('404')
     },
     // 指定输出文件名
     output: {
@@ -130,5 +131,6 @@ module.exports = {
         outputHtml('index'),
         outputHtml('lists'),
         outputHtml("art"),
+        outputHtml('404')
     ]
 };
