@@ -2,6 +2,12 @@
   "usingComponents": {
     "wet-btn":"../../wetui/base/btn/index",
     "wet-alert":"../../wetui/base/alert/index",
-    "wet-datepick":"../../wetui/base/datepick"
+    "wet-datepick":"../../wetui/base/datepick",
+    "wet-pick":"../../wetui/base/picker",
+    "wet-tabs":"../../wetui/base/tabs/tabs/index",
+    "wet-tabs-item":"../../wetui/base/tabs/item/index",
+    "wet-input":"../../wetui/base/form/input/index",
+    "wet-form":"../../wetui/base/form/index/index",
+    "wet-form-item":"../../wetui/base/form/item"
   }
 }

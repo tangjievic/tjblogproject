@@ -1,0 +1,26 @@
+<view class="wet-tabs">
+    <!-- 可滑动头部 -->
+    <scroll-view wx:if="{{ scroll }}" scroll-x="true" class="wet-tabs__box scroll {{ fixed ? 'fixed' : '' }}">
+        <view class="hd_item {{ scroll ? 'scroll' : '' }} {{ current === item.key ? 'current' : '' }}" wx:for="{{itemComponentAarry}}" wx:key="index" wx:for-item="item">
+            <view bindtap="handleClickItem" class="title_box" data-key="{{item.key}}">
+                <view class="title {{ current === item.key ? 'current' : '' }}" style="color: {{ current === item.key ? color:''}}">{{ item.title }}</view>
+                <view class="bar" wx:if="{{ current === item.key }}" style="background: {{ color }}"></view>
+            </view>
+        </view>
+    </scroll-view>
+    <!-- 常规头部 -->
+    <view wx:else class="wet-tabs__box {{ fixed ? 'fixed' : '' }}">
+        <view class="hd_item {{ scroll ? 'scroll' : '' }} {{ current === item.key ? 'current' : '' }}" wx:for="{{itemComponentAarry}}" wx:key="index" wx:for-item="item">
+            <view bindtap="handleClickItem" class="title_box" data-key="{{item.key}}">
+                <view class="title {{ current === item.key ? 'current' : '' }}" style="color: {{ current === item.key ? color:''}}">
+                    {{ item.title }}
+                </view>
+                <view class="dot {{item.dotmsg!==''?'dotmsg':''}}" wx:if="{{item.dot}}">{{item.dotmsg}}</view>
+                <view class="bar" wx:if="{{ current === item.key }}" style="background: {{ color }}"></view>
+            </view>
+        </view>
+    </view>
+    <view class="wet-tabs_panel {{ fixed ? 'fixed' : '' }}">
+        <slot></slot>
+    </view>
+</view>

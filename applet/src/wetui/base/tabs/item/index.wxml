@@ -1,0 +1,3 @@
+<view class="wet-tabs-item" wx:if="{{ current }}">
+    <slot></slot>
+</view>

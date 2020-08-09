@@ -1,0 +1,73 @@
+@import '../../../styles/_font.less';
+// 主色系
+@wet-defualt:#ffffff;
+@wet-primary:#1abc9c;
+@wet-success:#2ecc71;
+@wet-info:#3498db;
+@wet-warn:#f1c40f;
+@wet-risk:#FA4E4E;
+@wet-inverse:#34495E;
+.wet-input{
+    display: flex;
+    font-family: @wet-ftf-sans-serif;
+    &.round{
+        border:1px solid fade(@wet-inverse,20%);
+        padding: 0 5px;
+        border-radius: 5px;
+        & .input_box::after{
+            display: none;
+        }
+        &.focus{
+            border-color: fade(@wet-primary,70%);
+        }
+        .input_box{
+            padding: 5px;
+        }
+    }
+    .label{
+        flex:0 0 auto;
+        width: 85px;
+        text-align: left;
+        color: @wet-inverse;
+        font-size: @wet-fs-base;
+        line-height: 35px;
+    }
+    .input_box{
+        flex: 1;
+        padding: 5px;
+        position: relative;
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scaleY(.5);
+            border: 0 solid fade(@wet-inverse,20%);
+            border-bottom-width: 1px;
+            transition: border-color 0.2s;
+        }
+        &.focus::after{
+            border-color: fade(@wet-primary,70%);
+        }
+        .input{
+            color: fade(@wet-inverse,80%);
+            font-family: @wet-ftf-sans-serif;
+            font-size: @wet-fs-base;
+            min-height: 25px;
+            line-height: 1.6;
+            width: 100%;
+            font-weight: 500;
+            &.disabled{
+                color: fade(@wet-inverse,50%);
+            }
+            &:focus{
+                font-family: @wet-ftf-sans-serif;
+                font-size: @wet-fs-base;
+                font-weight: 500;
+            }
+        }
+    }
+}
+

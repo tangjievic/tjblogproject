@@ -8,6 +8,17 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    pickerList:[
+        {
+            label:'免确认',
+            value:false
+        },
+        {
+            label:'需确认',
+            value:true
+        },
+    ],
+    current: 'tab1',
   },
   // 事件处理函数
   bindViewTap() {
@@ -43,16 +54,16 @@ Page({
       })
     }
   },
-  getUserInfo(e: any) {
-    console.log(e,'xxxx')
-    let a:string = 'xxxx';
-    console.log(a)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true,
-    })
-  },
+    getUserInfo(e: any) {
+        console.log(e,'xxxx')
+        let a:string = 'xxxx';
+        console.log(a)
+        app.globalData.userInfo = e.detail.userInfo
+        this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true,
+        })
+    },
     testClick(){
         console.log("按钮触发")
     },
@@ -61,5 +72,11 @@ Page({
             type:'error',
             content:'我这是测试'
         })
-    }
+    },
+    handleChange (e:any) {
+        console.log(e.detail)
+        this.setData({
+            current: e.detail.key
+        });
+    },
 })

@@ -34,10 +34,6 @@
         }
         .title{
             flex: 1;
-            height: 40px;
-            line-height: 40px;
-            color: #666666;
-            text-align: center;
         }
         .cancel{
             &.wet-btn-hover{
@@ -45,9 +41,9 @@
             }
         }
         .confirm{
-            color: fade(@wet-success,90%);
+            color: fade(@wet-primary,90%);
             &.wet-btn-hover{
-                color: fade(@wet-success,50%);
+                color: fade(@wet-primary,50%);
             }
         }
     }
@@ -78,7 +74,7 @@
         color: fade(#333333,70%);
         text-align: center;
         &.selected{
-            color: @wet-primary
+            color: #333333
         }
     }
 }
