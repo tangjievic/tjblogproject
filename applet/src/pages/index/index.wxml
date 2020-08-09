@@ -51,6 +51,9 @@
             <wet-form-item label="用户名" decorator="password" rules="{{[{ ownrules:'required',message:'密码不能为空'}]}}">
                 <wet-input></wet-input>
             </wet-form-item>
+            <wet-form-item>
+                <wet-btn>默认按钮</wet-btn>
+            </wet-form-item>
         </wet-form>
     </view>
 

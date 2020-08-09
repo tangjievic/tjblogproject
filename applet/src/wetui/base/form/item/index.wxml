@@ -1,6 +1,6 @@
 <view class="wet-form__item">
-    <view class="label">
-        <text class="required">*</text>
+    <view class="label" wx:if="{{label}}">
+        <text class="required" wx:if="{{required}}">*</text>
         <text>{{label}}</text>
     </view>
     <view class="item_box">

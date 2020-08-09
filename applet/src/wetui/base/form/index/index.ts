@@ -16,7 +16,7 @@ Component({
             let form_value:any = {};
             let items = this.getRelationNodes('../item/index');
             let all_result = true;
-            console.log(items)
+            //console.log(items)
             items.forEach((item:any)=>{
                 //做值的规则校验
                 item.data.rules.forEach((its:any)=>{
@@ -33,8 +33,8 @@ Component({
                         //对its.ownrules进行类型判断，如果是正则这用正则体系，如果是函数就用函数体系
                     }
                 })
-                //Rules[item.]
-                //console.log(item)
+                Rules[item.]
+                console.log(item)
                 let data = item.data.inputvalue
                 Object.assign(form_value,data)
             })

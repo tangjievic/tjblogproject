@@ -1,8 +1,8 @@
 <view class="wet-form">
     <view class="hd" wx:if="{{title!==''}}">{{title}}</view>
     <view class="bd"><slot></slot></view>
-    <view class="ft">
+    <!-- <view class="ft">
         <wet-btn inline type="success" size="small" wet-class="btn_left" bind:click="handleClick">提交数据</wet-btn>
         <wet-btn inline type="warn" size="small">重置数据</wet-btn>
-    </view>
+    </view> -->
 </view>

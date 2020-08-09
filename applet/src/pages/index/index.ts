@@ -79,4 +79,7 @@ Page({
             current: e.detail.key
         });
     },
+    FormData(e:any){
+      console.log(e,'数据提交')
+    }
 })

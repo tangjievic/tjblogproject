@@ -1,6 +1,11 @@
 let time_key:boolean = true;
 Component({
     externalClasses: ['wet-class'],
+    relations:{
+        '../form/item/index':{
+            type:'parent'
+        }
+    },
     properties: {
         type: {
             type: String,
@@ -60,6 +65,8 @@ Component({
     },
     methods: {
         handleTap () {
+            const parent = this.getRelationNodes('../form/item/index');
+            console.log(parent)
             if (this.data.disabled){
                 return;
             };
@@ -73,7 +80,12 @@ Component({
                     })
                     clearTimeout(time)
                 },1000)
-                this.triggerEvent('click');
+                if(parent.length === 0){
+                    this.triggerEvent('click');
+                }else{
+                    console.log(parent)
+                    parent[0].emitEventSubmit();
+                }
             }
         },
         bindgetuserinfo({ detail = {} } = {}) {

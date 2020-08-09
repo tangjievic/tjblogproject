@@ -4,6 +4,9 @@ Component({
         '../input/index':{
             type:'child'
         },
+        "../../btn/index":{
+            type:'child'
+        },
         '../index/index':{
             type:'parent'
         }
@@ -20,6 +23,10 @@ Component({
         rules:{
             type:Array,
             value:[]
+        }, 
+        required:{
+            type:Boolean,
+            value:false
         }
     },
     data:{
@@ -34,6 +41,12 @@ Component({
             this.setData({
                 inputvalue:temp_obj
             });
+        },
+
+        emitEventSubmit(){
+            const parent = this.getRelationNodes('../index/index');
+            console.log(parent)
+            parent[0].handleClick();
         }
     }
 })
