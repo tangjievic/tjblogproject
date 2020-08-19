@@ -1,0 +1,17 @@
+@wet-leftmenu-mini-width:70px;
+.wet-leftmenu{
+    &.fiexd{
+        .fixed_left(100,@wet-leftmenu-mini-width);
+    }
+    background-color: @wet-primary;
+    .menu_top,.menu_bottom{
+        position: absolute;
+        left: 0;width: 100%;
+    }
+    .menu_top{
+        top: 0;
+    }
+    .menu_bottom{
+        bottom: 0;
+    }
+}

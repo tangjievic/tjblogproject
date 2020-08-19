@@ -1,0 +1,19 @@
+<view class="wet-select">
+    <!-- <wet-input disabled wet-class="select-input" round="{{round}}"></wet-input> -->
+    <view class="select-input" bindtap="openAction">
+        <!-- {{value}} -->
+        <block  wx:for="{{value}}" wx:if="{{type === 'single'}}" wx:key="index">
+            <text wx:if="{{item.selected}}">{{item.label}}</text>
+        </block>
+    </view>
+    <view class="icon" bindtap="openAction"></view>
+    <view class="option {{amintion_show?'show':'hidden'}}" hidden="{{!show}}">
+        <view class="option_item {{item.selected?'selected':''}}" data-value="{{item.value}}" data-index="{{index}}"
+        wx:for="{{value}}" wx:for-index="index" bindtap="selectAction" wx:key="index" >
+            <view class="icon-box">
+                <view class="icon-check"></view>
+            </view>
+            <view class="label">{{item.label}}</view>
+        </view>
+    </view>
+</view>

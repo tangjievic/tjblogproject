@@ -1,0 +1,12 @@
+<view id="{{name}}" class="wet-class wet-collapse-item ">
+    <view class="label {{showContent?'show':''}}" bindtap="trigger">
+        <!-- <wet-icon size="16" type="enter" wet-class="{{ showContent ? 'wet-collapse-item-arrow-show' : 'wet-collapse-item-arrow' }}"/> -->
+        <view class="icon"></view>
+        <text>{{label}}</text>
+    </view>
+    <view style="height:{{showContent?height+'px':'0px'}}" class="content-box">
+        <view class="content">
+            <slot></slot>
+        </view>
+    </view>
+</view>

@@ -7,7 +7,10 @@
     "wet-tabs":"../../wetui/base/tabs/tabs/index",
     "wet-tabs-item":"../../wetui/base/tabs/item/index",
     "wet-input":"../../wetui/base/form/input/index",
+    "wet-select":"../../wetui/base/form/select/index",
     "wet-form":"../../wetui/base/form/index/index",
-    "wet-form-item":"../../wetui/base/form/item"
+    "wet-form-item":"../../wetui/base/form/item",
+    "wet-collapse":"../../wetui/base/collaspse/index/index",
+    "wet-collapse-item":"../../wetui/base/collaspse/item/index"
   }
 }

@@ -19,6 +19,16 @@ Page({
         },
     ],
     current: 'tab1',
+    option:[
+        {
+            label:'男',
+            value:'man'
+        },
+        {
+            label:'女',
+            value:'wom'
+        }
+    ]
   },
   // 事件处理函数
   bindViewTap() {

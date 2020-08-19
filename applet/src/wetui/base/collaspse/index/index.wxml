@@ -1,0 +1,3 @@
+<view class="wet-class wet-collapse" bindcollapse="clickfn">
+  <slot></slot>
+</view>

@@ -7,6 +7,9 @@ Component({
         "../../btn/index":{
             type:'child'
         },
+        "../select/index":{
+            type:'child'
+        },
         '../index/index':{
             type:'parent'
         }

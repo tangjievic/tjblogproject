@@ -33,12 +33,12 @@ Component({
                         //对its.ownrules进行类型判断，如果是正则这用正则体系，如果是函数就用函数体系
                     }
                 })
-                Rules[item.]
-                console.log(item)
+                //Rules[item.]
+                //console.log(item)
                 let data = item.data.inputvalue
                 Object.assign(form_value,data)
             })
-            console.log(form_value)
+            //console.log(form_value)
             //如果有数据校验出错将不能提交数据
             if(!all_result){
                 return
