@@ -1,0 +1,21 @@
+//固定定位
+.fixed_top(@zindex,@height){
+    position: fixed;
+    z-index: @zindex;
+    top: 0;left:0 ;right: 0;
+    height: @height;
+}
+.fixed_left(@zindex, @width){
+    position: fixed;
+    z-index: @zindex;
+    top: 0;left:0 ;bottom: 0;
+    width: @width;
+}
+//清除浮动
+.clearfloat(){
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}

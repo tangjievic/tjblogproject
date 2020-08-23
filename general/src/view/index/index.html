@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <!-- head模块设置[[ -->
-<%= require('html-loader!../../components/elements/head/index.html') %>
-    <!-- head模块设置]] -->
+    <%= require('html-loader!../../components/elements/head/index.html') %>
+<!-- head模块设置]] -->
+    <body class="wetui-page">
+        <div class="tjblog-page__box">
+            <view class="view">
+                <div class="view_right">
+                    <%= require('html-loader!../../components/wetui/base/leftmenu/index.html')%> 
+                    <%= require('html-loader!../../components/wetui/base/headernav/index.html')%>
+                </div>
+                <aside class="view_left">
 
-    <body class="wet-bgcolor__gray">
-        <%= require('html-loader!../../components/elements/pageloading/index.html') %>
-        <div class="page_view">
-            <%= require('html-loader!../../components/wetui/nav/index.html') %>
-                <!-- pc端布局 [[-->
+                </aside>
+            </view>
+        </div>
+
+        <!-- <div class="page_view">
+
                 <div class="wet-pc page_content">
-                    <!-- 公司基本简介[[ -->
+    
                     <div class="content_box wxt-clear_ft">
                         <div class="box_center">
                             <div class="center_content">
                                 <h2 class="content_panel content_title">前端学习·分享</h2>
                                 <div class="content_panel">
-                                    <%= require('html-loader!../../components/plugin/sliderbanner/index.html') %>
+            
                                 </div>
                                 <div class="content_panel blog_msg">
                                     <h4 class="blog_msg__title">博客简介</h4>
@@ -24,125 +33,16 @@
                                         简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。本博客主要是webpack4，HTML5,CSS3,JS等技术实现的，本博客不支持ie10以下的，ie11及新版的ie才会有最佳的呈现效果。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混用，毕竟没做服务器端渲染，要普通网页来增加SEO的能力。
                                     </p>
                                 </div>
-                                <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
-                                    <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
-
-                                        <%= require('html-loader!../../components/elements/righttool/index.html') %>
                             </div>
                             <div class="center_content" style="margin-top: 20px;">
-                                <%= require('html-loader!../../components/elements/artlist/index.html') %>
-                                    <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
-                                        <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
                             </div>
                             <div class="centent_footer blog_boder">
-                                <%= require('html-loader!../../components/plugin/showreel/index.html') %>
                             </div>
                         </div>
                         <aside class="box_left">
-                            <%= require('html-loader!../../components/elements/leftele/mycard/index.html') %>
-                                <%= require('html-loader!../../components/elements/leftele/dynamic/index.html') %>
-                                    <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
-                                        <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
                         </aside>
-                        <%= require('html-loader!../../components/elements/asideleft/index.html')%>
-                    </div>
-                    <!-- 公司基本简介]] -->
-
-                </div>
-                <!-- pc端布局 ]]-->
-                <!-- 手机版布局[[ -->
-                <div class="wet-mb mb_page">
-                    <div class="wet_mb-bg">
-                        <div class="ball ball_1"></div>
-                        <div class="page_thd">
-                            <span>TANGJIE-BLOG</span>
-                            <span>·首页</span>
-                        </div>
-                        <div class="new_list">
-                            <%= require('html-loader!../../components/plugin/newlist/index.html') %>
-                        </div>
-                    </div>
-                    <div class="blog-desc">
-                        <section class="desc-item">
-                            <div style="position: relative;z-index: 10;">简约的风格搭配，对于我这种不好设计的人是一个不错的选择，这样做起来至少不会很丑。部分模块使用vue等单页面框架，也就是普通网页和单页面框架混搭。</div>
-                        </section>
-                        <section class="desc-item">
-                            <div class="item">
-                                十年磨一剑
-                            </div>
-                            <div class="item">
-                                一剑断九州
-                            </div>
-                        </section>
-                    </div>
-                    <div class="art-list">
-                        <div class="hot_box">
-                            <div class="hd">
-                                <span class="iconfont icon-fire"></span>
-                                <span>热门推荐</span>
-                            </div>
-                            <ul>
-                                <li class="hot_art-item">
-                                    <a class="item-link">
-                                        <div class="art_msg">
-                                            <span>作者·</span>
-                                            <span>时间·</span>
-                                            <span>作品分类</span>
-                                        </div>
-                                        <h2 class="title">标题</h2>
-                                        <div>简介</div>
-                                        <div style="text-align: right;">
-                                            <span class="iconfont icon-see" style="margin-right: 20px;">0</span>
-                                            <span class="iconfont icon-Good">0</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
 
-                    <div class="art-list">
-                        <div class="hot_box">
-                            <div class="hd">
-                                <span class="iconfont icon-book"></span>
-                                <span>全部文章</span>
-                            </div>
-                            <ul>
-                                <li class="hot_art-item">
-                                    <a class="item-link">
-                                        <div class="art_msg">
-                                            <span>作者·</span>
-                                            <span>时间·</span>
-                                            <span>作品分类</span>
-                                        </div>
-                                        <h2 class="title">标题</h2>
-                                        <div>简介</div>
-                                        <div style="text-align: right;">
-                                            <span class="iconfont icon-see" style="margin-right: 20px;">0</span>
-                                            <span class="iconfont icon-Good">0</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="articel_page">
-                                <ul class="pagination">
-                                    <li class="disabled"><span>«</span></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        TANGJIE-BLOG，个人前端技术分享网站
-                    </div>
-                </div>
-                <!-- 手机版布局]]  -->
-                <!-- 脚部[[ -->
-                <%= require('html-loader!../../components/elements/footer/index.html') %>
-                <!-- 脚部]] -->
-        </div>
+                </div> -->
     </body>
-
 </html>
