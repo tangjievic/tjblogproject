@@ -33,7 +33,7 @@ Component({
                         //对its.ownrules进行类型判断，如果是正则这用正则体系，如果是函数就用函数体系
                     }
                 })
-                Rules[item.]
+                //Rules[item.]
                 console.log(item)
                 let data = item.data.inputvalue
                 Object.assign(form_value,data)
