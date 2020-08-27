@@ -1,29 +1,45 @@
 @import '../static/fonticon/iconfont.css';
 @import '../components/wetui/index.less';
+@import '../components/elements/index.less';
 .tjblog-page__box{
     display: flex;
     width: 1200px;
     margin:0 auto;
-    min-height: 100%;
+    padding-top: 90px;
+    color: @wet-inverse;
     &::before{
         content: '';
         display: block;
         flex:0 0 auto;
         width: 70px;
+        height: 10vh;
     }
     .view{
-        min-height: 100%;
         .view_right,.view_left{
             float: right;
             height: 100%;
         }
         .view_right{
             width: 790px;
-            background-color: #545487;
+            .right_content-hd{
+                background-color: #ffffff;
+                .hd_title{
+                    margin: 0;
+                    padding:20px;
+                    font-size: @wet-fs-lg;
+                    font-weight: 600;
+                }
+            }
+            .css_adbox{
+                padding: 20px;
+                background-color: #ffffff;
+            }
+            .my_project{
+                background-color: #ffffff;
+            }
         }
         .view_left{
             width: 320px;
-            background-color: pink;
         }
         .clearfloat();
     }

@@ -1,25 +1,27 @@
 @import './mycard/index.less';
 @import './reward/index.less';
+@import './dynamic/index.less';
+@import './adcard/index.less';
+@import './hotart/index.less';
 .left_planels{
     position: relative;
-    // width: 280px;
+    width: 300px;
     box-sizing: border-box;
-    //padding-bottom:20px;
     background-color: #ffffff;
-    border: 1px solid #e6e6e6;
-    // padding: 20px;
-    color: #444443;
-    font-size: 14px;
+    //border: 1px solid #e6e6e6;
+    color: @wet-inverse;
+    font-size: 16px;
     margin-bottom: 20px;
+    border-radius: 5px;
     h3{
         padding: 20px;
-        color: #444443;
+        margin: 0;
+        font-weight: 500;
     }
     .msglist{
         padding: 20px;
         .msglist__item{
             margin-bottom: 15px;
-            color: #444443;
             &:last-child{
                 margin-bottom: 0;
             }
