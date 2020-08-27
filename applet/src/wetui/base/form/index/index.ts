@@ -34,7 +34,7 @@ Component({
                     }
                 })
                 //Rules[item.]
-                //console.log(item)
+                console.log(item)
                 let data = item.data.inputvalue
                 Object.assign(form_value,data)
             })
