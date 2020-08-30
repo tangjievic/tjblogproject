@@ -58,7 +58,8 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [{
-                        loader: 'css-loader?name=./css/[name].[hash].[ext]',
+                        //loader: 'css-loader?name=./css/[name].[hash].[ext]',
+                        loader: 'css-loader?name=./css/[name].[ext]',
                         options: {
                             minimize: true, //代码压缩
                         }

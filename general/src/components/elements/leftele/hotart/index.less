@@ -1,22 +1,21 @@
 
 .hotart_list{
     padding: 20px;
+    margin: 0;
     .list__item{
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        align-items: center;
         padding: 5px 0;
         border-bottom: 1px dashed rgba(226, 226, 226, 0.89);
+        transition: color 0.2s ease-in-out;
         .item__link{
             flex: 7;
             width: 70%;
+            .ellipsis();
         }
     }
     .list__item:hover,.list__item:hover a{
         cursor: pointer;
-        color: #5AC2E7;
+        color: #1ABC9C;
     }
 }

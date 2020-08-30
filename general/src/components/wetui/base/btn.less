@@ -1,0 +1,79 @@
+@import '../style/_front.less';
+@import '../style/_variate.less';
+
+@height_lg:40px;
+@height_nm:38px;//normal
+@height_md:32px;
+@height_sm:26px;
+@height_mini:22px;
+
+@pad_lg:0 18px;
+@pad_nm:0 16px;
+@pad_md:0 14px;
+@pad_sm:0 12px;
+@pad_mini:0 10px;
+//基本样式函数
+.btn-size(@height,@padding){
+    min-height: @height;
+    height: @height;
+    line-height: @height;
+    padding: @padding;
+}
+.btn-bg_color(@color){
+    color: #fff;
+    background-color: @color;
+}
+.btn-bg_color__plain(@color){
+    background-color: #ffffff;
+    color: @color;
+}
+// .box-show_start(@color){
+//     box-shadow: 0 0 0 0px @color;
+// }
+// .box-show_end(@color){
+//     box-shadow: 0 0 0 5px @color;
+// }
+.wet-btn { //正常形态
+    font-family: @wet-ftf-sans-serif;
+    font-size: @wet-fs-base;
+    text-align: center;
+    display: inline-block;//默认按钮是内联的
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition:all 0.1s ease-in-out;
+    font-weight: @wet-fw-base;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    border-radius: 4px;//默认是有圆角设计
+    text-decoration: none;
+    .btn-bg_color__plain(@wet-inverse);//默认plain类型
+    .btn-size(@height_nm,@pad_nm);//默认大小
+    .border_1px(fade(@wet-inverse,30%));
+    &:hover{
+        .border_1px(fade(@wet-primary,30%));
+        .btn-bg_color__plain(@wet-primary);
+    }
+    &:active{
+        .border_1px(@wet-primary);
+    }
+    &__block{
+        display: block;
+    }
+    &__large{
+
+    }
+    &__middle{
+
+    }
+    &__small{
+
+    }
+    &__mini{
+
+    }
+}

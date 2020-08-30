@@ -1,5 +1,5 @@
 import './common.less';
-//import '../components/plugin/shuibo/index.ts'
+import '../components/plugin/shuibo/index.ts';
 import jq from 'jquery';
 import wetUI from '../components/wetui/index';
 //将jq转到页面的全局

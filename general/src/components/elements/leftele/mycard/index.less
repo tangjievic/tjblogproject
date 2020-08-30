@@ -1,4 +1,37 @@
-.mycard__csdn{
-    padding:0 20px 20px 20px;
-    text-align: center;
+.mycard_btn{
+    display: flex;
+    padding-bottom: 20px;
+    .btn-item{
+        flex: 1;
+        &:first-child{
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        &:last-child{
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+    }
+}
+.msglist__item.profession,.msglist__item.site{
+    padding-left: 25px;
+    position: relative;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;margin-top: -11px;
+        left:0;
+        width: 18px;
+        height: 18px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}
+.msglist__item.profession&::before{
+    background-image: url(../../../../static/hobbies_icon2.png);
+}
+.msglist__item.site&::before{
+    background-image: url(../../../../static/hobbies_icon1.png);
 }

@@ -11,11 +11,26 @@
     top: 0;left:0 ;bottom: 0;
     width: @width;
 }
+//单行文本省略
+.ellipsis(){
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+}
 //清除浮动
 .clearfloat(){
     &::after{
         content: '';
         display: block;
         clear: both;
+    }
+}
+.border_1px(@color){
+    border:1px solid @color;
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .border_1px(@color){
+        border:0.5px solid @color;
     }
 }

@@ -1,0 +1,69 @@
+@import '../style/_front.less';
+@import '../style/_variate.less';
+@tag-height_lg:25px;
+@tag-height_md:23px;
+@tag-height_sm:20px;
+
+
+.tag-size(@size){
+    height:@size;
+    line-height:@size;
+    padding-left:@size;
+    padding-right:@size - 5;
+    border-radius:@size - 5;
+    &::before{
+        width: @size - 5;
+        height: @size - 5;
+        line-height:@size - 5;
+        margin-top: -(@size - 5)/2;
+    }
+}
+.tag-color(@color){
+    background: fade(@color,10%);
+    color: @color;
+    &::before{
+        background-color: @color;
+    }
+}
+
+.wet-tag {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-family: @wet-ftf-sans-serif;
+    font-size: @wet-fs-base;
+    &::before {
+        content: "#";
+        color: #ffffff;
+        display: block;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 2.5px;
+        overflow: hidden;
+    }
+    .tag-size(@tag-height_lg);//默认大标签
+    .tag-color(@wet-inverse);//默认@wet-inverse
+    &__md{
+        .tag-size(@tag-height_md);
+    }
+    &__md{
+        .tag-size(@tag-height_sm);
+    }
+    &__primary{
+        .tag-color(@wet-primary);
+    }
+    &__success{
+        .tag-color(@wet-success);
+    }
+    &__info{
+        .tag-color(@wet-info);
+    }
+    &__warn{
+        .tag-color(@wet-warn);
+    }
+    &__risk{
+        .tag-color(@wet-risk);
+    }
+}

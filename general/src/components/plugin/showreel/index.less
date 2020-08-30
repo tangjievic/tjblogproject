@@ -1,6 +1,11 @@
 .clearfix{
+    .blog_msg__title{
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
     .ato-list-fl{
-        padding: 25px;
+        padding: 20px;
     }
     &::after {
         clear: both;
@@ -85,30 +90,12 @@
     }
 
     .ato-more {
-        width: 157px;
-        height: 36px;
-        text-align: center;
-        display: none;
-        display: inline-block;
-        border: 1px solid #dcdfe6;
-        line-height: 34px;
-        color: #606266;
-        font-size: 13px;
-        text-decoration: none;
         position: absolute;
-        bottom: 30px;
-        left: 34px;
-    }
-
-    .ato-more:hover {
-        background-color: #5AC2E7;
-        border-color: #5AC2E7;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -ms-transition: all 0.3s;
-        -o-transition: all 0.3s;
-        transition: all 0.3s;
-        color: #FFF;
+        bottom: 15px;
+        left: 0; right: 0;
+        padding:5px 15px;
+        margin: 0!important;
+        width: auto!important;
     }
 
     .ato-list-fl {
@@ -125,20 +112,8 @@
     }
 
     .ato-right-btn{
-        flex: 0 1 220px;
-        text-align: right;
-        .prev,.next{
-            font-size: 14px;
-            display: inline-block;
-            text-align: center;
-            width: 65px;
-            height: 25px;
-            line-height: 25px;
-            margin-left: 20px;
-            border: 1px solid #dcdfe6;
-            color: #606060;
-            padding: 5px;
-            border-radius: 3px;
+        .next{
+            margin-left: 10px;
         }
     }
 
@@ -216,11 +191,5 @@
         position: absolute;
         top: 0;
         right: 11px;
-    }
-
-    .ato-list-fl a:hover {
-        border: 1px solid #5AC2E7;
-        color: #ffffff;
-        background-color: #5AC2E7;
     }
 }
