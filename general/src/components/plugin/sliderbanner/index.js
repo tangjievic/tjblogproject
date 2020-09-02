@@ -3,7 +3,7 @@ import './index.css';
 $(".swiper-container").carousel({
     width: 750,
     height: 300,
-    speed: 3e3,
+    speed: 5000,
     needPrevAndNextBtnGroup: true,
     needPagination: true
 });

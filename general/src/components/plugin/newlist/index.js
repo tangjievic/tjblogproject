@@ -1,4 +1,4 @@
-import './index.css';
+import './index.less';
 (function($, window, document, undefined) {
     'use strict';
     var pluginName = 'newsTicker',
@@ -203,6 +203,6 @@ import './index.css';
 })(jQuery, window, document);
 $('#nt-example1').newsTicker({
     row_height: 50,
-    max_rows: 1,
+    max_rows: 3,
     duration: 4000,
 });

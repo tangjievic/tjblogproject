@@ -76,4 +76,14 @@
     &__mini{
 
     }
+    &__success{
+        .btn-bg_color(@wet-primary);
+        .border_1px(fade(@wet-primary,30%));
+        &:hover{
+            .btn-bg_color(fade(@wet-primary,70%));
+        }
+        &:active{
+            .btn-bg_color(@wet-primary)
+        }
+    }
 }

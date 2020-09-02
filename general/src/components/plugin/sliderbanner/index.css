@@ -4,9 +4,11 @@
  * @date: 2020/06/27 15:16
  **/
 .swiper-item > img{
-    width: inherit;
+    /* width: inherit;
     height: inherit;
-    object-fit: cover;
+    object-fit: cover; */
+    width: 100%;
+    height: 100%;
 }
 .swiper-container {
   position: relative;

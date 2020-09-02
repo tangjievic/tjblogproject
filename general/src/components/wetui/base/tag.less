@@ -32,6 +32,24 @@
     overflow: hidden;
     font-family: @wet-ftf-sans-serif;
     font-size: @wet-fs-base;
+    &.circle {
+        text-align: center;
+        font-size: 14px;
+        width: @tag-height_lg;
+        padding: 5px;
+        border-radius: 50%;
+        &__md{
+            height: @tag-height_md;
+        }
+        &__sm{
+            height: @tag-height_sm;
+        }
+    }
+    &.circle{
+        &::before{
+           display: none;
+        }
+    }
     &::before {
         content: "#";
         color: #ffffff;
@@ -48,7 +66,7 @@
     &__md{
         .tag-size(@tag-height_md);
     }
-    &__md{
+    &__sm{
         .tag-size(@tag-height_sm);
     }
     &__primary{

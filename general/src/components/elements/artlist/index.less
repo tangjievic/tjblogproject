@@ -2,14 +2,19 @@
     border-radius: 5px;
     color: #666666;
     &>ul{
-        min-height: 600px;
+        min-height: 200px;
+        margin: 0;
+        padding:0 15px;
+        list-style: none;
     }
     .articel_page{
-        padding: 10px 20px;
+        padding:15px 15px 20px 15px;
         .pagination{
-            margin-top: 5px;
+            margin: 5px 0 0 0;
             height: 35px;
+            padding: 0;
             line-height: 35px;
+            list-style: none;
             li{
                 float: left;
                 margin-right: 5px;
@@ -22,18 +27,19 @@
                 transition: all 0.3s;
                 font-size: 14px;
                 &:hover{
-                    background-color: rgb(137, 213, 241);
+                    background-color: @wet-primary;
                     a{color: #fff;}
                 }
                 a,span{
                     display: block;
+                    text-decoration: none;
                 }
             }
             .active{
-                background-color: rgb(90, 194, 231);
+                background-color: fade(@wet-primary,90%);
                 color: #fff;
                 &:hover{
-                    background-color: rgb(90, 194, 231);
+                    background-color: fade(@wet-primary,60%);
                     color: #fff;
                 }
             }
@@ -64,11 +70,14 @@
             height: 35px;
             line-height: 35px;
             font-size: 15px;
-            flex:1
+            flex:1;
+            margin: 0;
         }
         .artlist-link{
             vertical-align: top;
             font-size: 15px;
+            color: @wet-inverse;
+            text-decoration: none;
             &:hover{
                 color:rgb(90, 194, 231) ;
             }
@@ -83,10 +92,17 @@
         color: #999;
         line-height: 24px;
         text-align: justify;
+        margin: 15px 0;
     }
     .btn_wrapper{
-        text-align: right;
-        padding-top: 15px; 
+        display: flex;
+        .art_base{
+            flex: 6;
+        }
+        .btn_div{
+            flex: 2;
+            text-align: right;
+        }
     }
 }
 .main__articel .art_h{
