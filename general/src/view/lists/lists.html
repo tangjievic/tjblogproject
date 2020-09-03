@@ -3,121 +3,36 @@
 <!-- head模块设置[[ -->
 <%= require('html-loader!../../components/elements/head/index.html') %>
     <!-- head模块设置]] -->
-
-    <body class="wet-bgcolor__gray">
-        <div class="page_view">
-            <%= require('html-loader!../../components/wetui/nav/index.html') %>
-                <div class="wet-pc blog_art-list page_content">
-                    <div class="content_box wxt-clear_ft">
-                        <div class="box_center">
-                            <div class="center_content">
-                                <h2 class="content_panel content_title">博客文章分类</h2>
-                                <div class="content_panel">
-                                    <div class="list_hd">
-                                        爱和死有一点相同：无论是帝王的高堂大殿还是牧人的茅屋草舍，它<span style="color: #333333;">都闯进去！</span>你与我也有一点相同：无论是相隔万里还是近在咫尺，它都是缘分;原谅我的无病<span style="color: #333333;">呻吟，喜欢</span>的给博客点个赞！！！
-                                    </div>
-                                </div>
-                                <div class="content_panel">
-                                    <%= require('html-loader!../../components/elements/artlist/index.html') %>
-                                </div>
-                                <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
-                                    <%= require('html-loader!../../components/elements/adlist/adlist.html') %>
-                                        <%= require('html-loader!../../components/elements/righttool/index.html') %>
+    <body class="wetui-page">
+        <div class="tjblog-page__box">
+            <div class="view">
+                <div class="view_right">
+                    <%= require('html-loader!../../components/wetui/base/leftmenu/index.html')%>
+                    <%= require('html-loader!../../components/wetui/base/headernav/index.html')%>
+                    <div class="box_center">
+                        <div class="right_content-hd">
+                            <h2 class="hd_title tag_title">博客文章分类</h2>
+                            <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                            <div class="list_hd">
+                                爱和死有一点相同：无论是帝王的高堂大殿还是牧人的茅屋草舍，它都闯进去！你与我也有一点相同：无论是相隔万里还是近在咫尺，它都是缘分;原谅我的无病呻吟，喜欢的给博客点个赞！！！
                             </div>
-                            <div class="centent_footer blog_boder">
-                                <%= require('html-loader!../../components/plugin/showreel/index.html') %>
+                            <div class="content_panel">
+                                <%= require('html-loader!../../components/elements/artlist/index.html') %>
                             </div>
                         </div>
-
-                        <aside class="box_left">
-                            <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
-                                <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
-                        </aside>
-                        <%= require('html-loader!../../components/elements/asideleft/index.html')%>
+                        <div class="my_project" style="margin-top: 20px;">
+                            <%= require('html-loader!../../components/plugin/showreel/index.html') %>
+                        </div>
                     </div>
                 </div>
 
-                 <!-- 手机版布局[[ -->
-                 <div class="wet-mb mb_page">
-                    <div class="wet_mb-bg">
-                        <div class="ball ball_1"></div>
-                        <div class="page_thd">
-                            <span>TANGJIE-BLOG</span>
-                            <span>·博文分类</span>
-                        </div>
-                        <div class="new_list">
-                            <%= require('html-loader!../../components/plugin/newlist/index.html') %>
-                        </div>
-                    </div>
-                    <ul class="type_solt">
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link selected">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="item-link">分类</a>
-                        </li>
-                    </ul>
-                    <div class="art-list">
-                        <div class="hot_box">
-                            <div class="hd">
-                                <span class="iconfont icon-book"></span>
-                                <span>全部文章</span>
-                            </div>
-                            <ul>
-                                <li class="hot_art-item">
-                                    <a class="item-link">
-                                        <div class="art_msg">
-                                            <span>作者·</span>
-                                            <span>时间·</span>
-                                            <span>作品分类</span>
-                                        </div>
-                                        <h2 class="title">标题</h2>
-                                        <div>简介</div>
-                                        <div style="text-align: right;">
-                                            <span class="iconfont icon-see" style="margin-right: 20px;">0</span>
-                                            <span class="iconfont icon-Good">0</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="articel_page">
-                                <ul class="pagination">
-                                    <li class="disabled"><span>«</span></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        TANGJIE-BLOG，个人前端技术分享网站
-                    </div>
-                </div>
-                <!-- 手机版布局]]  -->
-
-                <!-- 脚部[[ -->
-                <%= require('html-loader!../../components/elements/footer/index.html') %>
-                <!-- 脚部]] -->
+                <aside class="view_left">
+                    <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
+                    <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
+                </aside>
+            </div>
         </div>
+        <%= require('html-loader!../../components/elements/footer/index.html') %>
     </body>
 
 </html>

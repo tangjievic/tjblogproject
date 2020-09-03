@@ -1,0 +1,59 @@
+@import './_mixins.less';
+@menu-border:1px solid @wet-gray-2;
+@menu-box-shadow: 0 2px 4px rgba(0,0,0,.1);
+@menu-color-primary:rgb(90, 194, 231);
+.wet-menu{
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 30px;
+    list-style: none;
+    height: 70px;
+    display: inline-block;
+    // box-shadow:@menu-box-shadow;
+    //border-bottom: @menu-border;
+    .menu_box{
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 0;
+        margin: 0;
+        height: 70px;
+    }
+    .wet-menu__item{
+        padding: 0 15px;
+        cursor: pointer;
+        transition: color .2s linear;
+        list-style: none;
+        height: 70px;
+        line-height: 70px;
+        &:hover,&:focus{
+            text-decoration: none;
+        }
+        &.disabled{
+            color: @wet-gray-5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        &.actived,&:hover{
+            color:@menu-color-primary;
+        }
+    }
+    &.menu-vertical{
+        border-bottom: 0px;
+        width: 260px;
+        .menu_box{
+            flex-direction: column;
+            // border-left:
+        }
+    }
+    &.menu-horizontal{
+        .nav_box_thread{
+            height: 0;
+            width: 20px;
+            border-top: 4px solid @menu-color-primary;
+            position: absolute;
+            transform: translateX(0);
+            top: 0;
+            transition: transform .2s linear,width .2s linear;
+        }
+    }
+}
