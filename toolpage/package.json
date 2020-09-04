@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "dev": "vuepress dev docs",
+        "build": "vuepress build docs"
+    },
+    "dependencies": {
+        "highlight.js": "^9.11.0",
+        "jquery": "^3.5.1",
+        "vue": "^2.5.16",
+        "vue-highlight.js": "^3.1.0"
+    },
+    "devDependencies": {
+        "highlight.js": "^9.11.0",
+        "vuepress": "^1.5.2"
+    }
+}

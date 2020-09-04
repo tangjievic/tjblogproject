@@ -1,0 +1,8 @@
+{
+    "author": "tangjie",
+    "name": "bolinjz_pc",
+    "version": "1.0.0",
+    "description": "文档静态文件生成",
+    "main": "./index.js",
+    "license": "ISC"
+}

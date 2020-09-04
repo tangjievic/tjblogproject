@@ -1,0 +1,205 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+body {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #f3f3f3;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: none
+}
+
+
+@keyframes WetfadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes WetfadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(0)
+    }
+}
+
+@-moz-keyframes WetfadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        -moz-transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-20px);
+        -moz-transform: translateY(0)
+    }
+}
+
+body {
+    font-family: "PingFang SC", "Microsoft yahei", arial, "PingFangSC-Regular", sans-serif;
+}
+
+
+/* 背景基础颜色 */
+
+.wet-bgcolor__gray {
+    background-color: #eff3f5;
+}
+
+.wet-bgcolor__default {
+    background-color: #ffffff;
+}
+
+.wet-bgcolor__primary {
+    /* #5AC2E7 */
+    background-color: rgb(90, 194, 231);
+}
+
+.wet-bgcolor__success {
+    /* #46D4A4 */
+    background-color: rgb(106, 240, 208)
+}
+
+.wet-bgcolor__info {
+    /* #4E5E6E */
+    background-color: rgb(78, 94, 110)
+}
+
+.wet-bgcolor__warn {
+    /* #E36F40 */
+    background-color: rgb(227, 111, 64);
+}
+
+.wet-bgcolor__risk {
+    /* #FA4E4E */
+    background-color: rgb(250, 78, 78);
+}
+
+
+/* 定位 */
+
+.wet-fiexd__lt {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/* 清除浮动 */
+
+.wxt-clear_ft::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* div水平居中 */
+
+.wxt-center__leve {
+    margin: 0 auto;
+}
+
+// @media screen and (max-width: 1200px) {
+//    .wet-pc{
+//        display: none;
+//    }
+//    .wet-mb{
+//        display: block;
+//    }
+// }
+// @media screen and (min-width: 1200px) {
+//     .wet-pc{
+//         display: block;
+//     }
+//     .wet-mb{
+//         display: none;
+//     }
+// }
+.blog_msg__title{
+    color: #444443;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.blog_boder{
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+}
+.text-ellipt {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
