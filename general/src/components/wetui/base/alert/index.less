@@ -5,12 +5,18 @@
     right: 0;
     z-index: 1500;
     .wet-alert__item{
-        width: 340px;
+        width: 400px;
         margin: 10px auto;
         border-radius: 2px;
         color: #ffffff;
         text-align: center;
         position: relative;
+        &.show{
+            animation: AlertfadeIn 0.5s .2s ease both;
+        }
+        &.hide{
+            animation:AlertfadeOut 0.5s .2s ease both;
+        }
         .content{
             padding:12px 12px 12px 40px; 
         }
@@ -27,5 +33,24 @@
                 .png-fill__main();
             }
         }
+    }
+}
+@keyframes AlertfadeIn{
+    0%{opacity:0;
+        transform:translateY(-10px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes AlertfadeOut{
+    0%{
+        opacity:1;
+        transform:translateY(0)
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-10px)
     }
 }

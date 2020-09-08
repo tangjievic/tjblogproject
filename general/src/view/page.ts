@@ -13,4 +13,4 @@ declare global {
 window.$ = window.jQuery = jq;
 //以下是引入jq插件或jq组件 引入导航
 wetUI.HeaderNav('.page_topnav');
-pageLoding(3);
+pageLoding(2);
