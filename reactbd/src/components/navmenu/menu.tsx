@@ -34,7 +34,7 @@ interface IMenuContent {
 
 export const MenuContext = createContext<IMenuContent>( {index:0} );
 
-const WetMenu:React.FC<MenuProps> = (props:any) =>{
+const WetMenu:React.FC<MenuProps> = (props) =>{
     const {
         className,
         mode,
