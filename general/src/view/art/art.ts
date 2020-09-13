@@ -1,6 +1,7 @@
 import './art.less';
 import '../page';//引入页面公共ts方法模块
 import '../../components/plugin/artnav/index.js';
+import wetUI from '../../components/wetui/index';
 function lisenSroll (){
     let document_height:any = $(document).height()
     $(document).scroll(()=>{
@@ -26,3 +27,10 @@ function lisenSroll (){
     })
 }
 lisenSroll();
+
+$('.wet-submit_comment').on('click',()=>{
+    wetUI.Modal({
+        type:"warn",
+        content:"网站升级中，暂不开放"
+    });
+})
