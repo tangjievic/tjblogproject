@@ -36,7 +36,7 @@ module.exports = {
     // 指定输出文件名
     output: {
         //filename: "ts/[name].[hash].js",
-        filename: 'js/[name].js',
+        filename: 'js/[name].[hash].js',
         path: path.join(__dirname, '/../dist')
     },
     resolve: {
@@ -59,7 +59,7 @@ module.exports = {
                     fallback: 'style-loader',
                     use: [{
                         //loader: 'css-loader?name=./css/[name].[hash].[ext]',
-                        loader: 'css-loader?name=./css/[name].[ext]',
+                        loader: 'css-loader?name=./css/[name].[hash].[ext]',
                         options: {
                             minimize: true, //代码压缩
                         }
@@ -123,10 +123,10 @@ module.exports = {
     // npm install html-webpack-plugin clean-webpack-plugin -D
     plugins: [
         // 这里在编译之前先删除dist文件夹
-        // new CleanWebpackPlugin({
-        //   cleanOnceBeforeBuildPatterns: [path.join(__dirname,'/../dist')]
-        // }),
-        new ExtractTextPlugin('css/[name].css'),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [path.join(__dirname, '/../dist')]
+        }),
+        new ExtractTextPlugin('css/[name].[hash].css'),
         new OptimizeCssAssetsPlugin(),
         // 这里我们指定编译需要用模板，模板文件是./src/template/index.html，所以接下来我们要创建一个index.html文件
         outputHtml('index'),

@@ -3,36 +3,39 @@
 <!-- head模块设置[[ -->
 <%= require('html-loader!../../components/elements/head/index.html') %>
     <!-- head模块设置]] -->
-    <body class="wetui-page">
-        <div class="tjblog-page__box">
-            <div class="view">
-                <div class="view_right">
-                    <%= require('html-loader!../../components/wetui/base/leftmenu/index.html')%>
-                    <%= require('html-loader!../../components/wetui/base/headernav/index.html')%>
-                    <div class="box_center">
-                        <div class="right_content-hd">
-                            <h2 class="hd_title tag_title">博客文章分类</h2>
-                            <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
-                            <div class="list_hd">
-                                爱和死有一点相同：无论是帝王的高堂大殿还是牧人的茅屋草舍，它都闯进去！你与我也有一点相同：无论是相隔万里还是近在咫尺，它都是缘分;原谅我的无病呻吟，喜欢的给博客点个赞！！！
-                             </div>
-                            <div class="content_panel">
-                                <%= require('html-loader!../../components/elements/artlist/index.html') %>
-                            </div>
-                        </div>
-                        <div class="my_project" style="margin-top: 20px;">
-                            <%= require('html-loader!../../components/plugin/showreel/index.html') %>
-                        </div>
-                    </div>
-                </div>
 
-                <aside class="view_left">
-                    <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
-                    <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
-                </aside>
+    <body class="wetui-page">
+        <%= require('html-loader!../../components/wetui/base/pageloading/index.html')%>
+            <div class="tjblog-page__box">
+                <div class="view">
+                    <div class="view_right">
+                        <%= require('html-loader!../../components/wetui/base/leftmenu/index.html')%>
+                            <%= require('html-loader!../../components/wetui/base/headernav/index.html')%>
+                                <div class="box_center">
+                                    <div class="right_content-hd">
+                                        <h2 class="hd_title tag_title">博客文章分类</h2>
+                                        <%= require('html-loader!../../components/elements/bubbleline/index.html') %>
+                                            <div class="list_hd">
+                                                爱和死有一点相同：无论是帝王的高堂大殿还是牧人的茅屋草舍，它都闯进去！你与我也有一点相同：无论是相隔万里还是近在咫尺，它都是缘分;原谅我的无病呻吟，喜欢的给博客点个赞！！！
+                                            </div>
+                                            <div class="content_panel">
+                                                <%= require('html-loader!../../components/elements/artlist/index.html') %>
+                                            </div>
+                                    </div>
+                                    <div class="my_project" style="margin-top: 20px;">
+                                        <%= require('html-loader!../../components/plugin/showreel/index.html') %>
+                                    </div>
+                                </div>
+                    </div>
+
+                    <aside class="view_left">
+                        <%= require('html-loader!../../components/elements/leftele/hotart/index.html') %>
+                            <%= require('html-loader!../../components/elements/leftele/reward/index.html') %>
+                    </aside>
+                </div>
             </div>
-        </div>
-        <%= require('html-loader!../../components/elements/footer/index.html') %>
+            <%= require('html-loader!../../components/elements/footer/index.html') %>
+                <%= require('html-loader!../../components/wetui/base/alert/index.html') %>
     </body>
 
 </html>
