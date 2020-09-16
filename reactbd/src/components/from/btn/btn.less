@@ -1,0 +1,111 @@
+@import '../../styles/index.less';
+@height_lg:40px;
+@height_nm:38px;//normal
+@height_md:32px;
+@height_sm:26px;
+@height_mini:22px;
+
+@pad_lg:0 18px;
+@pad_nm:0 16px;
+@pad_md:0 14px;
+@pad_sm:0 12px;
+@pad_mini:0 10px;
+//基本样式函数
+.btn-size(@height,@padding){
+    min-height: @height;
+    height: @height;
+    line-height: @height;
+    padding: @padding;
+}
+.btn-bg_color(@color){
+    color: #fff;
+    background-color: @color;
+}
+.btn-bg_color__plain(@color){
+    background-color: #ffffff;
+    color: @color;
+}
+.wet-btn { //正常形态
+    font-family: @wet-ftf-sans-serif;
+    font-size: @wet-fs-base;
+    text-align: center;
+    display: inline-block;//默认按钮是内联的
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition:all 0.1s ease-in-out;
+    font-weight: @wet-fw-base;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    border-radius: 4px;//默认是有圆角设计
+    text-decoration: none;
+    .btn-bg_color__plain(@wet-inverse);//默认plain类型
+    .btn-size(@height_nm,@pad_nm);//默认大小
+    .border_1px(fade(@wet-inverse,30%));
+    &:hover{
+        .border_1px(fade(@wet-primary,30%));
+        .btn-bg_color__plain(@wet-primary);
+    }
+    &:active{
+        .border_1px(@wet-primary);
+    }
+    &__block{
+        display: block;
+    }
+    &__large{
+        .btn-size(@height_lg,@pad_lg);
+    }
+    &__middle{
+        .btn-size(@height_md,@pad_md);
+    }
+    &__small{
+        .btn-size(@height_sm,@pad_sm);
+    }
+    &__mini{
+        .btn-size(@height_mini,@pad_mini);
+    }
+    &__success{
+        .btn-bg_color(@wet-success);
+        .border_1px(fade(@wet-success,30%));
+        &:hover{
+            .btn-bg_color(fade(@wet-success,70%));
+        }
+        &:active{
+            .btn-bg_color(@wet-success);
+        }
+    }
+    &__primary{
+        .btn-bg_color(@wet-primary);
+        .border_1px(fade(@wet-primary,30%));
+        &:hover{
+            .btn-bg_color(fade(@wet-primary,70%));
+        }
+        &:active{
+            .btn-bg_color(@wet-primary);
+        }
+    }
+    &__warn{
+        .btn-bg_color(@wet-warn);
+        .border_1px(fade(@wet-warn,30%));
+        &:hover{
+            .btn-bg_color(fade(@wet-warn,70%));
+        }
+        &:active{
+            .btn-bg_color(@wet-warn);
+        }
+    }
+    &__info{
+        .btn-bg_color(@wet-info);
+        .border_1px(fade(@wet-info,30%));
+        &:hover{
+            .btn-bg_color(fade(@wet-info,70%));
+        }
+        &:active{
+            .btn-bg_color(@wet-info);
+        }
+    }
+}
