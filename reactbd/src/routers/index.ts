@@ -6,8 +6,12 @@ import MB from '../mb/index';
 // import UserHome from '../pages/userindex/userhome/userhome'
 // import UserEdite from '../pages/userindex/useredite/useredite'
 // import QueryArt from '../pages/userindex/queryart/queryart'
-let routers = {
-    mb:<RouterItem []>[
+interface RoutersParams {
+    mb:RouterItem [];
+    pc:RouterItem [];
+}
+let routers:RoutersParams = {
+    mb:[
         {
             path:'/',
             redirect:{
@@ -19,7 +23,7 @@ let routers = {
             component:MB.Home
         }
     ],
-    pc:<RouterItem []>[
+    pc:[
         {
             path:'/',
             redirect:{

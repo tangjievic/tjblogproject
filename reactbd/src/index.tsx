@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import './libs/fonticon/iconfont.css';
+import './components/index.less';
 ReactDOM.render(
   <React.StrictMode>
     <App />

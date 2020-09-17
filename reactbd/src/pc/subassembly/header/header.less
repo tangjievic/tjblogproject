@@ -1,0 +1,31 @@
+.tj-blog__hd{
+    background-color: #ffffff;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;right: 0;
+    height: auto;
+    &::before{
+        content: '';
+        display: block;
+        flex: 0 0 70px;
+    }
+    .hd__box{
+        width: 1130px;
+        margin: 0 auto;
+        &::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .hd_logo{
+            height: 70px;
+            line-height: 70px;
+            font-size: 22px;
+            float: left;
+        }
+        .nav_right{
+            float: right;
+        }
+    }
+}

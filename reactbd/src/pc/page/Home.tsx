@@ -1,12 +1,11 @@
 import React from 'react';
+import MainLayout from '../layout/MainLayout';
 interface HomeProps {
 
 }
 const Home:React.FC<HomeProps> = (props) =>{
     return (
-        <div>
-            这是主页面
-        </div>
+        <MainLayout></MainLayout>
     )
 }
 

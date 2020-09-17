@@ -34,7 +34,7 @@ interface IMenuContent {
 
 export const MenuContext = createContext<IMenuContent>( {index:0} );
 
-const WetMenu:React.FC<MenuProps> = (props) =>{
+const WetMenu:React.FC<MenuProps> = (props:any) =>{
     const {
         className,
         mode,
@@ -48,7 +48,11 @@ const WetMenu:React.FC<MenuProps> = (props) =>{
     //let thread_with:number = 0;
     let refsArray:any = [];
     let temp_position:any = [];
+    let a:any = {current:{
+        clientWidth:0
+    }};
     let cRef:any = useRef();
+    //let [refsArray,pushRefItem] = useState([])
     let [theadPosition,settheadPosition] = useState([]);
     let [threadWith,setThreadWith] = useState(0);
     let [currentActive,setActive] = useState(defaultIndex);
@@ -56,21 +60,25 @@ const WetMenu:React.FC<MenuProps> = (props) =>{
     let [initMenu,setInitMenu] = useState(true)
     //组件dom数据初始化
     useEffect(()=>{
-        //console.log(props.children[0].key)
-        refsArray.forEach((item:any,index:number)=>{
-            //temp_position[index] = item.current.clientWidth
-            temp_position.push(item.current.clientWidth)
-            if(item.current.classList.contains('actived')){
-                setThreadWith(item.current.clientWidth)
-                let position = 0
-                for(let i = 0;i<index;i++){
-                    position  = position + temp_position[i]
+        let count_time = setTimeout(() => {
+            console.log(refsArray[0].current.clientWidth)
+            refsArray.forEach((item:any,index:number)=>{
+                //temp_position[index] = item.current.clientWidth
+                temp_position.push(item.current.clientWidth)
+                if(item.current.classList.contains('actived')){
+                    setThreadWith(item.current.clientWidth)
+                    let position = 0
+                    for(let i = 0;i<index;i++){
+                        position  = position + temp_position[i]
+                    }
+                    console.log('xxx')
+                    setPositionX(position)
                 }
-                console.log('xxx')
-                setPositionX(position)
-            }
-        })
-        settheadPosition(temp_position)
+            })
+            settheadPosition(temp_position);
+            clearTimeout(count_time);
+        },100);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[initMenu])
     const classes = classNames('wet-menu',className,{
         'menu-vertical':mode === 'vertical',
@@ -91,7 +99,7 @@ const WetMenu:React.FC<MenuProps> = (props) =>{
             position  = position + theadPosition[i]
         }
         //console.log(keys,theadPosition,refsArray);
-        setThreadWith(refsArray[keys].current.clientWidth)
+        setThreadWith((refsArray as any)[keys].current.clientWidth)
         setPositionX(position)
     }
     const handMouseLeave = ()=>{
@@ -103,23 +111,24 @@ const WetMenu:React.FC<MenuProps> = (props) =>{
         onMouseOver:mouseOverHandle,
         //onMouseOut:handMouseOut
     }
-    const renderChildren = ()=>{
-        return React.Children.map(children,(child,idx)=>{
-            const childElement = child as React.FunctionComponentElement<MenuItemProps>//使用类型断言
-            const { displayName } = childElement.type;
+    const renderChildren = (children:React.FunctionComponentElement<MenuItemProps>[])=>{
+        let newschildren:any = children.map((item,index)=>{
+            const {displayName} = item.type
             if(displayName === 'WetMenuItem'){
-                cRef.current = idx;
-                let a = Object.assign({},cRef);
+                cRef.current = index;
+                a = Object.assign({},cRef);
                 refsArray.push(a);
-                let childrenEle =  React.cloneElement(childElement,{
-                    keys:idx,
-                    ref:a
+                let childrenEle =  React.cloneElement(item,{
+                    keys:index,
+                    ref:a,
+                    key:index
                 })
                 return childrenEle
             }else{
                 console.error('警告：非标准菜单子组件');
             }
         })
+        return newschildren
     }
     return (
         <nav className={classes} style={style}>
@@ -130,7 +139,7 @@ const WetMenu:React.FC<MenuProps> = (props) =>{
             <ul className="menu_box" onMouseLeave={()=>handMouseLeave()}>
                 {/* 这是react和vue的区别之一，一般用children来表示未来要插入的子节点 */}
                 <MenuContext.Provider value = {passedContent}>
-                {renderChildren()}
+                {renderChildren(children)}
                 </MenuContext.Provider>
             </ul>
         </nav>
