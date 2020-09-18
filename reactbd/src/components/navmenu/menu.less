@@ -17,14 +17,25 @@
         height: 70px;
     }
     .wet-menu__item{
-        padding: 0 15px;
+        position: relative;
+        //padding: 0 15px;
         cursor: pointer;
         transition: color .2s linear;
         list-style: none;
         height: 70px;
         line-height: 70px;
+        .nav-link,.sub__title{
+            display: block;
+            color: @wet-inverse;
+            text-decoration: none;
+            padding: 0 15px;
+        }
         &:hover,&:focus{
             text-decoration: none;
+            .nav_sub{
+                display: block;
+                animation: WetfadeInDown 0.1s .2s ease both;
+            }
         }
         &.disabled{
             color: @wet-gray-5;
@@ -32,7 +43,41 @@
             pointer-events: none;
         }
         &.actived,&:hover{
-            color:@menu-color-primary;
+            //color:@menu-color-primary;
+            .nav-link,.sub__title{
+                color:@menu-color-primary;
+            }
+        }
+        .nav_sub{
+            padding: 0;
+            display: none;
+            font-size: 14px;
+            position: absolute;
+            left: -5px;
+            min-width: 130%;
+            background-color: #ffffff;
+            top: 60px;
+            border-radius: 4px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
+            border-top: 1px solid rgba(0, 0, 0, .1);
+            &>.wet-menu__item{
+                height: 35px;
+                line-height: 35px;
+                .nav-link{
+                    height: 35px;
+                    line-height: 35px;
+                    color: @wet-inverse;
+                    &:hover{
+                        color:@menu-color-primary;
+                    }
+                }
+                &.actived{
+                    color:@menu-color-primary;
+                    .nav-link{
+                        color:@menu-color-primary;
+                    }
+                }
+            }
         }
     }
     &.menu-vertical{
@@ -53,5 +98,17 @@
             top: 0;
             transition: transform .2s linear,width .2s linear;
         }
+    }
+}
+
+@keyframes WetfadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0)
     }
 }
