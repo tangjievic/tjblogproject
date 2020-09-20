@@ -20,5 +20,64 @@
     .view{
         flex: 1;
         min-width: 1100px;
+        padding-top: 90px;
+        .view_box{
+            width: 1100px;
+            margin: 0 auto;
+            .view_right{
+                width: 780px;
+                float: right;
+            }
+            .view_left{
+                float: left;
+            }
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+    }
+    .view_section{
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        .section-content{
+            padding: 10px 20px;
+        }
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+            color: @wet-primary;
+        }
+    }
+}
+.left_planels{
+    position: relative;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: @wet-inverse;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    h3{
+        padding: 20px;
+        margin: 0;
+        font-weight: 500;
+    }
+    .msglist{
+        padding: 20px;
+        list-style: none;
+        margin: 0;
+        .msglist__item{
+            margin-bottom: 15px;
+            height: 20px;
+            line-height: 20px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .reward-desc{
+        padding: 20px;
+        margin:0;
     }
 }

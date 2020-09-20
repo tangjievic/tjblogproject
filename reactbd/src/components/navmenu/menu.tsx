@@ -53,6 +53,7 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
     let [initMenu,setInitMenu] = useState(true)
     //组件dom数据初始化
     useEffect(()=>{
+        console.log('dasfadsf')
         refsArray.forEach((item:any,index:number)=>{
             temp_position.push(item.current.clientWidth)
             if(item.current.classList.contains('actived')){
@@ -66,8 +67,9 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
         })
         settheadPosition(temp_position);
     },[initMenu])
-    setTimeout(()=>{
-        setInitMenu(!initMenu)
+    let time = setTimeout(()=>{
+        setInitMenu(false)
+        clearTimeout(time)
     },100)
     const classes = classNames('wet-menu',className,{
         'menu-vertical':mode === 'vertical',
@@ -81,7 +83,8 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
         }
     }
     const mouseOverHandle = (keys:number)=>{
-        let position = 0
+        let position = 0;
+        //setInitMenu(!initMenu)
         if(onMouseOver){
             onMouseOver(keys);
         }

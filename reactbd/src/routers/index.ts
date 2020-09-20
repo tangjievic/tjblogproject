@@ -27,12 +27,18 @@ let routers:RoutersParams = {
         {
             path:'/',
             redirect:{
-                to:'/home'
+                to:'/main'
             }
         },
         {
-            path:'/home',
-            component:PC.Home
+            path:'/',
+            component:PC.Home,
+            routers:[
+                {
+                    path:"/main",
+                    component:PC.Main
+                }
+            ]
         }
     ]
 }
