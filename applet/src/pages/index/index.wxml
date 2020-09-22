@@ -12,7 +12,7 @@
         <wet-btn bind:click="testClick" type="success" disabled round>默认按钮</wet-btn>
         <wet-btn bind:click="testClick" type="primary" disabled round>默认按钮</wet-btn>
         <wet-btn bind:click="testClick" type="info" disabled>默认按钮</wet-btn>
-        <wet-btn bind:click="testClick" type="warn" disabled>默认按钮</wet-btn>
+        <wet-btn bind:click="testClick" type="warn" disabled>默认按钮 dsfsadf </wet-btn>
         <wet-btn bind:click="testClick" type="risk" disabled>默认按钮</wet-btn>
 
         <wet-btn bind:click="testClick" plain>默认按钮</wet-btn>

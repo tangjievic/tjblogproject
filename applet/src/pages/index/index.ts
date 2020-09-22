@@ -15,7 +15,7 @@ Page({
         },
         {
             label:'需确认',
-            value:true
+            value:true 
         },
     ],
     current: 'tab1',
@@ -80,7 +80,7 @@ Page({
     showAlert(){
         $Alert({
             type:'error',
-            content:'我这是测试'
+            content:'我这是测试asdfa'
         })
     },
     handleChange (e:any) {
