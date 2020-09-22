@@ -3,12 +3,14 @@ import './mainlayout.less';
 import LeftTool from '../subassembly/lefttool/lefttool';
 import Header from '../subassembly/header/Header';
 import Bubline from '../subassembly/bubbleline/Bubbleline';
+import BlogFooter from '../subassembly/footer/Footer';
+import ad from './ad.png';
 interface MainLayoutProps {
 
 }
 
 const MainLayout:React.FC<MainLayoutProps> = (props)=>{
-    let { children,...others } = props;
+    let { children } = props;
     console.log(children)
     return(
         <div className="wetui-page">
@@ -21,23 +23,15 @@ const MainLayout:React.FC<MainLayoutProps> = (props)=>{
                     </div>
                     <div className="view_left">
                         <div className="left_planels">
-                            <h3>AUTHOR CARD</h3>
+                            <h3 className="hd_title">AD CARD</h3>
                             <Bubline></Bubline>
-                            <ul className="msglist">
-                                <li className="msglist__item profession">职业：前端海里游泳的鱼</li>
-                                <li className="msglist__item site">住址：深圳的某个地方蜗居</li>
+                            <ul className="ad_box">
+                                <img src={ad}></img>
                             </ul>
-                            <div className="mycard_btn">
-                                <div className="btn-item">
-                                    <a className="wet-btn wet-btn__block" href="https://blog.csdn.net/tangjie109411" target="_blank">个人CSDN</a>
-                                </div>
-                                <div className="btn-item">
-                                    <a className="wet-btn wet-btn__block" href="#">更多信息</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+                <BlogFooter></BlogFooter>
             </div>
         </div>
     )

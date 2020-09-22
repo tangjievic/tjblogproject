@@ -29,13 +29,15 @@ const WetMenuSub:React.FC<MenuSubPorps> = React.forwardRef( (props:any,ref)=>{
     })
     let refsArray:any = [];
     useEffect(()=>{
-        refsArray.forEach((item:any)=>{
-            if(item.props.index === context.index){
-                setSelectItem(true)
+        for(let i = 0;i<refsArray.length;i++){
+            let item = refsArray[i].props;
+            if(item.index === context.index){
+                setSelectItem(true);
+                break;
             }else{
-                setSelectItem(false)
+                setSelectItem(false);
             }
-        })
+        }
     })
     const context = useContext( MenuContext );
     const passedContent:IMenuContent = {

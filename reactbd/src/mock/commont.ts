@@ -1,0 +1,1 @@
+import Mock,{ Random } from 'mockjs'

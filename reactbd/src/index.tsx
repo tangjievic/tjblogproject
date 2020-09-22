@@ -4,10 +4,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './libs/fonticon/iconfont.css';
 import './components/index.less';
+import './mock/index';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
 
