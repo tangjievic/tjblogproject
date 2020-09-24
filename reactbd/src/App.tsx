@@ -8,9 +8,13 @@ import {
 import routers from './routers/index';
 import { Provider } from 'react-redux';
 import store from './store'
+import flexible from './tool/rem';
 
 function App() {
   let client_width:number =  document.body.clientWidth;
+  if(client_width<1200){
+    flexible(window,document);
+  }
   return(
     <Router>
       <Provider store={store}>
