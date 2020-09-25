@@ -1,5 +1,8 @@
 import React from 'react';
 import MainLayout from '../layout/mainLayout';
+import { Button } from 'antd';
+import Artlist from '../subassembly/artlist';
+import '../style/home.less';
 interface HomeProps {
 
 }
@@ -30,10 +33,28 @@ const Home:React.FC<HomeProps> = (props) =>{
                     </li>
                 </ul>
                 {/* 最新更新文章 */}
-                <section>
-                    <header></header>
+                <section className="page_section">
+                    <header className="section_title">最近更新</header>
+                    <div className="section_content new">
+                        <div className="art_hd">
+                            <a>标题</a>
+                        </div>
+                        <div className="art_sub">副标题</div>
+                        <p className="art_desc">简介:大安德森技法卢卡斯的飞洒地方</p>
+                        <div className="art_msg">
+                            <span>作者:</span>
+                            <span>发布时间:</span>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div className="art_btn">
+                            <Button block size="middle">点击查看</Button>
+                        </div>
+                    </div>
                 </section>
-                {/*  */}
+                {/* 文章列表 */}
+                <Artlist></Artlist>
             </div>
         </MainLayout>
     )

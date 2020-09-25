@@ -19,6 +19,7 @@ const MainLayout:React.FC = (props)=>{
             <footer className="main-footer">
                 <Footer></Footer>
             </footer>
+            <div className="ios-salf_padding"></div>
         </div>
     )
 }

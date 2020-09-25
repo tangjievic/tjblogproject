@@ -1,0 +1,13 @@
+.border_1px(){
+    /* 2倍屏 */
+    border-bottom:1px solid fade(#000000,10%);
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.0) {
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+    /* 3倍屏 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3.0) {
+        -webkit-transform: scaleY(0.33);
+        transform: scaleY(0.33);
+    }
+}
