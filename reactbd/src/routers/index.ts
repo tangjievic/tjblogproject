@@ -21,6 +21,14 @@ let routers:RoutersParams = {
         {
             path:'/home',
             component:MB.Home
+        },
+        {
+            path:'/find',
+            component:MB.Fond
+        },
+        {
+            path:'/mycenter',
+            component:MB.Mycenter
         }
     ],
     pc:[
@@ -37,7 +45,7 @@ let routers:RoutersParams = {
                 {
                     path:"/main",
                     component:PC.Main
-                }
+                },
             ]
         }
     ]

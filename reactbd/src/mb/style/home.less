@@ -1,5 +1,67 @@
 @import '../../components/styles/_variabels.less';
 @import '../../tool/mbtool.less';
+.find-section_hd{
+    width: 100%;
+    background-color: #ffffff;
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    .hd_form{
+        padding:0 20px 20px 20px;
+    }
+    .hd_box{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        .txt{
+            font-weight: 600;
+            padding-left: 20px;
+        }
+        .left_img{
+            img{
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .rt_bg{
+            position: relative;
+            height: 50px;
+            flex: 1;
+            &::after,&::before,.rt_dot{
+                content: '';
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+            }
+            &::after{
+                border:1px solid @wet-primary;
+                box-shadow: 0 0 2px 0 @wet-primary;
+                width: 10px;
+                height: 10px;
+                top:0;
+                right: 30px;
+            }
+            &::before{
+                width: 30px;
+                height: 30px;
+                border: 1px solid @wet-info;
+                right: 0;
+                box-shadow: 0 0 2px 0 @wet-info;
+                top: 50%;
+                margin-top: -15px;
+            }
+            .rt_dot{
+                width: 20px;
+                height: 20px;
+                border: 1px solid @wet-warn;
+                box-shadow: 0 0 2px 0 @wet-warn;
+                right: 30px;
+                bottom: 0;
+            }
+        }
+    }
+}
 .tjblog-page{
     font-family: @wet-ftf-sans-serif;
     font-size: 16px;
