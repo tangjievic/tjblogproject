@@ -1,12 +1,15 @@
 import React from 'react';
 import WetTag,{TagSize,TagType} from '../../components/tag/tag'
 import { Pagination  } from 'antd';
-const Artlist:React.FC = (props) => {
-    const { children } = props
-
+interface ArtlistProps {
+    title:string,
+    artlist?:any[]
+}
+const Artlist:React.FC<ArtlistProps> = (props) => {
+    const { title,children } = props
     return (
         <section className="page_section">
-            <header className="section_title">全部文章</header>
+            <header className="section_title">{title}</header>
             <div className="section_content">
                 <ul className="art_list">
                     <li className="art_li">

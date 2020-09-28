@@ -2,7 +2,7 @@ import React from 'react';
 import MainLayout from '../layout/mainLayout';
 import search from '../style/search.png';
 import { Input } from 'antd';
-
+import Artlist from '../subassembly/artlist';
 const { Search } = Input;
 
 const Fonds:React.FC = (porps)=>{
@@ -30,9 +30,7 @@ const Fonds:React.FC = (porps)=>{
                 </form>
             </section>
             <div className="tjblog-page">
-                <section className="page_section">
-
-                </section>
+                <Artlist title="查找结果"></Artlist>
             </div>
         </MainLayout>
     )

@@ -29,6 +29,14 @@ let routers:RoutersParams = {
         {
             path:'/mycenter',
             component:MB.Mycenter
+        },
+        {
+            path:'/artpage',
+            component:MB.Artpage
+        },
+        {
+            path:'/setting',
+            component:MB.Setting
         }
     ],
     pc:[

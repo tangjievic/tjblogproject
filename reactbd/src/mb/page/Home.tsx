@@ -60,7 +60,7 @@ const Home:React.FC<HomeProps> = (props) =>{
                     </div>
                 </section>
                 {/* 文章列表 */}
-                <Artlist></Artlist>
+                <Artlist title="全部文章"></Artlist>
             </div>
         </MainLayout>
     )
