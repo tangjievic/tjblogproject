@@ -1,15 +1,17 @@
 import React,{useEffect,useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import classNames from 'classnames'; 
 import './footer.less';
 
 interface FooterProps {
     selecttype:string;
+    gopage:()=>{};
 }
 
 const Footer:React.FC<FooterProps> = (props)=>{
     let { selecttype } =  props;
+    let history = useHistory();
     //let [currenttype,setCurrentType] = useState('home');
-
     //setCurrentType(selecttype);
 
     let home = classNames('itemicon',{
@@ -24,20 +26,22 @@ const Footer:React.FC<FooterProps> = (props)=>{
         'my':selecttype !== 'my',
         'my-active':selecttype === 'my'
     });
-    let goRouter = (props:any,type:string) =>{
-        console.log(props)
+    let goRouter = (type:string) =>{
+        // props.gopage(type);
+        // console.log(props)
+        history.push(`/${type}`)
     }
     return(
         <ul className="blog-mb__footer">
-            <li className="footer-item" onClick={()=>goRouter(props,'home')}>
+            <li className="footer-item" onClick={()=>goRouter('home')}>
                 <i className={home}></i>
                 <span>首页</span>
             </li>
-            <li className="footer-item" onClick={()=>goRouter(props,'find')}>
+            <li className="footer-item" onClick={()=>goRouter('find')}>
                 <i className={find}></i>
                 <span>发现</span>
             </li>
-            <li className="footer-item" onClick={()=>goRouter(props,'my')}>
+            <li className="footer-item" onClick={()=>goRouter('my')}>
                 <i className={my}></i>
                 <span>我的</span>
             </li>

@@ -1,11 +1,15 @@
 import React from 'react';
-
+import { useHistory } from 'react-router-dom';
 const Setting :React.FC = (props)=>{
+    let history = useHistory();
+    let goBack = ()=>{
+        history.goBack()
+    }
     return (
         <div className="mb-main__view art_page">
             <header className="view_header">
                 <div className="hd_box">
-                    <div className="hd_back"></div>
+                    <div className="hd_back" onClick={goBack}></div>
                     <div className="hd_title">
                         设置
                     </div>

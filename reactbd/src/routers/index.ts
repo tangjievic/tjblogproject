@@ -27,7 +27,7 @@ let routers:RoutersParams = {
             component:MB.Fond
         },
         {
-            path:'/mycenter',
+            path:'/my',
             component:MB.Mycenter
         },
         {
@@ -37,6 +37,14 @@ let routers:RoutersParams = {
         {
             path:'/setting',
             component:MB.Setting
+        },
+        {
+            path:'/login',
+            component:MB.Login
+        },
+        {
+            path:'/artdetail',
+            component:MB.Artdetail
         }
     ],
     pc:[
