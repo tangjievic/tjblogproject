@@ -4,10 +4,13 @@ import Router from '../router/index'
 import Cookies from 'js-cookie'
 
 let SEVERURL = ''; //服务器请求地址
+let LINKURL = '';
 if(process.env.NODE_ENV == 'development'){
     SEVERURL = 'http://www.tangjietop.cn/index.php'
+    LINKURL  = 'http://www.tangjietop.cn'
 }else{
     SEVERURL = 'https://www.tangjietop.cn/index.php'
+    LINKURL  = 'http://www.tangjietop.cn'
 }
 
 let cgiGet = (api:string,params:any) => {
@@ -25,32 +28,23 @@ let cgiGet = (api:string,params:any) => {
         }).then((res:any)=>{
             resolve(res.data)
         }).catch((error:any)=>{
-            //console.log(error)
             let data:any = null;
-            if(error.responese){
+            if(error.response){
                 data = error.response.data
             }else{
-                Vue.prototype.$message.error('系统繁忙，请稍后再试')
+                Vue.prototype.$message.error('系统错误，请稍后再试');
+                reject(data)
+                return
+            }
+            if(error.response.status === 401){
                 setTimeout(()=>{
                     Router.push({name:"login",params:{
                         type:'relogin'
                     }})
                 },1000)
-                return
-            }
-            if(error.response.status === 500){
-                Vue.prototype.$message.error(data.message)
-            }else{
-                if(data.error_code === 10002 ){
-                    setTimeout(()=>{
-                        Router.push({name:"login",params:{
-                            type:'relogin'
-                        }})
-                    },1000)
-                }else{
-                    Vue.prototype.$message.error(data.message)
-                }
+                Vue.prototype.$message.error(data.message);
                 reject(data)
+                return
             }
         })
     })
@@ -72,30 +66,22 @@ let cgiPost = (api:string,params:any) => {
             resolve(res.data)
         }).catch((error:any)=>{
             let data:any = null;
-            if(error.responese){
+            if(error.response){
                 data = error.response.data
             }else{
-                Vue.prototype.$message.error('系统繁忙，请稍后再试')
+                Vue.prototype.$message.error('系统错误，请稍后再试');
+                reject(data)
+                return
+            }
+            if(error.response.status === 401){
                 setTimeout(()=>{
                     Router.push({name:"login",params:{
                         type:'relogin'
                     }})
                 },1000)
-                return
-            }
-            if(error.response.status === 500){
-                Vue.prototype.$message.error(data.message)
-            }else{
-                if(data.error_code === 10002 ){
-                    setTimeout(()=>{
-                        Router.push({name:"login",params:{
-                            type:'relogin'
-                        }})
-                    },1000)
-                }else{
-                    Vue.prototype.$message.error(data.message)
-                }
+                Vue.prototype.$message.error(data.message);
                 reject(data)
+                return
             }
         })
     })
@@ -104,5 +90,6 @@ let cgiPost = (api:string,params:any) => {
 export{
     cgiGet,
     cgiPost,
-    SEVERURL
+    SEVERURL,
+    LINKURL
 }

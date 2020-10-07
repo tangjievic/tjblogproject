@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import classNames from 'classnames'; 
 import './footer.less';
@@ -11,9 +11,6 @@ interface FooterProps {
 const Footer:React.FC<FooterProps> = (props)=>{
     let { selecttype } =  props;
     let history = useHistory();
-    //let [currenttype,setCurrentType] = useState('home');
-    //setCurrentType(selecttype);
-
     let home = classNames('itemicon',{
         'home':selecttype !== 'home',
         'home-active':selecttype === 'home'

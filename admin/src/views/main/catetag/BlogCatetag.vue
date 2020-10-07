@@ -200,7 +200,8 @@ export default Vue.extend({
         }
         if(!this.tagdatalist||this.tagdatalist.length === 0){
             this.getTag();
-            this.tag_data = this.tagdatalist
+        }else{
+             this.tag_data = this.tagdatalist
         }
     },
     computed:{
@@ -227,7 +228,7 @@ export default Vue.extend({
             })
         },
         callback(key:number|string) {
-            console.log(key);
+           // console.log(key);
         },
         //编辑开始
         editeStart(data:any,type:string="cate"){

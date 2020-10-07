@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import './libs/fonticon/iconfont.css';
 import './components/index.less';
 import './mock/index';
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')

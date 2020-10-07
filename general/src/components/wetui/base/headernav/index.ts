@@ -1,3 +1,4 @@
+import { LINKURL } from '../../../../api/apimethods'
 let indexNav = (pDom:string,idx?:number):void =>{
     let item_id = idx?idx:$(pDom).data('activeidx')
     let temp:number = 0;
@@ -49,6 +50,9 @@ let indexNav = (pDom:string,idx?:number):void =>{
     $(`${pDom} .nav_panel .wxt-btn`).on('click',()=>{
         let val = $(`${pDom} .nav_panel .input`).val();
         console.log(val)
+    })
+    $('.wet-nav_gologin').on('click',()=>{
+        window.open(`${LINKURL}/user#/login`,'_self')
     })
 }
 export default indexNav;

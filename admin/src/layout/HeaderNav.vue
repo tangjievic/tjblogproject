@@ -16,6 +16,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import {mapState} from 'vuex'
+import Cookies from 'js-cookie'
+import { LINKURL } from '../cgictrl/index'
 export default Vue.extend({
     data(){
         return{
@@ -29,7 +31,12 @@ export default Vue.extend({
 	},
     methods:{
         handleMenuClick(e:any) {
-            console.log('click', e);
+            Cookies.remove('token');
+            Cookies.remove('username');
+            (this as any).$message.success('退出成功')
+            setTimeout(()=>{
+                window.open(LINKURL,'_self');
+            },500)
         },
     }
 })

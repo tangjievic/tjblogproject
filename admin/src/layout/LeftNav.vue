@@ -16,8 +16,8 @@ export default Vue.extend({
     data() {
         return {
             defaultSelectedKeys:[leftnav[0].name],
-            rootSubmenuKeys: [],
-            openKeys: [],
+            rootSubmenuKeys: [] as any,
+            openKeys: [] as any,
             leftnav:leftnav,
             selectedKeys:null
         };

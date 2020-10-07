@@ -30,7 +30,7 @@ const Tag:React.FC<TagProps> = (props)=>{
         className,
         tagshape
     } = props
-    const classes = classNames( className,'wet-tag',`wet-tag__${size}`,`wet-tag__${types}`,tagshape);
+    const classes = classNames( className,'wet-tag',`wet-tag__${size?size:'lg'}`,`wet-tag__${types}`,tagshape);
 
     return(
         <span className={classes}>

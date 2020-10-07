@@ -13,21 +13,22 @@ declare global {
 window.$ = window.jQuery = jq;
 //以下是引入jq插件或jq组件 引入导航
 wetUI.HeaderNav('.page_topnav');
+wetUI.LeftMenu();
 pageLoding(1);
-//点击用户图标
-$('.tjblog-user_detail').on('click',()=>{
-    wetUI.Modal({
-        type:"warn",
-        content:"网站升级中，暂不开放"
-    });
-})
-//点击登录图标
-$('.tjblog-user_login').on('click',()=>{
-    wetUI.Modal({
-        type:"warn",
-        content:"网站升级中，暂不开放"
-    })
-})
+// //点击用户图标
+// $('.tjblog-user_detail').on('click',()=>{
+//     wetUI.Modal({
+//         type:"warn",
+//         content:"网站升级中，暂不开放"
+//     });
+// })
+// //点击登录图标
+// $('.tjblog-user_login').on('click',()=>{
+//     wetUI.Modal({
+//         type:"warn",
+//         content:"网站升级中，暂不开放"
+//     })
+// })
 //暂时不开通的a连接
 $('.jsts_code,.tool-list').on('click',()=>{
     wetUI.Modal({

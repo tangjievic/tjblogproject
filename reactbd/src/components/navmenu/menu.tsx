@@ -1,7 +1,6 @@
 import React,{useState,useEffect,createContext,useRef} from 'react';
 import classNames from 'classnames';
 import WetMenuItem from './menuItem';
-import { MenuItemProps } from './menuItem';
 import WetMenuSub from './menuSub';
 
 // 在ts中，定义类型由两种方式：接口（interface）和类型别名（type alias）
@@ -53,7 +52,6 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
     let [initMenu,setInitMenu] = useState(true)
     //组件dom数据初始化
     useEffect(()=>{
-        console.log('dasfadsf')
         refsArray.forEach((item:any,index:number)=>{
             temp_position.push(item.current.clientWidth)
             if(item.current.classList.contains('actived')){
@@ -70,14 +68,13 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
     let time = setTimeout(()=>{
         setInitMenu(false)
         clearTimeout(time)
-    },100)
+    },1000)
     const classes = classNames('wet-menu',className,{
         'menu-vertical':mode === 'vertical',
         'menu-horizontal':mode !== 'vertical',
     })
     const handleClick = (index:number|string) => {
-        //console.log(index)
-        setActive(index);
+        setActive(defaultIndex)
         if(onSelect){
             onSelect(index)
         }
@@ -102,9 +99,18 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
         onSelect:handleClick,
         onMouseOver:mouseOverHandle,
     }
-    const renderChildren = (children:React.FunctionComponentElement<MenuItemProps>[])=>{
-        let newschildren:any = children.map((item,index)=>{
-            const {displayName} = item.type
+    const renderChildren = (children:any[])=>{
+        //console.log(children,'xxx')
+        let childtemp:any = [];
+        children.forEach((item:any,index:number)=>{
+            if(Array.isArray(item)){
+                childtemp = childtemp.concat(item)
+            }else{
+                childtemp.push(item)
+            }
+        })
+        let newschildren:any = childtemp.map((item:any,index:number)=>{
+            const { displayName } = item.type
             if(displayName === 'WetMenuItem' || displayName === 'WetMenuSub'){
                 cRef.current = index;
                 a = Object.assign({},cRef);

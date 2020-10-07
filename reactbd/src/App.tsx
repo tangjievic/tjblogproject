@@ -10,6 +10,18 @@ import { Provider } from 'react-redux';
 import store from './store'
 import flexible from './tool/rem';
 
+const view = document.getElementById('loading_init');
+if(view){
+  //view.style.display = 'none';
+  //view.style.opacity = '0';
+  setTimeout(() => {
+    view.style.opacity = '0';
+  }, 1500);
+  setTimeout(() => {
+    view.style.display = 'none';
+  }, 2000);
+}
+
 function App() {
   let client_width:number =  document.body.clientWidth;
   if(client_width<1200){

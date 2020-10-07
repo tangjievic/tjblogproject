@@ -32,7 +32,10 @@ const BlogFooter:React.FC =  ()=>{
                             <h4>其他模块</h4>
                             <ul>
                                 <li>
-                                    <a href="https://github.com/Tencent/omi" target="_blank">腾讯omi框架</a>
+                                    <a href="https://github.com/Tencent/omi"  rel="noopener noreferrer" target="_blank">腾讯omi框架</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/tangjievic/tjblogproject"  rel="noopener noreferrer" target="_blank">github</a>
                                 </li>
                             </ul>
                         </div>
@@ -44,10 +47,10 @@ const BlogFooter:React.FC =  ()=>{
                             <h4>友情链接</h4>
                             <ul>
                                 <li>
-                                    <a href="https://www.szbolinjz.com" target="_blank">深圳柏林家政</a>
+                                    <a href="https://www.szbolinjz.com"  rel="noopener noreferrer" target="_blank">深圳柏林家政</a>
                                 </li>
                                 <li>
-                                    <a href="https://sszfu.com" target="_blank">十三州府博客</a>
+                                    <a href="https://sszfu.com"  rel="noopener noreferrer" target="_blank">十三州府博客</a>
                                 </li>
                             </ul>
                         </div>

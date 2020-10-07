@@ -1,9 +1,19 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { message } from 'antd';
+import Cookies from 'js-cookie';
 const Setting :React.FC = (props)=>{
     let history = useHistory();
     let goBack = ()=>{
         history.goBack()
+    }
+    let loginOut = ()=>{
+        Cookies.remove('token');
+        Cookies.remove('username');
+        message.success('退出成功');
+        setTimeout(()=>{
+            history.replace('/home');
+        },500)
     }
     return (
         <div className="mb-main__view art_page">
@@ -17,7 +27,7 @@ const Setting :React.FC = (props)=>{
             </header>
 
             <ul className="my-center list setting">
-                <li className="item">
+                <li className="item" onClick={loginOut}>
                     <i className="icontext loginout"></i>
                     <div className="label setting">退出账户</div>
                 </li>

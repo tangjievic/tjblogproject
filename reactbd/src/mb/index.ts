@@ -5,6 +5,7 @@ import Artpage from './page/Artpage';
 import Setting from './page/Setting';
 import Login from './page/Login';
 import Artdetail from './page/Artdetail';
+import VeidoList from './page/veidoList';
 export default {
     Home,
     Fond,
@@ -12,5 +13,6 @@ export default {
     Artpage,
     Setting,
     Login,
-    Artdetail
+    Artdetail,
+    VeidoList
 }

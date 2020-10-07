@@ -4,10 +4,13 @@ import Cookies from 'js-cookie'
  *  axios 全局拦截，对一般错误拦截直接报错误码，对token验证错误，提示，并提示用户是否登录
  */
 let SEVERURL = ''; //服务器请求地址
+let LINKURL = ''; 
 if(process.env.NODE_ENV == 'development'){
     SEVERURL = 'http://www.tangjietop.cn/index.php'
+    LINKURL  = 'http://www.tangjietop.cn'
 }else{
     SEVERURL = 'https://www.tangjietop.cn/index.php'
+    LINKURL  = 'https://www.tangjietop.cn'
 }
 
 let cgiGet = (api:string,params:any) => {
@@ -104,5 +107,6 @@ let cgiPost = (api:string,params:any) => {
 export{
     cgiGet,
     cgiPost,
-    SEVERURL
+    SEVERURL,
+    LINKURL
 }

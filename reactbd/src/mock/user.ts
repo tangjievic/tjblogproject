@@ -1,4 +1,4 @@
-import Mock,{ Random } from 'mockjs';
+import Mock from 'mockjs';
 
 const useList = Mock.mock({
     'data':[

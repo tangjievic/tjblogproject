@@ -1,16 +1,23 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import MainLayout from '../layout/MainLayout';
 import {
-    HashRouter as Router,
+    //HashRouter as Router,
     Route,
     Redirect
 } from "react-router-dom";
-import Bubbline from '../subassembly/bubbleline/Bubbleline';
+import { connect } from 'react-redux';
+import { getUserMsgAction ,getCateMsgAction} from '../../store/actioncreator';
+import { getUerMsgPc } from '../../apilist/index';
 interface HomeProps {
-
+    reqUserData:()=>{};
+    reqCateMsg:()=>{};
 }
 const Home:React.FC<HomeProps> = (props) =>{
-    console.log(props)
+    useEffect(()=>{
+        props.reqUserData();
+        props.reqCateMsg();
+        getUerMsgPc();
+    },[])
     return (
         <MainLayout>
             {
@@ -34,4 +41,23 @@ const Home:React.FC<HomeProps> = (props) =>{
     )
 }
 
-export default Home
+const mapState = (state:any) =>{
+   return {
+        userData:state.userData,
+   }
+}
+
+const mapAtion = (dispatch:any) =>{
+    return {
+        reqUserData(){
+            const action = getUserMsgAction()
+            dispatch(action)
+        },
+        reqCateMsg(){
+            const action = getCateMsgAction()
+            dispatch(action)
+        }
+    }
+}
+
+export default connect(mapState,mapAtion)(Home as any)

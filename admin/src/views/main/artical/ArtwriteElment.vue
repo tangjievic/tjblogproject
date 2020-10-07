@@ -27,6 +27,7 @@
               :value="Number(item.id)"
               :title="item.catename"
               v-for="item in catelistdata"
+              v-show="item.pid!==0"
               :key="item.id"
             >{{item.catename}}</a-select-option>
           </a-select>
@@ -166,7 +167,7 @@ export default Vue.extend ({
     },
     created() {
         Object.assign(this.artdata, this.wrrittedata);
-        console.log(this.artdata,this.wrrittedata)
+        //console.log(this.artdata,this.wrrittedata)
     },
     computed:{
       ...mapState({

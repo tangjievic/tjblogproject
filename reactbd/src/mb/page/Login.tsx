@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col, Divider, Form, Input, Button,message } from 'antd';
 import '../style/login.less';
 import SendCode from '../../pc/subassembly/sendcode/sendcode';
-//import {getCode,userLogin,userSignIn,useReplacePassowrd} from '../../api/index'
+import Cookies from 'js-cookie';
+import {getCode,userLogin,userSignIn,useReplacePassowrd} from '../../apilist'
 
 const layout = {
     labelCol: { span: 8 },
@@ -220,18 +221,15 @@ class UserLogin extends Component {
     //登录
     onFinish(values:any){
         console.log('Success:', values);
-        // userLogin(values).then((res:any)=>{
-        //     let data = res.data
-        //     if(res.errorcode === 10001){
-        //         window.localStorage.setItem('tjuser_token',data.token);
-        //         window.localStorage.setItem('tjuser_username',data.username);
-        //         message.success('登录成功')
-        //         setTimeout(()=>{
-        //             //(this as any).props.history.replace('/main/home');
-        //         },500)
-        //     }
-        // })
-        //this.props.history.push('/main/home');
+        userLogin(values).then((res:any)=>{
+            let data:any = res.data?res.data:res;
+            Cookies.set('token', data.token, { expires: 2 });
+            Cookies.set('username',data.username,{ expires: 2 });
+            message.success('登录成功')
+            setTimeout(()=>{
+                (this as any).props.history.replace('/home');
+            },500)
+        })
     }
     onFieldsChangeA(values:any){
         if(values[0]){
@@ -255,12 +253,12 @@ class UserLogin extends Component {
                 temp[i] = values[i]
             }
         }
-        // userSignIn(temp).then(res=>{
-        //     message.success('注册成功')
-        //     setTimeout(()=>{
-        //         this.changeFlag(1)
-        //     },200)
-        // })
+        userSignIn(temp).then(res=>{
+            message.success('注册成功')
+            setTimeout(()=>{
+                this.changeFlag(1)
+            },200)
+        })
     }   
     //找回密码
     onFinishC(values:any){
@@ -275,27 +273,26 @@ class UserLogin extends Component {
             }
         }
         //请求cgi
-        //console.log(temp)
-        // useReplacePassowrd(temp).then(res=>{
-        //     message.success('重置密码成功')
-        //     setTimeout(()=>{
-        //         this.changeFlag(1)
-        //     },200)
-        // })
+        useReplacePassowrd(temp).then(res=>{
+            message.success('重置密码成功')
+            setTimeout(()=>{
+                this.changeFlag(1)
+            },200)
+        })
     }
 
     async sendCode(){
         let result = null;
         let emreg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/
         if(emreg.test(this.state.email)){
-            // await getCode({
-            //     email:this.state.email
-            // }).then((res:any)=>{
-            //     message.success('获取验证码成功，请登录邮箱查看验证码')
-            //     result = true
-            // }).catch(()=>{
-            //     result = false
-            // })
+            await getCode({
+                email:this.state.email
+            }).then((res:any)=>{
+                message.success('获取验证码成功，请登录邮箱查看验证码')
+                result = true
+            }).catch(()=>{
+                result = false
+            })
         }else{
             message.error('邮箱格式不正确,请确认后再次发送')
             result = false

@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { Button} from 'antd';
-import { inflate } from 'zlib';
 let time:any = null//全局定时器变量
 interface SendCodeProps {
     onClick:any

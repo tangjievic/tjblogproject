@@ -25,63 +25,69 @@ const lessPath = ['src/**/*.less', 'src/app.less'];
 const tsPath = ['src/**/*.ts', 'src/app.ts'];
 //清空目录
 function clearFile(cb) {
-    gulp.src('dist/**/*.*', { 
-        allowEmpty: true,
-        since:lastRun(clearFile)
-    }).pipe(clear({force: true}))
-    .pipe(gulp.dest(dist));
+    gulp.src('dist/**/*.*', {
+            allowEmpty: true,
+            since: lastRun(clearFile)
+        }).pipe(clear({ force: true }))
+        .pipe(gulp.dest(dist));
     cb();
 }
 //复制不包含less和图片的文件
-function copyFileUnlessLessTs(cb){
-    gulp.src(copyPath,option).pipe(gulp.dest(dist));
+function copyFileUnlessLessTs(cb) {
+    gulp.src(copyPath, option).pipe(gulp.dest(dist));
     cb();
 }
-
+//复制不包含less和图片的文件(只改动有变动的文件)
+function copyChange(cb) {
+    gulp.src(copyPath, option)
+        .pipe(changed(dist))
+        .pipe(gulp.dest(dist));
+    cb();
+}
 //编译less
-function lessCompile(cb){
-    gulp.src(lessPath,option)
-    .pipe(less().on('error',function(e){
-        console.error(e.message);
-        this.emit('end');
-    }))
-    .pipe(postcss([autoprefixer]))
-    .pipe(rename((path)=>{
-        path.extname = '.wxss';
-    }))
-    .pipe(gulp.dest(dist));
+function lessCompile(cb) {
+    gulp.src(lessPath, option)
+        .pipe(less().on('error', function(e) {
+            console.error(e.message);
+            this.emit('end');
+        }))
+        .pipe(postcss([autoprefixer]))
+        .pipe(rename((path) => {
+            path.extname = '.wxss';
+        }))
+        .pipe(gulp.dest(dist));
     cb()
 }
 //less变动在更新
-function lessChangeCompile(cb){
+function lessChangeCompile(cb) {
     gulp.src(lessPath, option)
-    .pipe(changed(dist))
-    .pipe(less().on('error', function (e) {
-      console.error(e.message);
-      this.emit('end');
-    }))
-    .pipe(postcss([autoprefixer]))
-    .pipe(rename((path) => {
-      path.extname = '.wxss';
-    }))
-    .pipe(gulp.dest(dist));
+        .pipe(changed(dist))
+        .pipe(less().on('error', function(e) {
+            console.error(e.message);
+            this.emit('end');
+        }))
+        .pipe(postcss([autoprefixer]))
+        .pipe(rename((path) => {
+            path.extname = '.wxss';
+        }))
+        .pipe(gulp.dest(dist));
     cb()
 }
 //编译ts
-function tsCompile(cb){
+function tsCompile(cb) {
     tsProject.src().pipe(sourcemaps.init())
-    .pipe(tsProject())
-    .js.pipe(sourcemaps.write())
-    .pipe(gulp.dest(builtPath));
+        .pipe(tsProject())
+        .js.pipe(sourcemaps.write())
+        .pipe(gulp.dest(builtPath));
     cb();
 }
 
 //监听 
-function wacthFile(cb){
-    gulp.watch(tsPath,gulp.series(tsCompile));
-    const watcher = gulp.watch(copyPath, gulp.series(lessChangeCompile));
-    gulp.watch(lessPath, gulp.series(lessCompile)); // Change
-    watcher.on('unlink',(filepath)=>{
+function wacthFile(cb) {
+    gulp.watch(tsPath, gulp.series(tsCompile));
+    const watcher = gulp.watch(copyPath, gulp.series(copyChange));
+    gulp.watch(lessPath, gulp.series(lessChangeCompile)); // Change
+    watcher.on('unlink', (filepath) => {
         const filePathFromSrc = path.relative(path.resolve('src'), filepath);
         const destFilePath = path.resolve(builtPath, filePathFromSrc);
         del.sync(destFilePath);
@@ -89,5 +95,5 @@ function wacthFile(cb){
     cb()
 }
 
-exports.build = gulp.series(clearFile,lessCompile,tsCompile,copyFileUnlessLessTs);
-exports.default = gulp.series(gulp.parallel(copyFileUnlessLessTs,lessCompile,tsCompile),wacthFile);
+exports.build = gulp.series(clearFile, lessCompile, tsCompile, copyFileUnlessLessTs);
+exports.default = gulp.series(gulp.parallel(copyFileUnlessLessTs, lessCompile, tsCompile), wacthFile);

@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="唐杰的博客" />
+    <style type="text/css">
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            z-index: 999;
+            background: #9ee4d6;
+            --amount: 20;
+            transition: all 0.5s ease-in;
+            opacity: 1;
+        }
+        
+        .background span {
+            width: 8vmin;
+            height: 8vmin;
+            border-radius: 4vmin;
+            backface-visibility: hidden;
+            position: absolute;
+            animation-name: move;
+            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.8);
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+            top: calc(50% - 4vmin);
+            left: 50%;
+            transform-origin: -4vmin center;
+        }
+        
+        .background span:nth-child(1) {
+            background: #35B0AB;
+            animation-delay: -0.5s;
+            opacity: 0;
+        }
+        
+        .background span:nth-child(2) {
+            background: #35B0AB;
+            animation-delay: -1s;
+            opacity: 0;
+        }
+        
+        .background span:nth-child(3) {
+            background: #C5F0A4;
+            animation-delay: -1.5s;
+            opacity: 0;
+        }
+        
+        .background span:nth-child(4) {
+            background: #226B80;
+            animation-delay: -2s;
+            opacity: 0;
+        }
+        
+        .background span:nth-child(5) {
+            background: #35B0AB;
+            animation-delay: -2.5s;
+            opacity: 0;
+        }
+        
+        .background span:nth-child(6) {
+            background: #226B80;
+            animation-delay: -3s;
+            opacity: 0;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: scale(1) rotate(0deg) translate3d(0, 0, 1px);
+            }
+            30% {
+                opacity: 1;
+            }
+            100% {
+                z-index: 10;
+                transform: scale(0) rotate(360deg) translate3d(0, 0, 1px);
+            }
+        }
+    </style>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -26,10 +103,22 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="loading_init" class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <div id="root"></div>
+    <!-- <div id="loading_init" class="loading_box">
+        
+    </div> -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -40,5 +129,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>

@@ -45,25 +45,37 @@ let routers:RoutersParams = {
         {
             path:'/artdetail',
             component:MB.Artdetail
+        },
+        {
+            path:'/veidoList',
+            component:MB.VeidoList
         }
     ],
     pc:[
         {
-            path:'/',
+            path:"/",
             redirect:{
                 to:'/main'
             }
         },
         {
-            path:'/',
+            path:'/main',
             component:PC.Home,
             routers:[
                 {
                     path:"/main",
                     component:PC.Main
                 },
+                {
+                    path:"/edite",
+                    component:PC.Main
+                },
             ]
-        }
+        },
+        {
+            path:'/login',
+            component:PC.Login
+        },
     ]
 }
 // let routers = [
