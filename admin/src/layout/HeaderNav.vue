@@ -31,8 +31,8 @@ export default Vue.extend({
 	},
     methods:{
         handleMenuClick(e:any) {
-            Cookies.remove('token');
-            Cookies.remove('username');
+            Cookies.remove('admin_token');
+            Cookies.remove('adminname');
             (this as any).$message.success('退出成功')
             setTimeout(()=>{
                 window.open(LINKURL,'_self');

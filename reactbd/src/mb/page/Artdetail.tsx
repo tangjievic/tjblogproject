@@ -6,18 +6,18 @@ import '../style/artdetail.less';
 const Artdetail:React.FC = (props) =>{
     let [art,setArt] = useState({})
     let history = useHistory();
+    let params = urlArgs(history.location.search)
     let goBack = ()=>{
         history.goBack()
     }
     useEffect(()=>{
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        let params = urlArgs(history.location.search)
         getArt({
             aid:params.aid
         }).then((res:any)=>{
             setArt(res.data)
         })
-    },[])
+    },[params])
     return (
         <div className="mb-main__view art_page">
              <header className="view_header">

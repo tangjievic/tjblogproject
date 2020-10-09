@@ -33,19 +33,19 @@
                 a,span{
                     display: block;
                     text-decoration: none;
-                    color: #4495e5;
+                    color: #34495e;
                 }
-            }
-            .active{
-                background-color: fade(@wet-primary,90%);
-                color: #fff;
-                &:hover{
-                    background-color: fade(@wet-primary,60%);
+                &.active{
+                    background-color: fade(@wet-primary,90%);
                     color: #fff;
+                    &:hover{
+                        background-color: fade(@wet-primary,60%);
+                        color: #fff;
+                    }
                 }
-            }
-            .disabled:hover{
-                background-color: #f4f4f5;
+                &.disabled:hover{
+                    background-color: #f4f4f5;
+                }
             }
         }
     }

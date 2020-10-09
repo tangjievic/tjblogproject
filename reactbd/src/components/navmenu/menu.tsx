@@ -64,6 +64,7 @@ const WetMenu:React.FC<MenuProps> = (props:any) =>{
             }
         })
         settheadPosition(temp_position);
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[initMenu])
     let time = setTimeout(()=>{
         setInitMenu(false)

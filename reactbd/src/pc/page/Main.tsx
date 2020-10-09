@@ -6,6 +6,7 @@ import Artlist from '../subassembly/Aartlist';
 import { connect } from 'react-redux';
 import novip from './novip.png';
 import vip from './vip.png';
+import veidoData from '../../tool/veidolist';
 import { getZanArt,getArtList,getHotArt,getCollectArt, getArtByKeywords} from '../../apilist';
 interface MaibProps{
     userData:any;
@@ -119,7 +120,7 @@ const Main:React.FC<MaibProps> = (props)=>{
                 callFunc = getCollectArt;
                 break
             default:
-                callFunc = ({})=>{return '0'};
+                callFunc = ()=>{return '0'};
                 break;
         }
         return  callFunc({
@@ -232,7 +233,19 @@ const Main:React.FC<MaibProps> = (props)=>{
                             <Artlist  artlist={artlist}  total={total} onChagePage={onChagePage}></Artlist>
                         </TabPane>
                         <TabPane tab="视频资源" key="6">
-                            <Empty description="暂无数据"></Empty>
+                            {/* <Empty description="暂无数据"></Empty> */}
+                            <div>
+                                <div>微信小程序组件开发</div>
+                                <ul>
+                                    {veidoData.weappMoel.map((item:any,index:number)=>{
+                                        return (
+                                            <li key={index}>
+                                                <a target="_blank" href={item.url} rel="noopener noreferrer">{item.id} * {item.name}</a>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
                         </TabPane>
                         <TabPane tab="文章查询" key="7">
                             <Search

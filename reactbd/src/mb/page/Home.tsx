@@ -15,8 +15,6 @@ interface HomeProps {
 const Home:React.FC<HomeProps> = (props) =>{
     //console.log(props)
     const { reqCateMsg,reqUserData } = props;
-    reqCateMsg();
-    reqUserData();
     let history = useHistory();
     let [visible,setVisibel] = useState(false);
     //let [catelist,setCateList] = useState([]);
@@ -25,6 +23,11 @@ const Home:React.FC<HomeProps> = (props) =>{
     let [pagenum,setPage] = useState(0);
     let [total,setTotal] = useState(0);
     let [selectcate,setSelectCate] = useState(0);
+    useEffect(()=>{
+        reqCateMsg();
+        reqUserData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[reqCateMsg,reqUserData])
     useEffect(()=>{
         getArtList({
             "id":'',
@@ -36,6 +39,7 @@ const Home:React.FC<HomeProps> = (props) =>{
             setPage(res.data.current_page);
             setTotal(res.data.total)
         })
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     
     let onChagePage = (current:number)=>{
@@ -76,11 +80,8 @@ const Home:React.FC<HomeProps> = (props) =>{
     }
     //渲染文章分类列表
     let rendCateBtn = (catelist:any[]) =>{
-        //console.log(catelist)
         catelist = catelist.map((item:any,index:number)=>{
-            if(item.pid === 0){
-                return
-            }else{
+            if(item.pid !== 0){
                 return (<li key={index}>  
                     <Button size="middle" block onClick={()=>goCatePage(item.id)}>{item.catename}</Button>
                 </li>)
@@ -101,19 +102,19 @@ const Home:React.FC<HomeProps> = (props) =>{
                 <div className="tips">博客类网站，移动端只适合游览熟悉知识点，如若需加强技术请移步至pc端，边看文章边实践</div>
                 <ul className="home_ulli">
                     <li className="item">
-                        <a className="link" onClick={(e) => openModel(e)}>
+                        <a href="#!" className="link" onClick={(e) => openModel(e)}>
                             <i  className="itemicon icon_calssify"></i>
                             <span>分类</span>
                         </a>
                     </li>
                     <li className="item">
-                        <a className="link" onClick={(e)=> openVeido(e)}>
+                        <a href="#!" className="link" onClick={(e)=> openVeido(e)}>
                             <i className="itemicon icon_video"></i>
                             <span>视频</span>
                         </a>
                     </li>
                     <li className="item">
-                        <a className="link" onClick={(e)=> openManual(e)}>
+                        <a href="#!" className="link" onClick={(e)=> openManual(e)}>
                             <i className="itemicon icon_manual"></i>
                             <span>手册</span>
                         </a>
@@ -124,7 +125,7 @@ const Home:React.FC<HomeProps> = (props) =>{
                     <header className="section_title">最近更新</header>
                     <div className="section_content new">
                         <div className="art_hd">
-                            <a>{(newart as any).title}</a>
+                            <a href="#!">{(newart as any).title}</a>
                         </div>
                         <div className="art_sub">{(newart as any).stitle}</div>
                         <p className="art_desc">简介:{(newart as any).desc}</p>

@@ -21,12 +21,12 @@ const Artpage:React.FC<ArtpageProps> = (props)=>{
     }
     useEffect(()=>{
         setCid(params.id)
-        if(params.id === 'collect'){
+        if(params.id=== 'collect'){
             getCollectArt({
                 "page_count": 1,
                 "page_size": 10,
             }).then((res:any)=>{
-                console.log(res)
+                //console.log(res)
                 setArtlist(res.data.data);
                 setPage(res.data.current_page);
                 setTotal(res.data.total)
@@ -36,7 +36,7 @@ const Artpage:React.FC<ArtpageProps> = (props)=>{
                 "page_count": 1,
                 "page_size": 10,
             }).then((res:any)=>{
-                console.log(res)
+                //console.log(res)
                 setArtlist(res.data.data);
                 setPage(res.data.current_page);
                 setTotal(res.data.total)
@@ -47,13 +47,14 @@ const Artpage:React.FC<ArtpageProps> = (props)=>{
                 "page_count": 1,
                 "page_size": 10,
             }).then((res:any)=>{
-                console.log(res)
+                //console.log(res)
                 setArtlist(res.data.data);
                 setPage(res.data.current_page);
                 setTotal(res.data.total)
             })
         }
-    },[cid])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     let onChagePage = (current:number)=>{
         return  getArtList({
@@ -72,14 +73,14 @@ const Artpage:React.FC<ArtpageProps> = (props)=>{
                         {
                             (()=>{
                                 let title:string = '';
-                                console.log(cid)
+                                //console.log(cid)
                                 if(cid === 'zan'){
                                     title = '我的点赞'
                                 }else if(cid === 'collect'){
                                     title = '我的收藏'
                                 }else{
                                     props.cateMsg.forEach((item:any)=>{
-                                        console.log(item.id)
+                                        //console.log(item.id)
                                         if(Number(cid) === Number(item.id)){
                                             title = item.catename
                                         }

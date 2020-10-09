@@ -8,7 +8,7 @@ interface MainLayoutProps {
 const MainLayout:React.FC<MainLayoutProps> = (props)=>{
     const { children,selecttype } = props;
     let goPage:any = (value:any)=> {
-        console.log(value)
+        //console.log(value)
     }    
     return (
         <div className="mb-main__view">

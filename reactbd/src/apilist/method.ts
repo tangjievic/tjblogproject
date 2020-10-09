@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 import { message } from 'antd';
 let SEVERURL = ''; //服务器请求地址
 let LINKURL = '';
-if(process.env.NODE_ENV == 'development'){
+if(process.env.NODE_ENV === 'development'){
     SEVERURL = 'http://www.tangjietop.cn/index.php'
     LINKURL = 'http://localhost:3000'
 }else{

@@ -15,7 +15,7 @@ if(process.env.NODE_ENV == 'development'){
 
 let cgiGet = (api:string,params:any) => {
     let header:any = {'Content-Type':'application/json'},token:string|undefined,username:string|undefined;
-    token = Cookies.get('token')?Cookies.get('token'):''
+    token = Cookies.get('admin_token')?Cookies.get('admin_token'):''
     username = Cookies.get('adminname')?Cookies.get('adminname'):''
     header.token = token;
     header.username = username;
@@ -52,7 +52,7 @@ let cgiGet = (api:string,params:any) => {
 
 let cgiPost = (api:string,params:any) => {
     let header:any = {'Content-Type':'application/json'},token:string|undefined,username:string|undefined;
-    token = Cookies.get('token')?Cookies.get('token'):''
+    token = Cookies.get('admin_token')?Cookies.get('admin_token'):''
     username = Cookies.get('adminname')?Cookies.get('adminname'):''
     header.token = token;
     header.username = username;

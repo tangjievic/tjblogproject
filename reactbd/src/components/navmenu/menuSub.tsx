@@ -38,7 +38,8 @@ const WetMenuSub:React.FC<MenuSubPorps> = React.forwardRef( (props:any,ref)=>{
                 setSelectItem(false);
             }
         }
-    })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     const context = useContext( MenuContext );
     const passedContent:IMenuContent = {
         index:0,

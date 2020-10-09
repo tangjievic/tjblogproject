@@ -107,7 +107,7 @@ const LeftTool:React.FC<LeftToolProps> = (props)=>{
                         </ul>
                         <div className="update_box">
                             <div className="updata">最新更新</div>
-                            <a href="#" className="updta-link" onClick={(e)=>goNewCate(e)}>{
+                            <a href="#!" className="updta-link" onClick={(e)=>goNewCate(e)}>{
                                 (()=>{
                                     if(cateMsg&&cateMsg.length!==0){
                                         for(let i = 0;i<cateMsg.length;i++){
@@ -173,7 +173,7 @@ const LeftTool:React.FC<LeftToolProps> = (props)=>{
                     </div>
                 </li>
                 <li className="leftmenu-item">
-                    <a href="https://gitee.com/thepigthatwantstofly/tjblog" target="_blank" className="item-link">
+                    <a href="https://gitee.com/thepigthatwantstofly/tjblog" target="_blank" className="item-link" rel="noopener noreferrer">
                         <i className="iconfont icon-mayun"></i>
                         <span>码云</span>
                     </a>

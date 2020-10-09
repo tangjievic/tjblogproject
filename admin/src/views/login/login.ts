@@ -21,7 +21,7 @@ export default Vue.extend({
             adminLogin(e).then((res:any)=>{
                 let data:any = res.data?res.data:res;
                 (this as any).$message.success('登录成功')
-                Cookies.set('token', data.token, { expires: 2 });
+                Cookies.set('admin_token', data.token, { expires: 2 });
                 Cookies.set('adminname',data.username,{ expires: 2 });
                 setTimeout(()=>{
                     if(this.type!==''){
